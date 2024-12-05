@@ -1,0 +1,1851 @@
+2024-03-26 15:28:57 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fee28457c50; archive(resolved)="<IDEArchive: 0x6000689e04e0>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team(resolved)="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	Chain (15, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fee28457c50; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionProcessingPipelineContext: 0x7fef8f2f1fa0; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fee28286e20; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fef68fa9210; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fee28228360; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fef8c858e60; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fee2a5c4d70; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fee2a597760; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fef68cda340; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="<IDEProvisioningDisambiguatableBasicTeam: 0x600007c9b0c0; teamID='96895Z6959', teamName='Nishant Taksande', teamType='Individual', username='nishant@thinkitive.com', isFreeProvisioningTeam='0'>">
+	<IDEDistributionContext: 0x7fef68cd95d0; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="(null)">
+	<IDEDistributionContext: 0x7fee2ea69b30; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="(null)">
+	<IDEDistributionContext: 0x7fee279dc7d0; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="(null)">
+	<IDEDistributionContext: 0x7fee284ef1f0; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="<IDEDistributionMethodiOSAdHoc: 0x60004214e0e0>", team="(null)">
+	<IDEDistributionContext: 0x7fef8cb215c0; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="(null)", team="(null)">
+	<IDEDistributionContext: 0x7fef67d34650; archive = "<IDEArchive: 0x6000689e04e0>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x7fee28457c50>
+2024-03-26 15:28:57 +0000  Processing step: IDEDistributionCreateDestRootStep
+2024-03-26 15:28:57 +0000  Processing step: IDEDistributionCopyItemStep
+2024-03-26 15:28:57 +0000  Running /usr/bin/ditto '-V' '/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app' '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app'
+2024-03-26 15:28:57 +0000  >>> Copying /Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app 
+2024-03-26 15:28:57 +0000  copying file ./_CodeSignature/CodeResources ... 
+2024-03-26 15:28:57 +0000  29810 bytes for ./_CodeSignature/CodeResources
+2024-03-26 15:28:57 +0000  copying file ./Fontisto.ttf ... 
+2024-03-26 15:28:57 +0000  313528 bytes for ./Fontisto.ttf
+copying file ./Octicons.ttf ... 
+2024-03-26 15:28:57 +0000  49404 bytes for ./Octicons.ttf
+copying file ./Feather.ttf ... 
+2024-03-26 15:28:57 +0000  56228 bytes for ./Feather.ttf
+copying file ./FontAwesome6_Regular.ttf ... 
+2024-03-26 15:28:57 +0000  63348 bytes for ./FontAwesome6_Regular.ttf
+2024-03-26 15:28:57 +0000  copying file ./Entypo.ttf ... 
+2024-03-26 15:28:57 +0000  66200 bytes for ./Entypo.ttf
+copying file ./NOTA_PROJECT ... 
+2024-03-26 15:28:57 +0000  3837792 bytes for ./NOTA_PROJECT
+2024-03-26 15:28:57 +0000  copying file ./FontAwesome5_Brands.ttf ... 
+2024-03-26 15:28:57 +0000  134040 bytes for ./FontAwesome5_Brands.ttf
+2024-03-26 15:28:57 +0000  copying file ./MaterialCommunityIcons.ttf ... 
+2024-03-26 15:28:57 +0000  1147844 bytes for ./MaterialCommunityIcons.ttf
+2024-03-26 15:28:57 +0000  copying file ./AppIcon60x60@2x.png ... 
+2024-03-26 15:28:57 +0000  12298 bytes for ./AppIcon60x60@2x.png
+2024-03-26 15:28:57 +0000  copying file ./AntDesign.ttf ... 
+2024-03-26 15:28:57 +0000  70344 bytes for ./AntDesign.ttf
+copying file ./Foundation.ttf ... 
+2024-03-26 15:28:57 +0000  56976 bytes for ./Foundation.ttf
+copying file ./Ionicons.ttf ... 
+2024-03-26 15:28:57 +0000  442604 bytes for ./Ionicons.ttf
+2024-03-26 15:28:57 +0000  copying file ./FontAwesome5_Solid.ttf ... 
+2024-03-26 15:28:57 +0000  202744 bytes for ./FontAwesome5_Solid.ttf
+2024-03-26 15:28:57 +0000  copying file ./FontAwesome5_Regular.ttf ... 
+2024-03-26 15:28:57 +0000  33736 bytes for ./FontAwesome5_Regular.ttf
+2024-03-26 15:28:57 +0000  copying file ./AccessibilityResources.bundle/en.lproj/Localizable.strings ... 
+2024-03-26 15:28:57 +0000  518 bytes for ./AccessibilityResources.bundle/en.lproj/Localizable.strings
+2024-03-26 15:28:57 +0000  copying file ./AccessibilityResources.bundle/Info.plist ... 
+2024-03-26 15:28:57 +0000  794 bytes for ./AccessibilityResources.bundle/Info.plist
+2024-03-26 15:28:57 +0000  copying file ./FontAwesome.ttf ... 
+2024-03-26 15:28:57 +0000  165548 bytes for ./FontAwesome.ttf
+2024-03-26 15:28:57 +0000  copying file ./Zocial.ttf ... 
+2024-03-26 15:28:57 +0000  25788 bytes for ./Zocial.ttf
+2024-03-26 15:28:57 +0000  copying file ./Assets.car ... 
+2024-03-26 15:28:57 +0000  448207 bytes for ./Assets.car
+2024-03-26 15:28:57 +0000  copying file ./EvilIcons.ttf ... 
+2024-03-26 15:28:57 +0000  13456 bytes for ./EvilIcons.ttf
+2024-03-26 15:28:57 +0000  copying file ./AppIcon76x76@2x~ipad.png ... 
+2024-03-26 15:28:57 +0000  16395 bytes for ./AppIcon76x76@2x~ipad.png
+2024-03-26 15:28:57 +0000  copying file ./main.jsbundle ... 
+2024-03-26 15:28:57 +0000  4301476 bytes for ./main.jsbundle
+2024-03-26 15:28:57 +0000  copying file ./FontAwesome6_Solid.ttf ... 
+2024-03-26 15:28:57 +0000  394668 bytes for ./FontAwesome6_Solid.ttf
+2024-03-26 15:28:57 +0000  copying file ./LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2024-03-26 15:28:57 +0000  2097 bytes for ./LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2024-03-26 15:28:57 +0000  copying file ./LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2024-03-26 15:28:57 +0000  924 bytes for ./LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+2024-03-26 15:28:57 +0000  copying file ./LaunchScreen.storyboardc/Info.plist ... 
+2024-03-26 15:28:57 +0000  258 bytes for ./LaunchScreen.storyboardc/Info.plist
+2024-03-26 15:28:57 +0000  copying file ./Frameworks/hermes.framework/_CodeSignature/CodeResources ... 
+2024-03-26 15:28:57 +0000  1798 bytes for ./Frameworks/hermes.framework/_CodeSignature/CodeResources
+2024-03-26 15:28:57 +0000  copying file ./Frameworks/hermes.framework/hermes ... 
+2024-03-26 15:28:57 +0000  508276416 bytes for ./Frameworks/hermes.framework/hermes
+2024-03-26 15:28:57 +0000  copying file ./Frameworks/hermes.framework/Info.plist ... 
+2024-03-26 15:28:57 +0000  815 bytes for ./Frameworks/hermes.framework/Info.plist
+2024-03-26 15:28:57 +0000  copying file ./SimpleLineIcons.ttf ... 
+2024-03-26 15:28:57 +0000  54056 bytes for ./SimpleLineIcons.ttf
+2024-03-26 15:28:57 +0000  copying file ./FontAwesome6_Brands.ttf ... 
+2024-03-26 15:28:57 +0000  189684 bytes for ./FontAwesome6_Brands.ttf
+2024-03-26 15:28:57 +0000  copying file ./embedded.mobileprovision ... 
+2024-03-26 15:28:57 +0000  28070 bytes for ./embedded.mobileprovision
+2024-03-26 15:28:57 +0000  copying file ./assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@3x.png ... 
+2024-03-26 15:28:57 +0000  212 bytes for ./assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@3x.png
+copying file ./assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@2x.png ... 
+2024-03-26 15:28:57 +0000  163 bytes for ./assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@2x.png
+2024-03-26 15:28:57 +0000  copying file ./assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon.png ... 
+2024-03-26 15:28:57 +0000  108 bytes for ./assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon.png
+2024-03-26 15:28:57 +0000  copying file ./assets/node_modules/@react-navigation/elements/src/assets/back-icon@3x.png ... 
+2024-03-26 15:28:57 +0000  761 bytes for ./assets/node_modules/@react-navigation/elements/src/assets/back-icon@3x.png
+2024-03-26 15:28:57 +0000  copying file ./assets/node_modules/@react-navigation/elements/src/assets/back-icon@2x.png ... 
+2024-03-26 15:28:57 +0000  405 bytes for ./assets/node_modules/@react-navigation/elements/src/assets/back-icon@2x.png
+2024-03-26 15:28:58 +0000  copying file ./assets/node_modules/@react-navigation/elements/src/assets/back-icon.png ... 
+2024-03-26 15:28:58 +0000  290 bytes for ./assets/node_modules/@react-navigation/elements/src/assets/back-icon.png
+2024-03-26 15:28:58 +0000  copying file ./assets/node_modules/@react-navigation/elements/src/assets/back-icon-mask.png ... 
+2024-03-26 15:28:58 +0000  913 bytes for ./assets/node_modules/@react-navigation/elements/src/assets/back-icon-mask.png
+2024-03-26 15:28:58 +0000  copying file ./assets/node_modules/react-native-paper/src/assets/back-chevron.png ... 
+2024-03-26 15:28:58 +0000  489 bytes for ./assets/node_modules/react-native-paper/src/assets/back-chevron.png
+2024-03-26 15:28:58 +0000  copying file ./assets/node_modules/react-native-element-dropdown/src/assets/down.png ... 
+2024-03-26 15:28:58 +0000  186 bytes for ./assets/node_modules/react-native-element-dropdown/src/assets/down.png
+2024-03-26 15:28:58 +0000  copying file ./assets/node_modules/react-native-element-dropdown/src/assets/close.png ... 
+2024-03-26 15:28:58 +0000  208 bytes for ./assets/node_modules/react-native-element-dropdown/src/assets/close.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/vaccine.png ... 
+2024-03-26 15:28:58 +0000  5518 bytes for ./assets/src/assets/images/vaccine.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/doctorcircle.png ... 
+2024-03-26 15:28:58 +0000  146245 bytes for ./assets/src/assets/images/doctorcircle.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/vitals.png ... 
+2024-03-26 15:28:58 +0000  20050 bytes for ./assets/src/assets/images/vitals.png
+copying file ./assets/src/assets/images/gradientBg.png ... 
+2024-03-26 15:28:58 +0000  104637 bytes for ./assets/src/assets/images/gradientBg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/BookAppointment.png ... 
+2024-03-26 15:28:58 +0000  18449 bytes for ./assets/src/assets/images/BookAppointment.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/medicalReports.png ... 
+2024-03-26 15:28:58 +0000  19970 bytes for ./assets/src/assets/images/medicalReports.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/personImg.png ... 
+2024-03-26 15:28:58 +0000  6190 bytes for ./assets/src/assets/images/personImg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/backpain.png ... 
+2024-03-26 15:28:58 +0000  322569 bytes for ./assets/src/assets/images/backpain.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/dermatologist.png ... 
+2024-03-26 15:28:58 +0000  336906 bytes for ./assets/src/assets/images/dermatologist.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/thyroid.png ... 
+2024-03-26 15:28:58 +0000  334519 bytes for ./assets/src/assets/images/thyroid.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/smily.png ... 
+2024-03-26 15:28:58 +0000  3319 bytes for ./assets/src/assets/images/smily.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/Ellipse.png ... 
+2024-03-26 15:28:58 +0000  37255 bytes for ./assets/src/assets/images/Ellipse.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/birthWeight.png ... 
+2024-03-26 15:28:58 +0000  3397 bytes for ./assets/src/assets/images/birthWeight.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/weightImg.jpeg ... 
+2024-03-26 15:28:58 +0000  4477 bytes for ./assets/src/assets/images/weightImg.jpeg
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/doctorImg.png ... 
+2024-03-26 15:28:58 +0000  237859 bytes for ./assets/src/assets/images/doctorImg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/demographics.png ... 
+2024-03-26 15:28:58 +0000  21102 bytes for ./assets/src/assets/images/demographics.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/visitHistory.png ... 
+2024-03-26 15:28:58 +0000  20721 bytes for ./assets/src/assets/images/visitHistory.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/generanalPhysician.png ... 
+2024-03-26 15:28:58 +0000  316794 bytes for ./assets/src/assets/images/generanalPhysician.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/halfStar.png ... 
+2024-03-26 15:28:58 +0000  1471 bytes for ./assets/src/assets/images/halfStar.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/famMem1.png ... 
+2024-03-26 15:28:58 +0000  43900 bytes for ./assets/src/assets/images/famMem1.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/vaccacine.png ... 
+2024-03-26 15:28:58 +0000  20209 bytes for ./assets/src/assets/images/vaccacine.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/stomachpain.png ... 
+2024-03-26 15:28:58 +0000  296413 bytes for ./assets/src/assets/images/stomachpain.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/famMem2.png ... 
+2024-03-26 15:28:58 +0000  55219 bytes for ./assets/src/assets/images/famMem2.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/LabTest.png ... 
+2024-03-26 15:28:58 +0000  14191 bytes for ./assets/src/assets/images/LabTest.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/takeimage.png ... 
+2024-03-26 15:28:58 +0000  5997 bytes for ./assets/src/assets/images/takeimage.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/oxysaturation.png ... 
+2024-03-26 15:28:58 +0000  1855 bytes for ./assets/src/assets/images/oxysaturation.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/resprate.png ... 
+2024-03-26 15:28:58 +0000  2215 bytes for ./assets/src/assets/images/resprate.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/homeBackgroundImg.png ... 
+2024-03-26 15:28:58 +0000  511904 bytes for ./assets/src/assets/images/homeBackgroundImg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/dentist.png ... 
+2024-03-26 15:28:58 +0000  428797 bytes for ./assets/src/assets/images/dentist.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/e-prescription.png ... 
+2024-03-26 15:28:58 +0000  15091 bytes for ./assets/src/assets/images/e-prescription.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/backGroundForImage.png ... 
+2024-03-26 15:28:58 +0000  16509 bytes for ./assets/src/assets/images/backGroundForImage.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/InstantVideoConsult.png ... 
+2024-03-26 15:28:58 +0000  18382 bytes for ./assets/src/assets/images/InstantVideoConsult.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/appdoctor.png ... 
+2024-03-26 15:28:58 +0000  182156 bytes for ./assets/src/assets/images/appdoctor.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/temperature.png ... 
+2024-03-26 15:28:58 +0000  1889 bytes for ./assets/src/assets/images/temperature.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/backgroundLogin.png ... 
+2024-03-26 15:28:58 +0000  33434 bytes for ./assets/src/assets/images/backgroundLogin.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/heightImg.png ... 
+2024-03-26 15:28:58 +0000  21383 bytes for ./assets/src/assets/images/heightImg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/topBG.png ... 
+2024-03-26 15:28:58 +0000  273080 bytes for ./assets/src/assets/images/topBG.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/bloodglucose.png ... 
+2024-03-26 15:28:58 +0000  1887 bytes for ./assets/src/assets/images/bloodglucose.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/InsCardFront.png ... 
+2024-03-26 15:28:58 +0000  61344 bytes for ./assets/src/assets/images/InsCardFront.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/InsCardBack.png ... 
+2024-03-26 15:28:58 +0000  89822 bytes for ./assets/src/assets/images/InsCardBack.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/profileImage.jpeg ... 
+2024-03-26 15:28:58 +0000  9283 bytes for ./assets/src/assets/images/profileImage.jpeg
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/UpcomingAppointment.png ... 
+2024-03-26 15:28:58 +0000  19046 bytes for ./assets/src/assets/images/UpcomingAppointment.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/allergies.png ... 
+2024-03-26 15:28:58 +0000  22488 bytes for ./assets/src/assets/images/allergies.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/profile.png ... 
+2024-03-26 15:28:58 +0000  63300 bytes for ./assets/src/assets/images/profile.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/Insurance.png ... 
+2024-03-26 15:28:58 +0000  16963 bytes for ./assets/src/assets/images/Insurance.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/pulseRateImg.png ... 
+2024-03-26 15:28:58 +0000  2047 bytes for ./assets/src/assets/images/pulseRateImg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/pediatrician.png ... 
+2024-03-26 15:28:58 +0000  374952 bytes for ./assets/src/assets/images/pediatrician.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/problems.png ... 
+2024-03-26 15:28:58 +0000  20007 bytes for ./assets/src/assets/images/problems.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/provider-5.png ... 
+2024-03-26 15:28:58 +0000  105094 bytes for ./assets/src/assets/images/provider-5.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/provider-4.png ... 
+2024-03-26 15:28:58 +0000  79054 bytes for ./assets/src/assets/images/provider-4.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/star.png ... 
+2024-03-26 15:28:58 +0000  1129 bytes for ./assets/src/assets/images/star.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/uploadimage.png ... 
+2024-03-26 15:28:58 +0000  6236 bytes for ./assets/src/assets/images/uploadimage.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/provider-6.png ... 
+2024-03-26 15:28:58 +0000  109174 bytes for ./assets/src/assets/images/provider-6.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/heartrate.png ... 
+2024-03-26 15:28:58 +0000  2274 bytes for ./assets/src/assets/images/heartrate.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/vertigo.png ... 
+2024-03-26 15:28:58 +0000  319312 bytes for ./assets/src/assets/images/vertigo.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/medications.png ... 
+2024-03-26 15:28:58 +0000  20069 bytes for ./assets/src/assets/images/medications.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/provider-3.png ... 
+2024-03-26 15:28:58 +0000  78565 bytes for ./assets/src/assets/images/provider-3.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/notification.png ... 
+2024-03-26 15:28:58 +0000  6208 bytes for ./assets/src/assets/images/notification.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/NavalaLogoWithName.jpg ... 
+2024-03-26 15:28:58 +0000  37045 bytes for ./assets/src/assets/images/NavalaLogoWithName.jpg
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/provider-2.png ... 
+2024-03-26 15:28:58 +0000  103307 bytes for ./assets/src/assets/images/provider-2.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/back.png ... 
+2024-03-26 15:28:58 +0000  489 bytes for ./assets/src/assets/images/back.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/bmiImg.png ... 
+2024-03-26 15:28:58 +0000  5041 bytes for ./assets/src/assets/images/bmiImg.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/provider-1.png ... 
+2024-03-26 15:28:58 +0000  102310 bytes for ./assets/src/assets/images/provider-1.png
+2024-03-26 15:28:58 +0000  copying file ./assets/src/assets/images/bp.png ... 
+2024-03-26 15:28:58 +0000  1571 bytes for ./assets/src/assets/images/bp.png
+2024-03-26 15:28:58 +0000  copying file ./Info.plist ... 
+2024-03-26 15:28:58 +0000  2101 bytes for ./Info.plist
+2024-03-26 15:28:58 +0000  copying file ./PkgInfo ... 
+2024-03-26 15:28:58 +0000  8 bytes for ./PkgInfo
+2024-03-26 15:28:58 +0000  copying file ./MaterialIcons.ttf ... 
+2024-03-26 15:28:58 +0000  356840 bytes for ./MaterialIcons.ttf
+2024-03-26 15:28:58 +0000  /usr/bin/ditto exited with 0
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionEmbedProfileStep
+2024-03-26 15:28:58 +0000  Skipping profile for item: <IDEDistributionItem: 0x600068984840; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x600058d25c80:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x600058330a00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x6000119c8000; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='(null)', teamID='96895Z6959', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x6000348b0af0:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'>
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionInfoPlistStep
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2024-03-26 15:28:58 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes' '-r' '-keep_cs' '-o' '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes'
+2024-03-26 15:28:58 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip exited with 0
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionCopyBCSymbolMapsStep because it said so
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionSymbolsStep
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionSymbolsStep because it said so
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionAppThinningStep
+2024-03-26 15:28:58 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionArchThinningStep
+2024-03-26 15:28:58 +0000  Item /Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework doesn't have the entitlement com.apple.developer.web-browser-engine.host enabled, returning ["arm64e"]
+2024-03-26 15:28:58 +0000  Archs to thin for item /Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework are ["arm64e"]
+2024-03-26 15:28:58 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes' '-verify_arch' 'arm64e'
+2024-03-26 15:28:58 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2024-03-26 15:28:58 +0000  Skipping architecture thinning for item "hermes" because arch "arm64e" wasn't found
+2024-03-26 15:28:58 +0000  Item /Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app doesn't have the entitlement com.apple.developer.web-browser-engine.host enabled, returning ["arm64e"]
+2024-03-26 15:28:58 +0000  Archs to thin for item /Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app are ["arm64e"]
+2024-03-26 15:28:58 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/NOTA_PROJECT' '-verify_arch' 'arm64e'
+2024-03-26 15:28:58 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2024-03-26 15:28:58 +0000  Skipping architecture thinning for item "NOTA_PROJECT" because arch "arm64e" wasn't found
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionODRStep
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionStripXattrsStep
+2024-03-26 15:28:58 +0000  Skipping stripping extended attributes because the codesign step will strip them.
+2024-03-26 15:28:58 +0000  Skipping stripping extended attributes because the codesign step will strip them.
+2024-03-26 15:28:58 +0000  Processing step: IDEDistributionCodesignStep
+2024-03-26 15:28:58 +0000  Entitlements for <IDEDistributionItem: 0x600068984840; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x600058d25c80:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x600058330a00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x60000d63f240; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='(null)', teamID='96895Z6959', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x6000348b0af0:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'>: {
+}
+2024-03-26 15:28:58 +0000  Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2024-03-26 15:28:58 +0000  Entitlements for <IDEDistributionItem: 0x600068984840; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x600058d25c80:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x600058330a00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x60000d63e700; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='(null)', teamID='96895Z6959', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x6000348b0af0:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'> are: {
+}
+2024-03-26 15:28:58 +0000  Writing entitlements for <IDEDistributionItem: 0x600068984840; bundleID='dev.hermesengine.iphoneos', path='<DVTFilePath:0x600058d25c80:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x600058330a00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x60000d63c180; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='(null)', teamID='96895Z6959', identifier='dev.hermesengine.iphoneos', executablePath='<DVTFilePath:0x6000348b0af0:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes'>', hardenedRuntime='0'>'> to: /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/entitlements~~~Qww8es
+2024-03-26 15:28:58 +0000  Sending request EA82BF67-8FF1-430F-AD0D-84D3DF8FE86F to <https://developerservices2.apple.com/services/QH65B2/listTeams.action?clientId=XABBG36SBA> for session <DVTServicesAccountBasedSession: 0x6000689c0660; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>.
+Method: POST
+
+Headers:
+{
+    Accept = "text/x-xml-plist";
+    "Accept-Encoding" = "gzip, deflate";
+    "Content-Length" = 368;
+    "Content-Type" = "text/x-xml-plist";
+    "User-Agent" = Xcode;
+    "X-Apple-App-Info" = "com.apple.gs.xcode.auth";
+    "X-Apple-GS-Token" = "AAAABLwIAAAAAGYCaKQRDWdzLnhjb2RlLmF1dGi9AMBtswLzX1ZNpBwkmd95uc02D8IwwVNNDbN03yK9ilIOqaRCBsMsQvHw07EfABfmKIJ6UWaN3kEqi0aydZ3phfqewN4+ZZqbzGX5JtbwFGb6iW3pv6xjMcWP5NmDCKUAOMsataAh6I/g1H+K1szu6lERhs+d";
+    "X-Apple-I-Identity-Id" = "001332-08-0934b962-6fb6-4afc-814e-859238ce7ba7";
+    "X-MMe-Client-Info" = "<MacBookPro16,1> <macOS;14.4.1;23E224> <com.apple.AuthKit/1 (com.apple.dt.Xcode/22618)>";
+    "X-Mme-Device-Id" = "7EB186BF-95A9-596A-9C53-73E157F7C6C9";
+    "X-Xcode-Version" = "15.3 (15E204a)";
+}
+
+Payload:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>clientId</key>
+	<string>XABBG36SBA</string>
+	<key>protocolVersion</key>
+	<string>QH65B2</string>
+	<key>requestId</key>
+	<string>EA82BF67-8FF1-430F-AD0D-84D3DF8FE86F</string>
+</dict>
+</plist>
+2024-03-26 15:28:58 +0000  Received response for EA82BF67-8FF1-430F-AD0D-84D3DF8FE86F @ <https://developerservices2.apple.com/services/QH65B2/listTeams.action?clientId=XABBG36SBA>. Code = 0
+2024-03-26 15:28:59 +0000  Response payload: {
+    creationTimestamp = "2024-03-26T15:28:58Z";
+    protocolVersion = QH65B2;
+    requestId = "EA82BF67-8FF1-430F-AD0D-84D3DF8FE86F";
+    requestUrl = "https://developerservices2.apple.com:443/services/QH65B2/listTeams.action?clientId=XABBG36SBA";
+    responseId = "9787dee9-554d-4bc7-94cf-b0a746ad90bd";
+    resultCode = 0;
+    teams =     (
+                {
+            currentTeamMember =             {
+                developerStatus = active;
+                email = "nishant@thinkitive.com";
+                firstName = Nishant;
+                lastName = Taksande;
+                personId = 17097204612;
+                privileges =                 {
+                };
+                roles =                 (
+                    AGENT,
+                    "TEAM_ADMIN",
+                    "MAC_PROGRAM_TEAM_ADMIN",
+                    "XCODE_FREE_USER"
+                );
+                teamMemberId = 52L2Z2F2X3;
+            };
+            dateCreated = "2020-01-15 06:44:51 +0000";
+            extendedTeamAttributes =             {
+            };
+            memberships =             (
+                                {
+                    dateExpire = "2024-06-20 06:59:00 +0000";
+                    dateStart = "2023-06-19 11:23:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = 5FZHSBMX98;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = ios;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-06-20 06:59:00 +0000";
+                    dateStart = "2023-06-19 11:23:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = 5FZHSBMX98;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = mac;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-06-20 06:59:00 +0000";
+                    dateStart = "2023-06-19 11:23:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = 5FZHSBMX98;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = safari;
+                    status = active;
+                },
+                                {
+                    dateStart = "2020-01-15 06:44:51 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = M5RU3NU9AC;
+                    membershipProductId = fp22;
+                    name = "Xcode Free Provisioning Program";
+                    platform = ios;
+                    status = activeNeverExpire;
+                }
+            );
+            name = "Nishant Taksande";
+            status = active;
+            teamAgent =             {
+                developerStatus = active;
+                email = "nishant@thinkitive.com";
+                firstName = Nishant;
+                lastName = Taksande;
+                personId = 17097204612;
+                teamMemberId = 52L2Z2F2X3;
+            };
+            teamId = 96895Z6959;
+            type = Individual;
+            xcodeFreeOnly = 0;
+        },
+                {
+            currentTeamMember =             {
+                developerStatus = active;
+                email = "nishant@thinkitive.com";
+                firstName = Nishant;
+                lastName = Taksande;
+                personId = 17097204612;
+                privileges =                 {
+                };
+                roles =                 (
+                    "TEAM_ADMIN",
+                    "MAC_PROGRAM_TEAM_ADMIN"
+                );
+                teamMemberId = MQ88CMCZHP;
+            };
+            dateCreated = "2012-09-24 16:35:00 +0000";
+            extendedTeamAttributes =             {
+            };
+            memberships =             (
+                                {
+                    dateExpire = "2024-12-25 23:59:00 +0000";
+                    dateStart = "2023-12-25 04:28:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 1;
+                    inRenewalWindow = 0;
+                    membershipId = 8BCTC7S9ML;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = ios;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-12-25 23:59:00 +0000";
+                    dateStart = "2023-12-25 04:28:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 1;
+                    inRenewalWindow = 0;
+                    membershipId = 8BCTC7S9ML;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = mac;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-12-25 23:59:00 +0000";
+                    dateStart = "2023-12-25 04:28:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 1;
+                    inRenewalWindow = 0;
+                    membershipId = 8BCTC7S9ML;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = safari;
+                    status = active;
+                }
+            );
+            name = "Zenwork, Inc";
+            status = active;
+            teamAgent =             {
+                developerStatus = active;
+                email = "sanjre@hotmail.com";
+                firstName = Sanjeev;
+                lastName = Singh;
+                personId = 115930981;
+                teamMemberId = 7ENADF2DDJ;
+            };
+            teamId = UCDUTTBK96;
+            type = "Company/Organization";
+            xcodeFreeOnly = 0;
+        }
+    );
+    userLocale = "en_US";
+}
+
+2024-03-26 15:28:59 +0000  invoking codesign: <NSConcreteTask: 0x6000483d05f0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    "-",
+    "--signature-size",
+    16000,
+    "--entitlements",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/entitlements~~~Qww8es",
+    "--requirements",
+    "=designated => anchor apple generic and identifier \"dev.hermesengine.iphoneos\" and certificate leaf[subject.CN] = \"Apple Distribution: Nishant Taksande (96895Z6959)\" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */",
+    "--preserve-metadata=identifier,flags,runtime",
+    "--omit-adhoc-flag",
+    "--team-identifier",
+    96895Z6959,
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework"
+)'>
+2024-03-26 15:28:59 +0000  codesign output: /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework: replacing existing signature
+/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework: signed bundle with Mach-O thin (arm64) [dev.hermesengine.iphoneos]
+2024-03-26 15:28:59 +0000  Remote code signing '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework' with signature slices '[<DVTCodeSignatureSlice: 0x60002ee395f0; architecture='arm64', cmsDigest='<DVTCodeSignatureHash: 0x60002635b300; digestAlgorithmDescription='sha256', cdHashHexEncoded='843f51106fb951b0c7320d9f326e6736480d08817f72cbe5d4169104c7faab9a'>', codeSignatureHashes='{(
+    <DVTCodeSignatureHash: 0x600026359540; digestAlgorithmDescription='sha256', cdHashHexEncoded='843f51106fb951b0c7320d9f326e6736480d08817f72cbe5d4169104c7faab9a'>
+)}', cmsHexEncoded=''>]' and configuration 'RemoteSigningToolConfiguration(path: <DVTFilePath:0x600058cec080:'/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework'>, signingCertificate: <DVTSigningCertificate: 0x6000156c1ec0; name='Apple Distribution: Nishant Taksande (96895Z6959)', hash='523EC24B6F8758C5B2D3B1966C825D9313392B12', serialNumber='7D7F3024F7DC0F6BEE78BA5F4CD1B899', certificateKinds='(
+    "1.2.840.113635.100.6.1.7",
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2023-06-30 11:19:34 +0000''>, session: <DVTServicesAccountBasedSession: 0x6000689c0660; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>, team: <DVTPortalTeam: 0x60000f80b540; name='Nishant Taksande', teamID='96895Z6959', type='Individual', memberships='(
+    "<DVTPortalMembership: 0x60002f1c1380; programs='{(\n    <DVTPortalProgram: 0x600000429f40; <DVTPortalProgram: 0x600000429f40; identifier='Xcode.Portal.Program.iOS'>>\n)}'>",
+    "<DVTPortalMembership: 0x60002f1c1ec0; programs='{(\n    <DVTPortalProgram: 0x600000429d60; <DVTPortalProgram: 0x600000429d60; identifier='Xcode.Portal.Program.Mac'>>\n)}'>"
+)'>, codeResourcesDictionary: [AnyHashable("rules"): {
+    "^.*" = 1;
+    "^.*\\.lproj/" =     {
+        optional = 1;
+        weight = 1000;
+    };
+    "^.*\\.lproj/locversion.plist$" =     {
+        omit = 1;
+        weight = 1100;
+    };
+    "^Base\\.lproj/" =     {
+        weight = 1010;
+    };
+    "^version.plist$" = 1;
+}, AnyHashable("files"): {
+    "Info.plist" = {length = 20, bytes = 0xaff23ef25fe5b11cb50373b529a55589d5b7445c};
+}, AnyHashable("rules2"): {
+    ".*\\.dSYM($|/)" =     {
+        weight = 11;
+    };
+    "^(.*/)?\\.DS_Store$" =     {
+        omit = 1;
+        weight = 2000;
+    };
+    "^.*" = 1;
+    "^.*\\.lproj/" =     {
+        optional = 1;
+        weight = 1000;
+    };
+    "^.*\\.lproj/locversion.plist$" =     {
+        omit = 1;
+        weight = 1100;
+    };
+    "^Base\\.lproj/" =     {
+        weight = 1010;
+    };
+    "^Info\\.plist$" =     {
+        omit = 1;
+        weight = 20;
+    };
+    "^PkgInfo$" =     {
+        omit = 1;
+        weight = 20;
+    };
+    "^embedded\\.provisionprofile$" =     {
+        weight = 20;
+    };
+    "^version\\.plist$" =     {
+        weight = 20;
+    };
+}, AnyHashable("files2"): {
+}], enableSignatureValidation: true)'
+2024-03-26 15:28:59 +0000  Sending request 62CCCEC6-F6E4-4FE1-8C5A-2E91BCBE35A6 to <https://developerservices2.apple.com/services/v1/certificates> for session <DVTServicesAccountBasedSession: 0x6000689c0660; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>.
+Method: POST
+
+Headers:
+{
+    Accept = "application/vnd.api+json";
+    "Accept-Encoding" = "gzip, deflate";
+    "Content-Length" = 104;
+    "Content-Type" = "application/vnd.api+json";
+    DSESSIONID = 1d6t8idcvvrgh9a61m5prp307mivg5ol5m4563g69s4jk7bm7pbo;
+    "User-Agent" = Xcode;
+    "X-Apple-App-Info" = "com.apple.gs.xcode.auth";
+    "X-Apple-GS-Token" = "AAAABLwIAAAAAGYCaKQRDWdzLnhjb2RlLmF1dGi9AMBtswLzX1ZNpBwkmd95uc02D8IwwVNNDbN03yK9ilIOqaRCBsMsQvHw07EfABfmKIJ6UWaN3kEqi0aydZ3phfqewN4+ZZqbzGX5JtbwFGb6iW3pv6xjMcWP5NmDCKUAOMsataAh6I/g1H+K1szu6lERhs+d";
+    "X-Apple-I-Identity-Id" = "001332-08-0934b962-6fb6-4afc-814e-859238ce7ba7";
+    "X-HTTP-Method-Override" = GET;
+    "X-MMe-Client-Info" = "<MacBookPro16,1> <macOS;14.4.1;23E224> <com.apple.AuthKit/1 (com.apple.dt.Xcode/22618)>";
+    "X-Mme-Device-Id" = "7EB186BF-95A9-596A-9C53-73E157F7C6C9";
+    "X-Xcode-Version" = "15.3 (15E204a)";
+}
+
+Payload:
+{"urlEncodedQueryParams":"teamId=96895Z6959&filter%5BcertificateType%5D=DISTRIBUTION_MANAGED&limit=200"}
+2024-03-26 15:28:59 +0000  Received response for 62CCCEC6-F6E4-4FE1-8C5A-2E91BCBE35A6 @ <https://developerservices2.apple.com/services/v1/certificates>. Code = 0
+2024-03-26 15:28:59 +0000  Response payload: {
+  "data" : [ {
+    "type" : "certificates",
+    "id" : "4C6Y94S2CG",
+    "attributes" : {
+      "requesterEmail" : "nishant@thinkitive.com",
+      "serialNumber" : "7D7F3024F7DC0F6BEE78BA5F4CD1B899",
+      "certificateContent" : "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",
+      "displayName" : "Nishant Taksande",
+      "requesterLastName" : "Taksande",
+      "csrContent" : null,
+      "machineName" : null,
+      "platform" : null,
+      "requesterFirstName" : "Nishant",
+      "machineId" : null,
+      "name" : "Apple Distribution: Nishant Taksande",
+      "responseId" : "d572f317-d281-4b39-a466-7699dd3424ee",
+      "expirationDate" : "2024-06-29T11:19:33.000+00:00",
+      "certificateType" : "DISTRIBUTION_MANAGED"
+    },
+    "links" : {
+      "self" : "https://developerservices2.apple.com:443/services/v1/certificates/4C6Y94S2CG"
+    }
+  } ],
+  "links" : {
+    "self" : "https://developerservices2.apple.com:443/services/v1/certificates?filter%5BcertificateType%5D=DISTRIBUTION_MANAGED&limit=200"
+  },
+  "meta" : {
+    "paging" : {
+      "total" : 1,
+      "limit" : 200
+    }
+  }
+}
+
+2024-03-26 15:28:59 +0000  Sending request F8342E55-3053-4B31-A3CA-8379D5727E2A to <https://developerservices3.apple.com/services/v1/batch> for session <DVTServicesAccountBasedSession: 0x6000689c0660; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>.
+Method: POST
+
+Headers:
+{
+    Accept = "application/vnd.api+json";
+    "Accept-Encoding" = "gzip, deflate";
+    "Content-Length" = 429;
+    "Content-Type" = "application/vnd.api+json";
+    DSESSIONID = 1d6t8idcvvrgh9a61m5prp307mivg5ol5m4563g69s4jk7bm7pbo;
+    "User-Agent" = Xcode;
+    "X-Apple-App-Info" = "com.apple.gs.xcode.auth";
+    "X-Apple-GS-Token" = "AAAABLwIAAAAAGYCaKQRDWdzLnhjb2RlLmF1dGi9AMBtswLzX1ZNpBwkmd95uc02D8IwwVNNDbN03yK9ilIOqaRCBsMsQvHw07EfABfmKIJ6UWaN3kEqi0aydZ3phfqewN4+ZZqbzGX5JtbwFGb6iW3pv6xjMcWP5NmDCKUAOMsataAh6I/g1H+K1szu6lERhs+d";
+    "X-Apple-I-Identity-Id" = "001332-08-0934b962-6fb6-4afc-814e-859238ce7ba7";
+    "X-MMe-Client-Info" = "<MacBookPro16,1> <macOS;14.4.1;23E224> <com.apple.AuthKit/1 (com.apple.dt.Xcode/22618)>";
+    "X-Mme-Device-Id" = "7EB186BF-95A9-596A-9C53-73E157F7C6C9";
+    "X-Xcode-Version" = "15.3 (15E204a)";
+}
+
+Payload:
+{"data":{"type":"batch","attributes":{"resourceVersion":"1","teamId":"96895Z6959","resourceList":[{"data":{"type":"codeSignatures","relationships":{"certificate":{"data":{"type":"certificates","id":"4C6Y94S2CG"}}},"attributes":{"digestHash":"843F51106FB951B0C7320D9F326E6736480D08817F72CBE5D4169104C7FAAB9A","name":"0","cdHashSha256":"843F51106FB951B0C7320D9F326E6736480D08817F72CBE5D4169104C7FAAB9A","teamId":"96895Z6959"}}}]}}}
+2024-03-26 15:29:01 +0000  Received response for F8342E55-3053-4B31-A3CA-8379D5727E2A @ <https://developerservices3.apple.com/services/v1/batch>. Code = 0
+2024-03-26 15:29:01 +0000  Response payload: {
+  "data" : {
+    "type" : "batch",
+    "id" : "8697d5b1-75d3-48d3-9447-93803da3d475",
+    "attributes" : {
+      "responseId" : "8697d5b1-75d3-48d3-9447-93803da3d475",
+      "resourceList" : [ {
+        "type" : "codeSignatures",
+        "id" : "e7f2ebee-99e1-43bb-9cec-f9848f5f806a",
+        "attributes" : {
+          "digestHash" : "843F51106FB951B0C7320D9F326E6736480D08817F72CBE5D4169104C7FAAB9A",
+          "cdHashSha256" : "843F51106FB951B0C7320D9F326E6736480D08817F72CBE5D4169104C7FAAB9A",
+          "signature" : "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",
+          "name" : "0",
+          "responseId" : "8697d5b1-75d3-48d3-9447-93803da3d475",
+          "cmsSignature" : "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",
+          "timestamp" : false
+        },
+        "relationships" : {
+          "bundleId" : {
+            "data" : null,
+            "links" : {
+              "self" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/e7f2ebee-99e1-43bb-9cec-f9848f5f806a/relationships/bundleId"
+              },
+              "related" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/e7f2ebee-99e1-43bb-9cec-f9848f5f806a/bundleId"
+              }
+            }
+          },
+          "certificate" : {
+            "data" : {
+              "type" : "certificates",
+              "id" : "4C6Y94S2CG"
+            },
+            "links" : {
+              "self" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/e7f2ebee-99e1-43bb-9cec-f9848f5f806a/relationships/certificate"
+              },
+              "related" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/e7f2ebee-99e1-43bb-9cec-f9848f5f806a/certificate"
+              }
+            }
+          }
+        },
+        "links" : {
+          "self" : {
+            "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/e7f2ebee-99e1-43bb-9cec-f9848f5f806a"
+          }
+        }
+      } ],
+      "resourceVersion" : "1"
+    },
+    "links" : {
+      "self" : "https://developerservices3.apple.com:443/services/v1/batch/8697d5b1-75d3-48d3-9447-93803da3d475"
+    }
+  },
+  "links" : {
+    "self" : "https://developerservices3.apple.com:443/services/v1/batch"
+  }
+}
+
+2024-03-26 15:29:01 +0000  Remote signature for /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework (arch: arm64) is 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
+2024-03-26 15:29:01 +0000  invoking codesign: <NSConcreteTask: 0x600058376ee0; launchPath='/usr/bin/codesign', arguments='(
+    "-e",
+    "--edit-cms",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/cms~~~BLl3hw",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework"
+)'>
+2024-03-26 15:29:01 +0000  codesign output: 
+2024-03-26 15:29:01 +0000  Entitlements for <IDEDistributionItem: 0x6000689d2100; bundleID='org.navala1.NOTA-PROJECT', path='<DVTFilePath:0x600058d08080:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x6000344c9c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x60000d9c3180; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='{
+    "application-identifier" = "96895Z6959.org.navala1.NOTA-PROJECT";
+    "com.apple.developer.team-identifier" = 96895Z6959;
+    "get-task-allow" = 1;
+}', teamID='96895Z6959', identifier='org.navala1.NOTA-PROJECT', executablePath='<DVTFilePath:0x600058d1c080:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/NOTA_PROJECT'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "96895Z6959.org.navala1.NOTA-PROJECT";
+    "com.apple.developer.team-identifier" = 96895Z6959;
+    "get-task-allow" = 0;
+}
+2024-03-26 15:29:01 +0000  Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2024-03-26 15:29:01 +0000  Entitlements for <IDEDistributionItem: 0x6000689d2100; bundleID='org.navala1.NOTA-PROJECT', path='<DVTFilePath:0x600058d08080:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x6000344c9c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x60000d9c1f80; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='{
+    "application-identifier" = "96895Z6959.org.navala1.NOTA-PROJECT";
+    "com.apple.developer.team-identifier" = 96895Z6959;
+    "get-task-allow" = 1;
+}', teamID='96895Z6959', identifier='org.navala1.NOTA-PROJECT', executablePath='<DVTFilePath:0x600058d1c080:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/NOTA_PROJECT'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "96895Z6959.org.navala1.NOTA-PROJECT";
+    "com.apple.developer.team-identifier" = 96895Z6959;
+    "get-task-allow" = 0;
+}
+2024-03-26 15:29:01 +0000  Writing entitlements for <IDEDistributionItem: 0x6000689d2100; bundleID='org.navala1.NOTA-PROJECT', path='<DVTFilePath:0x600058d08080:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x6000344c9c70; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x60000d9c1680; name='Apple Development: Nishant Taksande (52L2Z2F2X3)', hash='6571659DF8FBF5AEBD66D88D6BC0DD6E218D60B5', serialNumber='2936FD56E983C5BB7BC8D28CF2D161DE', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2024-03-06 15:56:37 +0000''>', entitlements='{
+    "application-identifier" = "96895Z6959.org.navala1.NOTA-PROJECT";
+    "com.apple.developer.team-identifier" = 96895Z6959;
+    "get-task-allow" = 1;
+}', teamID='96895Z6959', identifier='org.navala1.NOTA-PROJECT', executablePath='<DVTFilePath:0x600058d1c080:'/Users/thinkitive/Library/Developer/Xcode/Archives/2024-03-26/NOTA_PROJECT 26-03-24, 8.53 PM.xcarchive/Products/Applications/NOTA_PROJECT.app/NOTA_PROJECT'>', hardenedRuntime='0'>'> to: /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/entitlements~~~WUTE8A
+2024-03-26 15:29:01 +0000  Sending request 293017A8-7CD8-4C71-BC46-A3F115A1EB92 to <https://developerservices2.apple.com/services/QH65B2/listTeams.action?clientId=XABBG36SBA> for session <DVTServicesAccountBasedSession: 0x6000689f2be0; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>.
+Method: POST
+
+Headers:
+{
+    Accept = "text/x-xml-plist";
+    "Accept-Encoding" = "gzip, deflate";
+    "Content-Length" = 368;
+    "Content-Type" = "text/x-xml-plist";
+    "User-Agent" = Xcode;
+    "X-Apple-App-Info" = "com.apple.gs.xcode.auth";
+    "X-Apple-GS-Token" = "AAAABLwIAAAAAGYCaKQRDWdzLnhjb2RlLmF1dGi9AMBtswLzX1ZNpBwkmd95uc02D8IwwVNNDbN03yK9ilIOqaRCBsMsQvHw07EfABfmKIJ6UWaN3kEqi0aydZ3phfqewN4+ZZqbzGX5JtbwFGb6iW3pv6xjMcWP5NmDCKUAOMsataAh6I/g1H+K1szu6lERhs+d";
+    "X-Apple-I-Identity-Id" = "001332-08-0934b962-6fb6-4afc-814e-859238ce7ba7";
+    "X-MMe-Client-Info" = "<MacBookPro16,1> <macOS;14.4.1;23E224> <com.apple.AuthKit/1 (com.apple.dt.Xcode/22618)>";
+    "X-Mme-Device-Id" = "7EB186BF-95A9-596A-9C53-73E157F7C6C9";
+    "X-Xcode-Version" = "15.3 (15E204a)";
+}
+
+Payload:
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>clientId</key>
+	<string>XABBG36SBA</string>
+	<key>protocolVersion</key>
+	<string>QH65B2</string>
+	<key>requestId</key>
+	<string>293017A8-7CD8-4C71-BC46-A3F115A1EB92</string>
+</dict>
+</plist>
+2024-03-26 15:29:01 +0000  Received response for 293017A8-7CD8-4C71-BC46-A3F115A1EB92 @ <https://developerservices2.apple.com/services/QH65B2/listTeams.action?clientId=XABBG36SBA>. Code = 0
+2024-03-26 15:29:01 +0000  Response payload: {
+    creationTimestamp = "2024-03-26T15:29:01Z";
+    protocolVersion = QH65B2;
+    requestId = "293017A8-7CD8-4C71-BC46-A3F115A1EB92";
+    requestUrl = "https://developerservices2.apple.com:443/services/QH65B2/listTeams.action?clientId=XABBG36SBA";
+    responseId = "6ca4758a-1b40-4175-973c-75b7fad89365";
+    resultCode = 0;
+    teams =     (
+                {
+            currentTeamMember =             {
+                developerStatus = active;
+                email = "nishant@thinkitive.com";
+                firstName = Nishant;
+                lastName = Taksande;
+                personId = 17097204612;
+                privileges =                 {
+                };
+                roles =                 (
+                    AGENT,
+                    "TEAM_ADMIN",
+                    "MAC_PROGRAM_TEAM_ADMIN",
+                    "XCODE_FREE_USER"
+                );
+                teamMemberId = 52L2Z2F2X3;
+            };
+            dateCreated = "2020-01-15 06:44:51 +0000";
+            extendedTeamAttributes =             {
+            };
+            memberships =             (
+                                {
+                    dateExpire = "2024-06-20 06:59:00 +0000";
+                    dateStart = "2023-06-19 11:23:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = 5FZHSBMX98;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = ios;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-06-20 06:59:00 +0000";
+                    dateStart = "2023-06-19 11:23:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = 5FZHSBMX98;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = mac;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-06-20 06:59:00 +0000";
+                    dateStart = "2023-06-19 11:23:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = 5FZHSBMX98;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = safari;
+                    status = active;
+                },
+                                {
+                    dateStart = "2020-01-15 06:44:51 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 0;
+                    inRenewalWindow = 0;
+                    membershipId = M5RU3NU9AC;
+                    membershipProductId = fp22;
+                    name = "Xcode Free Provisioning Program";
+                    platform = ios;
+                    status = activeNeverExpire;
+                }
+            );
+            name = "Nishant Taksande";
+            status = active;
+            teamAgent =             {
+                developerStatus = active;
+                email = "nishant@thinkitive.com";
+                firstName = Nishant;
+                lastName = Taksande;
+                personId = 17097204612;
+                teamMemberId = 52L2Z2F2X3;
+            };
+            teamId = 96895Z6959;
+            type = Individual;
+            xcodeFreeOnly = 0;
+        },
+                {
+            currentTeamMember =             {
+                developerStatus = active;
+                email = "nishant@thinkitive.com";
+                firstName = Nishant;
+                lastName = Taksande;
+                personId = 17097204612;
+                privileges =                 {
+                };
+                roles =                 (
+                    "TEAM_ADMIN",
+                    "MAC_PROGRAM_TEAM_ADMIN"
+                );
+                teamMemberId = MQ88CMCZHP;
+            };
+            dateCreated = "2012-09-24 16:35:00 +0000";
+            extendedTeamAttributes =             {
+            };
+            memberships =             (
+                                {
+                    dateExpire = "2024-12-25 23:59:00 +0000";
+                    dateStart = "2023-12-25 04:28:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 1;
+                    inRenewalWindow = 0;
+                    membershipId = 8BCTC7S9ML;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = ios;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-12-25 23:59:00 +0000";
+                    dateStart = "2023-12-25 04:28:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 1;
+                    inRenewalWindow = 0;
+                    membershipId = 8BCTC7S9ML;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = mac;
+                    status = active;
+                },
+                                {
+                    dateExpire = "2024-12-25 23:59:00 +0000";
+                    dateStart = "2023-12-25 04:28:00 +0000";
+                    deleteDevicesOnExpiry = 0;
+                    inIosDeviceResetWindow = 1;
+                    inRenewalWindow = 0;
+                    membershipId = 8BCTC7S9ML;
+                    membershipProductId = ad19;
+                    name = "Apple Developer Program";
+                    platform = safari;
+                    status = active;
+                }
+            );
+            name = "Zenwork, Inc";
+            status = active;
+            teamAgent =             {
+                developerStatus = active;
+                email = "sanjre@hotmail.com";
+                firstName = Sanjeev;
+                lastName = Singh;
+                personId = 115930981;
+                teamMemberId = 7ENADF2DDJ;
+            };
+            teamId = UCDUTTBK96;
+            type = "Company/Organization";
+            xcodeFreeOnly = 0;
+        }
+    );
+    userLocale = "en_US";
+}
+
+2024-03-26 15:29:01 +0000  invoking codesign: <NSConcreteTask: 0x6000400e28f0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    "-",
+    "--signature-size",
+    16000,
+    "--entitlements",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/entitlements~~~WUTE8A",
+    "--requirements",
+    "=designated => anchor apple generic and identifier \"org.navala1.NOTA-PROJECT\" and certificate leaf[subject.CN] = \"Apple Distribution: Nishant Taksande (96895Z6959)\" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */",
+    "--preserve-metadata=identifier,flags,runtime",
+    "--omit-adhoc-flag",
+    "--team-identifier",
+    96895Z6959,
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app"
+)'>
+2024-03-26 15:29:01 +0000  codesign output: /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app: replacing existing signature
+/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app: signed app bundle with Mach-O thin (arm64) [org.navala1.NOTA-PROJECT]
+2024-03-26 15:29:01 +0000  Remote code signing '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app' with signature slices '[<DVTCodeSignatureSlice: 0x60002f1e2430; architecture='arm64', cmsDigest='<DVTCodeSignatureHash: 0x60002633ea20; digestAlgorithmDescription='sha256', cdHashHexEncoded='97cc0f191d53c98a8ea96be23fa404012fece5574cb4856a2d9c0c64a2720596'>', codeSignatureHashes='{(
+    <DVTCodeSignatureHash: 0x60002633cc60; digestAlgorithmDescription='sha256', cdHashHexEncoded='97cc0f191d53c98a8ea96be23fa404012fece5574cb4856a2d9c0c64a2720596'>
+)}', cmsHexEncoded=''>]' and configuration 'RemoteSigningToolConfiguration(path: <DVTFilePath:0x600058ce4c00:'/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app'>, signingCertificate: <DVTSigningCertificate: 0x60000d63cc00; name='Apple Distribution: Nishant Taksande (96895Z6959)', hash='523EC24B6F8758C5B2D3B1966C825D9313392B12', serialNumber='7D7F3024F7DC0F6BEE78BA5F4CD1B899', certificateKinds='(
+    "1.2.840.113635.100.6.1.7",
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2023-06-30 11:19:34 +0000''>, session: <DVTServicesAccountBasedSession: 0x6000689f2be0; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>, team: <DVTPortalTeam: 0x60000fb40880; name='Nishant Taksande', teamID='96895Z6959', type='Individual', memberships='(
+    "<DVTPortalMembership: 0x60002f1df660; programs='{(\n    <DVTPortalProgram: 0x600000429f40; <DVTPortalProgram: 0x600000429f40; identifier='Xcode.Portal.Program.iOS'>>\n)}'>",
+    "<DVTPortalMembership: 0x60002f1dca80; programs='{(\n    <DVTPortalProgram: 0x600000429d60; <DVTPortalProgram: 0x600000429d60; identifier='Xcode.Portal.Program.Mac'>>\n)}'>"
+)'>, codeResourcesDictionary: [AnyHashable("files"): {
+    "AccessibilityResources.bundle/Info.plist" = {length = 20, bytes = 0xdac15f1717b01ca81b8917612a3bb4274d3d3a27};
+    "AccessibilityResources.bundle/en.lproj/Localizable.strings" =     {
+        hash = {length = 20, bytes = 0x85af75399c384ce816531b944f905bb22c2a696d};
+        optional = 1;
+    };
+    "AntDesign.ttf" = {length = 20, bytes = 0x4e77868439280fb434d4697c7b911271406c81f3};
+    "AppIcon60x60@2x.png" = {length = 20, bytes = 0x4b5877ca083d131bc0698b13e578d0e096e7a175};
+    "AppIcon76x76@2x~ipad.png" = {length = 20, bytes = 0x4af1a7b00198a4e6dfccb677bae90e8e81d73f3a};
+    "Assets.car" = {length = 20, bytes = 0x2033469d51b68704c956ae39675eca71997b5514};
+    "Entypo.ttf" = {length = 20, bytes = 0x12b5670eb178138f77285d5f2c246d3cc5fa67d6};
+    "EvilIcons.ttf" = {length = 20, bytes = 0x91d377ea3cf47490b256c2ed081704a7dabdae0c};
+    "Feather.ttf" = {length = 20, bytes = 0xe6604258b1ced5efd51360875d782fca65381d47};
+    "FontAwesome.ttf" = {length = 20, bytes = 0x13b1eab65a983c7a73bc7997c479d66943f7c6cb};
+    "FontAwesome5_Brands.ttf" = {length = 20, bytes = 0x3fa2d67cef22da5c3f3eb5730c6afbd6fecf0372};
+    "FontAwesome5_Regular.ttf" = {length = 20, bytes = 0x7d849a3981a716e2ba4a84634bc57d0b8054a6a3};
+    "FontAwesome5_Solid.ttf" = {length = 20, bytes = 0xc1b9fae262f42868c075ac865a8ab34920e20a2c};
+    "FontAwesome6_Brands.ttf" = {length = 20, bytes = 0xd8b3568e9d8a1d3c01c85520eb9ca0b49b72815d};
+    "FontAwesome6_Regular.ttf" = {length = 20, bytes = 0x2d7890e12afb77490112ec57fe47ca0688aebda2};
+    "FontAwesome6_Solid.ttf" = {length = 20, bytes = 0xe9ace557c3aa403307f1e7a2cef1c035d522b94b};
+    "Fontisto.ttf" = {length = 20, bytes = 0xc090a3ec96a3f1bb9b615c2f3f204ce0dcdcdbc3};
+    "Foundation.ttf" = {length = 20, bytes = 0x4b2bce6c792493a4a5716b6fec2dbefe89492c3f};
+    "Frameworks/hermes.framework/Info.plist" = {length = 20, bytes = 0xaff23ef25fe5b11cb50373b529a55589d5b7445c};
+    "Frameworks/hermes.framework/_CodeSignature/CodeResources" = {length = 20, bytes = 0xea61ca9533a730d207319e65e75163636f696f06};
+    "Frameworks/hermes.framework/hermes" = {length = 20, bytes = 0x6a154ac087fe70ad8a725c8518bd05173873cd0e};
+    "Info.plist" = {length = 20, bytes = 0x7b2eb575012b6ee57303ec1de99648a520f5b93e};
+    "Ionicons.ttf" = {length = 20, bytes = 0x86e07c3d974eb09099e6e5a9b3b8310303cf0feb};
+    "LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib" = {length = 20, bytes = 0x44ff56c649d1260daedc35be7c42b9d3727134f7};
+    "LaunchScreen.storyboardc/Info.plist" = {length = 20, bytes = 0x9f6b7c82c0e97c4e979211b7d69ec84094714f15};
+    "LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib" = {length = 20, bytes = 0x65580cd7e2b065c667c2181a23417b06dd5b6b67};
+    "MaterialCommunityIcons.ttf" = {length = 20, bytes = 0x4c2a838b00dbb5e8bb1b368fce0de534e8eb241c};
+    "MaterialIcons.ttf" = {length = 20, bytes = 0x7e02c3f005532ff4d24148567c84089756a7848a};
+    "Octicons.ttf" = {length = 20, bytes = 0x56acefc0731f35ee23b195b1c8cb5fa94a0db97b};
+    PkgInfo = {length = 20, bytes = 0x9f9eea0cfe2d65f2c3d6b092e375b40782d08f31};
+    "SimpleLineIcons.ttf" = {length = 20, bytes = 0x9ffb81a5a11112e292f2cc323e98486bad597599};
+    "Zocial.ttf" = {length = 20, bytes = 0x6a48a962b06cc3acbdfd61df0d9a34744eea5e8d};
+    "assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon.png" = {length = 20, bytes = 0x6bc9ee8341fd47663ca6912d5c33847e3bad2c48};
+    "assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@2x.png" = {length = 20, bytes = 0xadc16d98d0fc02f0ef3d456298c664e707ad6617};
+    "assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@3x.png" = {length = 20, bytes = 0x15b2e888bac28eff94ce39a399d66d903d6a7307};
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon-mask.png" = {length = 20, bytes = 0xffdc4ed473b2be2806e99d0f680d1d2e9fe00e56};
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon.png" = {length = 20, bytes = 0x91e2ce8b58a725d5ecd084522a75eaca15b9ec0c};
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon@2x.png" = {length = 20, bytes = 0xad2bc6f26e2e3cc488b4872c205f8ddad0c90fc5};
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon@3x.png" = {length = 20, bytes = 0xf24146f15bfb1dfaf0e3255c16b85485b1e27810};
+    "assets/node_modules/react-native-element-dropdown/src/assets/close.png" = {length = 20, bytes = 0xd8709cf2f46620a79cecbba8de3ad0b0aa54a764};
+    "assets/node_modules/react-native-element-dropdown/src/assets/down.png" = {length = 20, bytes = 0x36404cd88b0ca1f9a4b568518f762ade751f89ca};
+    "assets/node_modules/react-native-paper/src/assets/back-chevron.png" = {length = 20, bytes = 0x4837fe4eb6d2c90bfb7bba291296639c26d4ab63};
+    "assets/src/assets/images/BookAppointment.png" = {length = 20, bytes = 0x8ede3bbe9ae4d9eef9f2549cd41d0ae20f00fcee};
+    "assets/src/assets/images/Ellipse.png" = {length = 20, bytes = 0xd7d728ba6aa1ecd475c4f2fa0e4856f1e7ed2de6};
+    "assets/src/assets/images/InsCardBack.png" = {length = 20, bytes = 0xc490cdda1743672ac95e710420ef6a4aec024c38};
+    "assets/src/assets/images/InsCardFront.png" = {length = 20, bytes = 0xe5af21d3ade8572f8908facb9663b9c7abb96212};
+    "assets/src/assets/images/InstantVideoConsult.png" = {length = 20, bytes = 0xc54c8b1a71376f0976eb4f8005297ef71dd37209};
+    "assets/src/assets/images/Insurance.png" = {length = 20, bytes = 0x86ef00added99fb221f18e6da6518f6bb59a5d01};
+    "assets/src/assets/images/LabTest.png" = {length = 20, bytes = 0xec01d4ec5ff216f1149f16e7e274c073f10013b4};
+    "assets/src/assets/images/NavalaLogoWithName.jpg" = {length = 20, bytes = 0x1fa00a2296881ed4f7a69e41d364fce7ffccfb1e};
+    "assets/src/assets/images/UpcomingAppointment.png" = {length = 20, bytes = 0xed29e0eeea247138092c1c08aad2ab628a58688c};
+    "assets/src/assets/images/allergies.png" = {length = 20, bytes = 0xfbc2523201e96b5eb74744ba59270eec569d526e};
+    "assets/src/assets/images/appdoctor.png" = {length = 20, bytes = 0x79e5178015b8dab9a53eb20c42acce6afb31c82b};
+    "assets/src/assets/images/back.png" = {length = 20, bytes = 0xeb6d5a7b098ccc19c0611e52713820cebef190aa};
+    "assets/src/assets/images/backGroundForImage.png" = {length = 20, bytes = 0x8c39376a8f2d6c1bab67ee2f7994602204c3ada5};
+    "assets/src/assets/images/backgroundLogin.png" = {length = 20, bytes = 0x9eb98475f09cafec6caef061535cd663280448a0};
+    "assets/src/assets/images/backpain.png" = {length = 20, bytes = 0xd7710e07b40dcc0332acb30e516530b76db36cff};
+    "assets/src/assets/images/birthWeight.png" = {length = 20, bytes = 0xfc2fe358222b5e282b28856bc7c2f0e380253f0c};
+    "assets/src/assets/images/bloodglucose.png" = {length = 20, bytes = 0xd1cbf7260fb905b5b26bb3bb4fc210a06bcb79cb};
+    "assets/src/assets/images/bmiImg.png" = {length = 20, bytes = 0xf489b38cf4242e46c79bbd181f7fd32108641551};
+    "assets/src/assets/images/bp.png" = {length = 20, bytes = 0xfacfaa6324e54f0b10c3be53ad2e176ec392e690};
+    "assets/src/assets/images/demographics.png" = {length = 20, bytes = 0x6ed74dead355dd5d6891dcf1fe7d2ab7a94a4741};
+    "assets/src/assets/images/dentist.png" = {length = 20, bytes = 0x247f76bad62a94314979a1ec864ef8889cdefecf};
+    "assets/src/assets/images/dermatologist.png" = {length = 20, bytes = 0xa89ef7c93518542eba72d39d34fa262ea0b59ee9};
+    "assets/src/assets/images/doctorImg.png" = {length = 20, bytes = 0x6c2fd4d664b5ac11e355b5360baaa2f70300ddc7};
+    "assets/src/assets/images/doctorcircle.png" = {length = 20, bytes = 0x54ee422d934aa2638d1d9b1c16cff3501c59c039};
+    "assets/src/assets/images/e-prescription.png" = {length = 20, bytes = 0xc2a5eaebb237d07e2f73b4f2d9ddb135296e2e46};
+    "assets/src/assets/images/famMem1.png" = {length = 20, bytes = 0xf2de4241226f6dba09cfc61a252e0428b78a09f3};
+    "assets/src/assets/images/famMem2.png" = {length = 20, bytes = 0x43d2593ca8825a51771ba7abbcd4977c32fb1733};
+    "assets/src/assets/images/generanalPhysician.png" = {length = 20, bytes = 0xf9443f77e0e9a8d20457e24841399c8abc482423};
+    "assets/src/assets/images/gradientBg.png" = {length = 20, bytes = 0xb2b9c6d3b281216e434e62db507c56efce77adf9};
+    "assets/src/assets/images/halfStar.png" = {length = 20, bytes = 0x5e457f2d8954f6f1a446285ec09f824331a6308c};
+    "assets/src/assets/images/heartrate.png" = {length = 20, bytes = 0x1a0633db19c8ed7c6b42542cc2631ae99f7bc073};
+    "assets/src/assets/images/heightImg.png" = {length = 20, bytes = 0x5c4a397fecd7103b1bfcbac589eca0984de9e99a};
+    "assets/src/assets/images/homeBackgroundImg.png" = {length = 20, bytes = 0x3cb76aa99623922c6fa97c8373bd896d7d944c4c};
+    "assets/src/assets/images/medicalReports.png" = {length = 20, bytes = 0x9fb7bb1129036cd182693872b70d6095ce1b2837};
+    "assets/src/assets/images/medications.png" = {length = 20, bytes = 0x48dac8c9f5b6cff08cf6a5b7c4c7b9b25621d8ac};
+    "assets/src/assets/images/notification.png" = {length = 20, bytes = 0xcb2dbaf4a75160c8df01a5d32082d8404d2106b8};
+    "assets/src/assets/images/oxysaturation.png" = {length = 20, bytes = 0x7e9eaf1624f70722f908e9678974682615559f67};
+    "assets/src/assets/images/pediatrician.png" = {length = 20, bytes = 0x4e55ead914040cdaa66a238b938f9560e4f1947e};
+    "assets/src/assets/images/personImg.png" = {length = 20, bytes = 0xc1b048ed8f9b86d21b0e03e01c1eca415316ad47};
+    "assets/src/assets/images/problems.png" = {length = 20, bytes = 0xab2a05e249d01c9ea0f6e52c9cdff029fd1a242e};
+    "assets/src/assets/images/profile.png" = {length = 20, bytes = 0x1c466e659e6dfb6695bd6bc18e4c56bf60adb218};
+    "assets/src/assets/images/profileImage.jpeg" = {length = 20, bytes = 0x1d8a38b0ac6b400df2f19b654fc458fd31b7a54e};
+    "assets/src/assets/images/provider-1.png" = {length = 20, bytes = 0xf2b5f424e361ff4282ae34b397847112362fe68d};
+    "assets/src/assets/images/provider-2.png" = {length = 20, bytes = 0x2d5d70096d6a86e82f03348ca0929f4eb8273d85};
+    "assets/src/assets/images/provider-3.png" = {length = 20, bytes = 0xba0d5989fc0470bca4b029f6a6e782697b3c0563};
+    "assets/src/assets/images/provider-4.png" = {length = 20, bytes = 0xdb6ff89dae413cffcf9fdf4be19d3910ea54b371};
+    "assets/src/assets/images/provider-5.png" = {length = 20, bytes = 0x8936cdc06e67571d2a3caec7797305d7bcc42af5};
+    "assets/src/assets/images/provider-6.png" = {length = 20, bytes = 0xd52b549e3b4c1827a3047da488cecbd7f1139b1b};
+    "assets/src/assets/images/pulseRateImg.png" = {length = 20, bytes = 0xccfd5158ecdd6d64e4a7e0ddab98a2588967c138};
+    "assets/src/assets/images/resprate.png" = {length = 20, bytes = 0x4a13729a752a3d3653a182f88cce43ba216d6201};
+    "assets/src/assets/images/smily.png" = {length = 20, bytes = 0xb2860c1893ee7956945153771fb4f6a0b5a00975};
+    "assets/src/assets/images/star.png" = {length = 20, bytes = 0x746e24a07395649a5ee4d9afcd3b309f9cee3686};
+    "assets/src/assets/images/stomachpain.png" = {length = 20, bytes = 0x3a596aefa7c0d482f38bc645b59ec884aecee315};
+    "assets/src/assets/images/takeimage.png" = {length = 20, bytes = 0xa535a5a6f02599566f846c0937c9d68028690cf0};
+    "assets/src/assets/images/temperature.png" = {length = 20, bytes = 0xa6c81a3a517a9d9c85bc2f03522f415e361bb1f9};
+    "assets/src/assets/images/thyroid.png" = {length = 20, bytes = 0x0ae5d2d3af85e9e4d13d7096f93cdebce0122cdc};
+    "assets/src/assets/images/topBG.png" = {length = 20, bytes = 0xd5e89d9ecdcd0f93a5603fce3dc005e070ec41a5};
+    "assets/src/assets/images/uploadimage.png" = {length = 20, bytes = 0x2559539bee83ee10ddefaa02af73c88ec49ef095};
+    "assets/src/assets/images/vaccacine.png" = {length = 20, bytes = 0x5e287c31efb9b1d3b01665da251a0cbc93f7319e};
+    "assets/src/assets/images/vaccine.png" = {length = 20, bytes = 0xa659a8115e848e4176e0e7f4d1722938048e1302};
+    "assets/src/assets/images/vertigo.png" = {length = 20, bytes = 0xacd65e345a63b922e052545085f4613b5126fb5f};
+    "assets/src/assets/images/visitHistory.png" = {length = 20, bytes = 0x492f532345458ff90ee4b152d45ee0cbe242c9a6};
+    "assets/src/assets/images/vitals.png" = {length = 20, bytes = 0xd535991ee78e3490270ad46b688cbb41e9bbb4d4};
+    "assets/src/assets/images/weightImg.jpeg" = {length = 20, bytes = 0xbcb1cc1f59a86a66277c05bd51f45794b3a1202e};
+    "embedded.mobileprovision" = {length = 20, bytes = 0xcb83528cf93250b7278f9a748e4ed49befff8a55};
+    "main.jsbundle" = {length = 20, bytes = 0x15b4178a2aa16970a43ca97914cc4bdf23b862c8};
+}, AnyHashable("rules"): {
+    "^.*" = 1;
+    "^.*\\.lproj/" =     {
+        optional = 1;
+        weight = 1000;
+    };
+    "^.*\\.lproj/locversion.plist$" =     {
+        omit = 1;
+        weight = 1100;
+    };
+    "^Base\\.lproj/" =     {
+        weight = 1010;
+    };
+    "^version.plist$" = 1;
+}, AnyHashable("files2"): {
+    "AccessibilityResources.bundle/Info.plist" =     {
+        hash2 = {length = 32, bytes = 0x79436b4c 8f87b30a 8539df98 de7e137a ... 71082486 b76dd6a4 };
+    };
+    "AccessibilityResources.bundle/en.lproj/Localizable.strings" =     {
+        hash2 = {length = 32, bytes = 0xacceb36c 18c2c10e 2458ab7b 2af854ab ... 18393174 bb867a41 };
+        optional = 1;
+    };
+    "AntDesign.ttf" =     {
+        hash2 = {length = 32, bytes = 0x7955ca14 127b3041 2c114eb1 3cfd702b ... 695d73ca a824cde1 };
+    };
+    "AppIcon60x60@2x.png" =     {
+        hash2 = {length = 32, bytes = 0x0af56f5b 401eb50d 00cfe26c be4530b6 ... 8a0c9c17 3f367d37 };
+    };
+    "AppIcon76x76@2x~ipad.png" =     {
+        hash2 = {length = 32, bytes = 0xbc2f7ac2 3ca44575 42f8a625 0a36e009 ... 27283254 0300f3fd };
+    };
+    "Assets.car" =     {
+        hash2 = {length = 32, bytes = 0x1dfae8b8 a9938ce0 8211fa3f b79ce4f5 ... 31d81908 e6bc089e };
+    };
+    "Entypo.ttf" =     {
+        hash2 = {length = 32, bytes = 0x16f92298 587bab2b 469bc13c 0dfc6d5d ... 3ad16bc0 23bf717d };
+    };
+    "EvilIcons.ttf" =     {
+        hash2 = {length = 32, bytes = 0xa5caeb4d 395c5e32 f1d5a30a cb382aeb ... 9907f221 5e4e3e26 };
+    };
+    "Feather.ttf" =     {
+        hash2 = {length = 32, bytes = 0x57599360 fc9b80bc e473b364 f7f255b5 ... 18cb0e0f 838462b4 };
+    };
+    "FontAwesome.ttf" =     {
+        hash2 = {length = 32, bytes = 0xaa58f33f 239a0fb0 2f5c7a6c 45c043d7 ... 94ecd6d4 edc0d6a8 };
+    };
+    "FontAwesome5_Brands.ttf" =     {
+        hash2 = {length = 32, bytes = 0x06f4d009 23ea2469 7df5df0b 92984175 ... 531bb401 e393ec42 };
+    };
+    "FontAwesome5_Regular.ttf" =     {
+        hash2 = {length = 32, bytes = 0xc651b8a6 7d319320 6f622c3c 3b0fbca4 ... 52c1e2a2 e84c9b31 };
+    };
+    "FontAwesome5_Solid.ttf" =     {
+        hash2 = {length = 32, bytes = 0x3d06af1f 31cd83ac e7a265a0 14b8fb5d ... 5555190e 627e03c2 };
+    };
+    "FontAwesome6_Brands.ttf" =     {
+        hash2 = {length = 32, bytes = 0x003f1154 1856a649 a6c8235c 6266c893 ... da24dc55 56d14fbf };
+    };
+    "FontAwesome6_Regular.ttf" =     {
+        hash2 = {length = 32, bytes = 0x7d81a1a7 cc07e1ab 196e4049 6d3f4359 ... 46675ee6 9912950b };
+    };
+    "FontAwesome6_Solid.ttf" =     {
+        hash2 = {length = 32, bytes = 0xcea79b34 5caf49d6 223098b8 a2b04d70 ... cf7f7a26 7793e9aa };
+    };
+    "Fontisto.ttf" =     {
+        hash2 = {length = 32, bytes = 0x94dab9f1 d5b13ea0 769d124a 2da0d024 ... c0446a77 158100c0 };
+    };
+    "Foundation.ttf" =     {
+        hash2 = {length = 32, bytes = 0x7e1dd03d d4ce90b6 58052554 cd7459df ... a4c6d56a 5f8933e6 };
+    };
+    "Frameworks/hermes.framework/Info.plist" =     {
+        hash2 = {length = 32, bytes = 0x69d6caf4 cf3f206d d35969aa 362c1c60 ... b1e376f0 7c3b082e };
+    };
+    "Frameworks/hermes.framework/_CodeSignature/CodeResources" =     {
+        hash2 = {length = 32, bytes = 0x08502f91 409c6cea 1f84a57e c9fc1047 ... 8ae60625 b7f87a04 };
+    };
+    "Frameworks/hermes.framework/hermes" =     {
+        hash2 = {length = 32, bytes = 0x79fd6ac2 79a8897b fced3df4 53fa13b4 ... d9be9e1b 68fbadf8 };
+    };
+    "Ionicons.ttf" =     {
+        hash2 = {length = 32, bytes = 0x9c7fb907 1a6c2858 2c6b8446 8cbff2c7 ... 48a15993 8d22916b };
+    };
+    "LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib" =     {
+        hash2 = {length = 32, bytes = 0x14997c6d b44ba332 60cf8af5 7b082000 ... 5b52be4f c0d873bd };
+    };
+    "LaunchScreen.storyboardc/Info.plist" =     {
+        hash2 = {length = 32, bytes = 0x1f255d5c c53b531e 3f29a940 6a8df49a ... bd8374f7 07f7d5c8 };
+    };
+    "LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib" =     {
+        hash2 = {length = 32, bytes = 0x54f3637f 671feba5 f19e82ec 4f4a7fb4 ... 89aa571f c8f053e2 };
+    };
+    "MaterialCommunityIcons.ttf" =     {
+        hash2 = {length = 32, bytes = 0x9e94d4db e2e87ea4 95f0d42d 879146bc ... 154a15ee fa37ef59 };
+    };
+    "MaterialIcons.ttf" =     {
+        hash2 = {length = 32, bytes = 0xef149f08 bdd2ff09 a4e2c857 3476b7b0 ... e59899e7 175bedda };
+    };
+    "Octicons.ttf" =     {
+        hash2 = {length = 32, bytes = 0x16db3480 53ea1125 99e2a635 6f6c1fa0 ... fadffcda 90e2227c };
+    };
+    "SimpleLineIcons.ttf" =     {
+        hash2 = {length = 32, bytes = 0x3f501ddb 05c70829 bbb51cfe 9ca9fff5 ... 3ccf25df 767f0870 };
+    };
+    "Zocial.ttf" =     {
+        hash2 = {length = 32, bytes = 0xdd8ee403 bbcbf5e5 8b77dca4 ac03ebaf ... 9ca49043 5a86fa48 };
+    };
+    "assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon.png" =     {
+        hash2 = {length = 32, bytes = 0x37fa5f25 51348a5e b41475a2 7bc8ce78 ... 5c786c05 84274809 };
+    };
+    "assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@2x.png" =     {
+        hash2 = {length = 32, bytes = 0x5a4e296a 810edee2 3bbac5f1 3671be66 ... 4395232a b9a4ada5 };
+    };
+    "assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@3x.png" =     {
+        hash2 = {length = 32, bytes = 0x7b569f04 df7d1171 309f6580 63bfa4b7 ... 1bff1a95 8b8a2cb3 };
+    };
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon-mask.png" =     {
+        hash2 = {length = 32, bytes = 0x2c95e8c2 675e7993 35fd0046 bb07dbda ... 22c6309d 619cc4d3 };
+    };
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon.png" =     {
+        hash2 = {length = 32, bytes = 0x2cdfeb8e 5ccde797 6f7012fb 8cce73af ... 09fed114 871c6cd8 };
+    };
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon@2x.png" =     {
+        hash2 = {length = 32, bytes = 0x2b7443a9 a58e92ca 11a575bd c1159861 ... 0d602606 b302cd98 };
+    };
+    "assets/node_modules/@react-navigation/elements/src/assets/back-icon@3x.png" =     {
+        hash2 = {length = 32, bytes = 0x3ddd0773 ed27e23d 25789f30 1731b3ac ... 1b838f89 c6d27225 };
+    };
+    "assets/node_modules/react-native-element-dropdown/src/assets/close.png" =     {
+        hash2 = {length = 32, bytes = 0x739381db 30acdf6c 0909f5fc 826ff6e5 ... 3af20767 6b379767 };
+    };
+    "assets/node_modules/react-native-element-dropdown/src/assets/down.png" =     {
+        hash2 = {length = 32, bytes = 0x6331558e f9218df3 5372f08e dbd20ff3 ... 565d3207 5414a1c5 };
+    };
+    "assets/node_modules/react-native-paper/src/assets/back-chevron.png" =     {
+        hash2 = {length = 32, bytes = 0xd17c915d 7fce424f 0184c2a8 55fcdc96 ... 0fd9a824 1a95543a };
+    };
+    "assets/src/assets/images/BookAppointment.png" =     {
+        hash2 = {length = 32, bytes = 0x89705353 9f803b68 fa9bb068 b24b89e2 ... 51a4eb6d 91b8753d };
+    };
+    "assets/src/assets/images/Ellipse.png" =     {
+        hash2 = {length = 32, bytes = 0xe52243c8 261ef56d bfee115a dc559efa ... 8af1a624 41095e1a };
+    };
+    "assets/src/assets/images/InsCardBack.png" =     {
+        hash2 = {length = 32, bytes = 0xfe22175c 86af0c0e 56e67d8e 0dc9ca40 ... a8b3416b f54a3d3b };
+    };
+    "assets/src/assets/images/InsCardFront.png" =     {
+        hash2 = {length = 32, bytes = 0x36663e40 8dd01a5b c043a0eb 585521e8 ... c59374ef 36f47ca2 };
+    };
+    "assets/src/assets/images/InstantVideoConsult.png" =     {
+        hash2 = {length = 32, bytes = 0xd0a2232f de497945 37ebc02e a13bdaa3 ... 15c1ad26 ed11c735 };
+    };
+    "assets/src/assets/images/Insurance.png" =     {
+        hash2 = {length = 32, bytes = 0x67d2299f ec9130d9 a6e43ce3 3f3ae7ed ... cae13ed4 90b44552 };
+    };
+    "assets/src/assets/images/LabTest.png" =     {
+        hash2 = {length = 32, bytes = 0xdd0908bd 34db0a67 96ac28b7 65822342 ... 00153bfd db98c7d8 };
+    };
+    "assets/src/assets/images/NavalaLogoWithName.jpg" =     {
+        hash2 = {length = 32, bytes = 0x84efe0b0 c75981a4 a24d77ad aa1005ee ... a537df5c 07a19fdd };
+    };
+    "assets/src/assets/images/UpcomingAppointment.png" =     {
+        hash2 = {length = 32, bytes = 0xbd616158 587bbaa0 627dd3a2 6ac483bc ... 7750ff46 8726bc6a };
+    };
+    "assets/src/assets/images/allergies.png" =     {
+        hash2 = {length = 32, bytes = 0x43e99c52 a5dd6a3e eaffcc53 01059a34 ... 712ee2ae af993e95 };
+    };
+    "assets/src/assets/images/appdoctor.png" =     {
+        hash2 = {length = 32, bytes = 0x0831a611 f5ddff52 47ce55ea a38a4939 ... 3368a199 a0fba142 };
+    };
+    "assets/src/assets/images/back.png" =     {
+        hash2 = {length = 32, bytes = 0x8db01bb1 08a9b817 ecf37fe3 e87fd8f3 ... 89272b68 03e6c39a };
+    };
+    "assets/src/assets/images/backGroundForImage.png" =     {
+        hash2 = {length = 32, bytes = 0x467faa72 b4a4fde4 626cb16d 08d48c86 ... 0f7f0021 d3ddc0da };
+    };
+    "assets/src/assets/images/backgroundLogin.png" =     {
+        hash2 = {length = 32, bytes = 0x7d1cac23 74051a63 4ca31d8f 9b01bc28 ... c06cbf5e 0ebac869 };
+    };
+    "assets/src/assets/images/backpain.png" =     {
+        hash2 = {length = 32, bytes = 0xf923b1c3 33b850cf 90115fdd d6e3a8d9 ... 03e7da2e b9bd294a };
+    };
+    "assets/src/assets/images/birthWeight.png" =     {
+        hash2 = {length = 32, bytes = 0xb39b3983 96b1e218 100e5d83 f4fe3cb7 ... f32f80fe ac034e72 };
+    };
+    "assets/src/assets/images/bloodglucose.png" =     {
+        hash2 = {length = 32, bytes = 0xfd9e34b7 db9b01e6 2386efcf 7704f6fd ... 5483c2c1 94cfe59c };
+    };
+    "assets/src/assets/images/bmiImg.png" =     {
+        hash2 = {length = 32, bytes = 0x6d7eb040 4f4e28d3 246b12a9 4165f838 ... 5da82304 7dd8969a };
+    };
+    "assets/src/assets/images/bp.png" =     {
+        hash2 = {length = 32, bytes = 0x2010722f 97d508b1 997d630a 276c0ae9 ... 6d179c3c c0ae05b7 };
+    };
+    "assets/src/assets/images/demographics.png" =     {
+        hash2 = {length = 32, bytes = 0x2a471780 07ea2cad 3931a76e 0ab15ebd ... fff03104 debca699 };
+    };
+    "assets/src/assets/images/dentist.png" =     {
+        hash2 = {length = 32, bytes = 0x54a71bed 1e2c197a c685294b b9394d05 ... dd2780c6 2334a5b3 };
+    };
+    "assets/src/assets/images/dermatologist.png" =     {
+        hash2 = {length = 32, bytes = 0x6e67e1cb a8847490 712053a7 5384dc73 ... 524a5299 e17a847f };
+    };
+    "assets/src/assets/images/doctorImg.png" =     {
+        hash2 = {length = 32, bytes = 0x82be77e4 6e700854 52de15b8 d3d637ac ... f039bf0c 23c81ee0 };
+    };
+    "assets/src/assets/images/doctorcircle.png" =     {
+        hash2 = {length = 32, bytes = 0x5a2f3ffe 9bc0d44d de848d35 922da544 ... a4a48e1a 3706c856 };
+    };
+    "assets/src/assets/images/e-prescription.png" =     {
+        hash2 = {length = 32, bytes = 0x26642553 fb147b74 094e0f28 36da88f9 ... cd6eaf90 2794817f };
+    };
+    "assets/src/assets/images/famMem1.png" =     {
+        hash2 = {length = 32, bytes = 0xee9d7272 35764a37 c82dfb1a 50b642de ... d45fd02a f01781b7 };
+    };
+    "assets/src/assets/images/famMem2.png" =     {
+        hash2 = {length = 32, bytes = 0xf6f60c77 6c8c28e0 7354fcf4 ceb58376 ... 18b32d11 b132eac1 };
+    };
+    "assets/src/assets/images/generanalPhysician.png" =     {
+        hash2 = {length = 32, bytes = 0x60897027 e0474dbd 7feaf790 361db864 ... c17670f5 961c301b };
+    };
+    "assets/src/assets/images/gradientBg.png" =     {
+        hash2 = {length = 32, bytes = 0x73013881 39b38f8d 9c351d9f 97b2e165 ... 9220f228 9c6938be };
+    };
+    "assets/src/assets/images/halfStar.png" =     {
+        hash2 = {length = 32, bytes = 0x648cd7bb 37c80134 4c56c108 95cd7da1 ... cbd8d4a3 afcc2685 };
+    };
+    "assets/src/assets/images/heartrate.png" =     {
+        hash2 = {length = 32, bytes = 0xc0b5c332 314956f7 9a7e6b3a f8da403f ... e4c75307 4523b81d };
+    };
+    "assets/src/assets/images/heightImg.png" =     {
+        hash2 = {length = 32, bytes = 0x85d11f4f 05c7c0b8 fa9334de ad472283 ... 3649f8c6 c50f58e7 };
+    };
+    "assets/src/assets/images/homeBackgroundImg.png" =     {
+        hash2 = {length = 32, bytes = 0xe81e67c2 90c8d1d9 be5c134a e5ea8dda ... 3e42ca41 d2a47717 };
+    };
+    "assets/src/assets/images/medicalReports.png" =     {
+        hash2 = {length = 32, bytes = 0xfcc966ed bf2c5dec 85d20626 f2b4077d ... b422cccb 7f17a006 };
+    };
+    "assets/src/assets/images/medications.png" =     {
+        hash2 = {length = 32, bytes = 0x722d0f8c 1235f41f 7e722bec 29915f96 ... d8e45666 acba2e0e };
+    };
+    "assets/src/assets/images/notification.png" =     {
+        hash2 = {length = 32, bytes = 0x6cd13169 0b8986c9 881dd3f7 c2133d27 ... 979b832a 79d67828 };
+    };
+    "assets/src/assets/images/oxysaturation.png" =     {
+        hash2 = {length = 32, bytes = 0x8fdb2b11 6ee4fa23 6da2e208 5eac1a88 ... 6ff03f01 f1566c02 };
+    };
+    "assets/src/assets/images/pediatrician.png" =     {
+        hash2 = {length = 32, bytes = 0xcdb1563c ebe70b9b d4b3618f ac422fbb ... 889f8755 f4627e08 };
+    };
+    "assets/src/assets/images/personImg.png" =     {
+        hash2 = {length = 32, bytes = 0x000b16fd 0cf16441 92c07c23 8a0669ae ... 82b305d9 b368ebda };
+    };
+    "assets/src/assets/images/problems.png" =     {
+        hash2 = {length = 32, bytes = 0x8076567f 992c543f 36490455 466c1d4d ... 65b316ec 93a7d058 };
+    };
+    "assets/src/assets/images/profile.png" =     {
+        hash2 = {length = 32, bytes = 0xb2d1ac12 4cd6ca44 7c82d87c f3da42b6 ... 84ad4864 2c54425e };
+    };
+    "assets/src/assets/images/profileImage.jpeg" =     {
+        hash2 = {length = 32, bytes = 0x14d743c8 0dbacfc3 05ca2329 3420f94b ... 862ed0c4 0196ff41 };
+    };
+    "assets/src/assets/images/provider-1.png" =     {
+        hash2 = {length = 32, bytes = 0x91ab3e67 3f8261b1 ca5d0a95 faeb0813 ... bdbb5b5f 5e27c4a6 };
+    };
+    "assets/src/assets/images/provider-2.png" =     {
+        hash2 = {length = 32, bytes = 0xc094cf80 61e636b6 618fb245 2f09d140 ... afe8e699 216f0fac };
+    };
+    "assets/src/assets/images/provider-3.png" =     {
+        hash2 = {length = 32, bytes = 0xf79696aa 931734b1 24c27fa9 f1d76800 ... d621d890 2a7df939 };
+    };
+    "assets/src/assets/images/provider-4.png" =     {
+        hash2 = {length = 32, bytes = 0xb0202f39 c9312bf6 842ca066 1bcc4a62 ... af69e0be 51074e88 };
+    };
+    "assets/src/assets/images/provider-5.png" =     {
+        hash2 = {length = 32, bytes = 0xf5dc3796 112fe4e8 9f752740 9f5fcb1f ... 81334f5a 08ddfa2d };
+    };
+    "assets/src/assets/images/provider-6.png" =     {
+        hash2 = {length = 32, bytes = 0x8c0f3764 1ee771cf cec4c4d2 ee024176 ... d70a669e a7e5e06d };
+    };
+    "assets/src/assets/images/pulseRateImg.png" =     {
+        hash2 = {length = 32, bytes = 0x74086b50 521c5091 b848f1b4 01beae5e ... a36411de dca00a23 };
+    };
+    "assets/src/assets/images/resprate.png" =     {
+        hash2 = {length = 32, bytes = 0xf7cdccbe 453526fe 7e13f02f 859d6a6a ... 00589f25 a18ad11e };
+    };
+    "assets/src/assets/images/smily.png" =     {
+        hash2 = {length = 32, bytes = 0x3ad2cb68 b983f6c7 c7baa5b8 cb8f6a89 ... 15af7e95 aee363eb };
+    };
+    "assets/src/assets/images/star.png" =     {
+        hash2 = {length = 32, bytes = 0x6f79e908 65822742 2fcbbd08 a4d4dcc9 ... e8008258 f21ccfe3 };
+    };
+    "assets/src/assets/images/stomachpain.png" =     {
+        hash2 = {length = 32, bytes = 0x803dcefc cae9ef41 3660c08c 0f3d9490 ... ce0ef0bb e40a23d0 };
+    };
+    "assets/src/assets/images/takeimage.png" =     {
+        hash2 = {length = 32, bytes = 0x872aeecc d5a3a787 4103b169 d92cd6df ... d68694b0 f6f6b0d4 };
+    };
+    "assets/src/assets/images/temperature.png" =     {
+        hash2 = {length = 32, bytes = 0x2d3230f3 387b7564 523d03b2 6ec24b38 ... 47b08c24 bbc1248e };
+    };
+    "assets/src/assets/images/thyroid.png" =     {
+        hash2 = {length = 32, bytes = 0xb89f33d3 e768d780 e2a5029b 5a0cb36e ... 9c68d2e2 61acdda6 };
+    };
+    "assets/src/assets/images/topBG.png" =     {
+        hash2 = {length = 32, bytes = 0xefdbfe53 32baebff aeb638a4 fd00b46c ... 08f79f76 108bb2b5 };
+    };
+    "assets/src/assets/images/uploadimage.png" =     {
+        hash2 = {length = 32, bytes = 0x0943f85e e99dd0f5 03012131 0a63eb6a ... 1c83dfeb da114f59 };
+    };
+    "assets/src/assets/images/vaccacine.png" =     {
+        hash2 = {length = 32, bytes = 0xd913b9f0 1d409ba5 4d43f15c b9481c2d ... 42ce2406 4cedfc4b };
+    };
+    "assets/src/assets/images/vaccine.png" =     {
+        hash2 = {length = 32, bytes = 0x0076a0ed 2ba2c30e de8ee392 2a634b2d ... 10fd9865 32342588 };
+    };
+    "assets/src/assets/images/vertigo.png" =     {
+        hash2 = {length = 32, bytes = 0xd11fe9bd c7b0ffdc 6061caaf b6426d33 ... b4eb214a 6addbada };
+    };
+    "assets/src/assets/images/visitHistory.png" =     {
+        hash2 = {length = 32, bytes = 0xb3938f69 140c7a5e 430e1f5c 2802e92f ... 3d956859 8b6a983a };
+    };
+    "assets/src/assets/images/vitals.png" =     {
+        hash2 = {length = 32, bytes = 0xa2a4f6d3 f2f7c204 bd849dd9 a75da1f8 ... a29465d0 6d730cf8 };
+    };
+    "assets/src/assets/images/weightImg.jpeg" =     {
+        hash2 = {length = 32, bytes = 0x54404803 e8aa9e6b 322e80a0 3ebebdf7 ... 910537f7 2008378e };
+    };
+    "embedded.mobileprovision" =     {
+        hash2 = {length = 32, bytes = 0x540462b3 8e3a2685 5dfa8d7a ec56d39e ... 0ab50a95 a6fc7826 };
+    };
+    "main.jsbundle" =     {
+        hash2 = {length = 32, bytes = 0xd975f04e ec9dc363 d5f4fa43 958ba896 ... 96bef641 4b48e253 };
+    };
+}, AnyHashable("rules2"): {
+    ".*\\.dSYM($|/)" =     {
+        weight = 11;
+    };
+    "^(.*/)?\\.DS_Store$" =     {
+        omit = 1;
+        weight = 2000;
+    };
+    "^.*" = 1;
+    "^.*\\.lproj/" =     {
+        optional = 1;
+        weight = 1000;
+    };
+    "^.*\\.lproj/locversion.plist$" =     {
+        omit = 1;
+        weight = 1100;
+    };
+    "^Base\\.lproj/" =     {
+        weight = 1010;
+    };
+    "^Info\\.plist$" =     {
+        omit = 1;
+        weight = 20;
+    };
+    "^PkgInfo$" =     {
+        omit = 1;
+        weight = 20;
+    };
+    "^embedded\\.provisionprofile$" =     {
+        weight = 20;
+    };
+    "^version\\.plist$" =     {
+        weight = 20;
+    };
+}], enableSignatureValidation: true)'
+2024-03-26 15:29:01 +0000  Sending request 9C691E21-0818-44D8-9379-C1358D6501A0 to <https://developerservices2.apple.com/services/v1/certificates> for session <DVTServicesAccountBasedSession: 0x6000689f2be0; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>.
+Method: POST
+
+Headers:
+{
+    Accept = "application/vnd.api+json";
+    "Accept-Encoding" = "gzip, deflate";
+    "Content-Length" = 104;
+    "Content-Type" = "application/vnd.api+json";
+    DSESSIONID = 1gc2jombpvb5e1kqsflavv2k9h7l3vb028psf90e8lrka3i8a39k;
+    "User-Agent" = Xcode;
+    "X-Apple-App-Info" = "com.apple.gs.xcode.auth";
+    "X-Apple-GS-Token" = "AAAABLwIAAAAAGYCaKQRDWdzLnhjb2RlLmF1dGi9AMBtswLzX1ZNpBwkmd95uc02D8IwwVNNDbN03yK9ilIOqaRCBsMsQvHw07EfABfmKIJ6UWaN3kEqi0aydZ3phfqewN4+ZZqbzGX5JtbwFGb6iW3pv6xjMcWP5NmDCKUAOMsataAh6I/g1H+K1szu6lERhs+d";
+    "X-Apple-I-Identity-Id" = "001332-08-0934b962-6fb6-4afc-814e-859238ce7ba7";
+    "X-HTTP-Method-Override" = GET;
+    "X-MMe-Client-Info" = "<MacBookPro16,1> <macOS;14.4.1;23E224> <com.apple.AuthKit/1 (com.apple.dt.Xcode/22618)>";
+    "X-Mme-Device-Id" = "7EB186BF-95A9-596A-9C53-73E157F7C6C9";
+    "X-Xcode-Version" = "15.3 (15E204a)";
+}
+
+Payload:
+{"urlEncodedQueryParams":"teamId=96895Z6959&filter%5BcertificateType%5D=DISTRIBUTION_MANAGED&limit=200"}
+2024-03-26 15:29:01 +0000  Received response for 9C691E21-0818-44D8-9379-C1358D6501A0 @ <https://developerservices2.apple.com/services/v1/certificates>. Code = 0
+2024-03-26 15:29:01 +0000  Response payload: {
+  "data" : [ {
+    "type" : "certificates",
+    "id" : "4C6Y94S2CG",
+    "attributes" : {
+      "requesterEmail" : "nishant@thinkitive.com",
+      "serialNumber" : "7D7F3024F7DC0F6BEE78BA5F4CD1B899",
+      "certificateContent" : "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",
+      "displayName" : "Nishant Taksande",
+      "requesterLastName" : "Taksande",
+      "csrContent" : null,
+      "machineName" : null,
+      "platform" : null,
+      "requesterFirstName" : "Nishant",
+      "machineId" : null,
+      "name" : "Apple Distribution: Nishant Taksande",
+      "responseId" : "93aefc45-ae5b-4473-8ca0-87d04d64acee",
+      "expirationDate" : "2024-06-29T11:19:33.000+00:00",
+      "certificateType" : "DISTRIBUTION_MANAGED"
+    },
+    "links" : {
+      "self" : "https://developerservices2.apple.com:443/services/v1/certificates/4C6Y94S2CG"
+    }
+  } ],
+  "links" : {
+    "self" : "https://developerservices2.apple.com:443/services/v1/certificates?filter%5BcertificateType%5D=DISTRIBUTION_MANAGED&limit=200"
+  },
+  "meta" : {
+    "paging" : {
+      "total" : 1,
+      "limit" : 200
+    }
+  }
+}
+
+2024-03-26 15:29:01 +0000  Sending request 499E2A7B-7989-4AF0-B7CC-7723935918F1 to <https://developerservices3.apple.com/services/v1/batch> for session <DVTServicesAccountBasedSession: 0x6000689f2be0; account='<DVTAppleIDBasedDeveloperAccount: 0x600003de4e00; username='nishant@thinkitive.com'>'>.
+Method: POST
+
+Headers:
+{
+    Accept = "application/vnd.api+json";
+    "Accept-Encoding" = "gzip, deflate";
+    "Content-Length" = 488;
+    "Content-Type" = "application/vnd.api+json";
+    DSESSIONID = 1gc2jombpvb5e1kqsflavv2k9h7l3vb028psf90e8lrka3i8a39k;
+    "User-Agent" = Xcode;
+    "X-Apple-App-Info" = "com.apple.gs.xcode.auth";
+    "X-Apple-GS-Token" = "AAAABLwIAAAAAGYCaKQRDWdzLnhjb2RlLmF1dGi9AMBtswLzX1ZNpBwkmd95uc02D8IwwVNNDbN03yK9ilIOqaRCBsMsQvHw07EfABfmKIJ6UWaN3kEqi0aydZ3phfqewN4+ZZqbzGX5JtbwFGb6iW3pv6xjMcWP5NmDCKUAOMsataAh6I/g1H+K1szu6lERhs+d";
+    "X-Apple-I-Identity-Id" = "001332-08-0934b962-6fb6-4afc-814e-859238ce7ba7";
+    "X-MMe-Client-Info" = "<MacBookPro16,1> <macOS;14.4.1;23E224> <com.apple.AuthKit/1 (com.apple.dt.Xcode/22618)>";
+    "X-Mme-Device-Id" = "7EB186BF-95A9-596A-9C53-73E157F7C6C9";
+    "X-Xcode-Version" = "15.3 (15E204a)";
+}
+
+Payload:
+{"data":{"attributes":{"resourceVersion":"1","teamId":"96895Z6959","resourceList":[{"data":{"attributes":{"cdHashSha256":"97CC0F191D53C98A8EA96BE23FA404012FECE5574CB4856A2D9C0C64A2720596","teamId":"96895Z6959","name":"0","digestHash":"97CC0F191D53C98A8EA96BE23FA404012FECE5574CB4856A2D9C0C64A2720596"},"type":"codeSignatures","relationships":{"bundleId":{"data":{"id":"22L987JXG5","type":"bundleIds"}},"certificate":{"data":{"id":"4C6Y94S2CG","type":"certificates"}}}}}]},"type":"batch"}}
+2024-03-26 15:29:02 +0000  Received response for 499E2A7B-7989-4AF0-B7CC-7723935918F1 @ <https://developerservices3.apple.com/services/v1/batch>. Code = 0
+2024-03-26 15:29:02 +0000  Response payload: {
+  "data" : {
+    "type" : "batch",
+    "id" : "7a71e2ed-71a1-4a76-8f20-38dd5de49d6e",
+    "attributes" : {
+      "responseId" : "7a71e2ed-71a1-4a76-8f20-38dd5de49d6e",
+      "resourceList" : [ {
+        "type" : "codeSignatures",
+        "id" : "91848cd0-9211-41ad-9eab-494a37f2308a",
+        "attributes" : {
+          "digestHash" : "97CC0F191D53C98A8EA96BE23FA404012FECE5574CB4856A2D9C0C64A2720596",
+          "cdHashSha256" : "97CC0F191D53C98A8EA96BE23FA404012FECE5574CB4856A2D9C0C64A2720596",
+          "signature" : "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",
+          "name" : "0",
+          "responseId" : "7a71e2ed-71a1-4a76-8f20-38dd5de49d6e",
+          "cmsSignature" : "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",
+          "timestamp" : false
+        },
+        "relationships" : {
+          "bundleId" : {
+            "data" : {
+              "type" : "bundleIds",
+              "id" : "22L987JXG5"
+            },
+            "links" : {
+              "self" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/91848cd0-9211-41ad-9eab-494a37f2308a/relationships/bundleId"
+              },
+              "related" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/91848cd0-9211-41ad-9eab-494a37f2308a/bundleId"
+              }
+            }
+          },
+          "certificate" : {
+            "data" : {
+              "type" : "certificates",
+              "id" : "4C6Y94S2CG"
+            },
+            "links" : {
+              "self" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/91848cd0-9211-41ad-9eab-494a37f2308a/relationships/certificate"
+              },
+              "related" : {
+                "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/91848cd0-9211-41ad-9eab-494a37f2308a/certificate"
+              }
+            }
+          }
+        },
+        "links" : {
+          "self" : {
+            "href" : "https://developerservices3.apple.com:443/services/v1/codeSignatures/91848cd0-9211-41ad-9eab-494a37f2308a"
+          }
+        }
+      } ],
+      "resourceVersion" : "1"
+    },
+    "links" : {
+      "self" : "https://developerservices3.apple.com:443/services/v1/batch/7a71e2ed-71a1-4a76-8f20-38dd5de49d6e"
+    }
+  },
+  "links" : {
+    "self" : "https://developerservices3.apple.com:443/services/v1/batch"
+  }
+}
+
+2024-03-26 15:29:02 +0000  Remote signature for /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app (arch: arm64) is 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
+2024-03-26 15:29:02 +0000  invoking codesign: <NSConcreteTask: 0x60005835da40; launchPath='/usr/bin/codesign', arguments='(
+    "-e",
+    "--edit-cms",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/cms~~~nhBqMD",
+    "/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app"
+)'>
+2024-03-26 15:29:02 +0000  codesign output: 
+2024-03-26 15:29:02 +0000  Processing step: IDEDistributionZipODRItemStep
+2024-03-26 15:29:02 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2024-03-26 15:29:02 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2024-03-26 15:29:02 +0000  Processing step: IDEDistributionCreateIPAStep
+2024-03-26 15:29:02 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root' '/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Packages/NOTA_PROJECT.ipa'
+2024-03-26 15:29:02 +0000  >>> Copying /var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root 
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/_CodeSignature/CodeResources ... 
+2024-03-26 15:29:02 +0000  29810 bytes for ./Payload/NOTA_PROJECT.app/_CodeSignature/CodeResources
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/Fontisto.ttf ... 
+2024-03-26 15:29:02 +0000  313528 bytes for ./Payload/NOTA_PROJECT.app/Fontisto.ttf
+copying file ./Payload/NOTA_PROJECT.app/Octicons.ttf ... 
+2024-03-26 15:29:02 +0000  49404 bytes for ./Payload/NOTA_PROJECT.app/Octicons.ttf
+copying file ./Payload/NOTA_PROJECT.app/Feather.ttf ... 
+2024-03-26 15:29:02 +0000  56228 bytes for ./Payload/NOTA_PROJECT.app/Feather.ttf
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome6_Regular.ttf ... 
+2024-03-26 15:29:02 +0000  63348 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome6_Regular.ttf
+copying file ./Payload/NOTA_PROJECT.app/Entypo.ttf ... 
+2024-03-26 15:29:02 +0000  66200 bytes for ./Payload/NOTA_PROJECT.app/Entypo.ttf
+copying file ./Payload/NOTA_PROJECT.app/NOTA_PROJECT ... 
+2024-03-26 15:29:02 +0000  3835792 bytes for ./Payload/NOTA_PROJECT.app/NOTA_PROJECT
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome5_Brands.ttf ... 
+2024-03-26 15:29:02 +0000  134040 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome5_Brands.ttf
+copying file ./Payload/NOTA_PROJECT.app/MaterialCommunityIcons.ttf ... 
+2024-03-26 15:29:02 +0000  1147844 bytes for ./Payload/NOTA_PROJECT.app/MaterialCommunityIcons.ttf
+copying file ./Payload/NOTA_PROJECT.app/AppIcon60x60@2x.png ... 
+2024-03-26 15:29:02 +0000  12298 bytes for ./Payload/NOTA_PROJECT.app/AppIcon60x60@2x.png
+copying file ./Payload/NOTA_PROJECT.app/AntDesign.ttf ... 
+2024-03-26 15:29:02 +0000  70344 bytes for ./Payload/NOTA_PROJECT.app/AntDesign.ttf
+copying file ./Payload/NOTA_PROJECT.app/Foundation.ttf ... 
+2024-03-26 15:29:02 +0000  56976 bytes for ./Payload/NOTA_PROJECT.app/Foundation.ttf
+copying file ./Payload/NOTA_PROJECT.app/Ionicons.ttf ... 
+2024-03-26 15:29:02 +0000  442604 bytes for ./Payload/NOTA_PROJECT.app/Ionicons.ttf
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome5_Solid.ttf ... 
+2024-03-26 15:29:02 +0000  202744 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome5_Solid.ttf
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome5_Regular.ttf ... 
+2024-03-26 15:29:02 +0000  33736 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome5_Regular.ttf
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/AccessibilityResources.bundle/en.lproj/Localizable.strings ... 
+518 bytes for ./Payload/NOTA_PROJECT.app/AccessibilityResources.bundle/en.lproj/Localizable.strings
+copying file ./Payload/NOTA_PROJECT.app/AccessibilityResources.bundle/Info.plist ... 
+2024-03-26 15:29:02 +0000  794 bytes for ./Payload/NOTA_PROJECT.app/AccessibilityResources.bundle/Info.plist
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome.ttf ... 
+2024-03-26 15:29:02 +0000  165548 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome.ttf
+copying file ./Payload/NOTA_PROJECT.app/Zocial.ttf ... 
+2024-03-26 15:29:02 +0000  25788 bytes for ./Payload/NOTA_PROJECT.app/Zocial.ttf
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/Assets.car ... 
+2024-03-26 15:29:02 +0000  448207 bytes for ./Payload/NOTA_PROJECT.app/Assets.car
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/EvilIcons.ttf ... 
+2024-03-26 15:29:02 +0000  13456 bytes for ./Payload/NOTA_PROJECT.app/EvilIcons.ttf
+copying file ./Payload/NOTA_PROJECT.app/AppIcon76x76@2x~ipad.png ... 
+2024-03-26 15:29:02 +0000  16395 bytes for ./Payload/NOTA_PROJECT.app/AppIcon76x76@2x~ipad.png
+copying file ./Payload/NOTA_PROJECT.app/main.jsbundle ... 
+2024-03-26 15:29:02 +0000  4301476 bytes for ./Payload/NOTA_PROJECT.app/main.jsbundle
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome6_Solid.ttf ... 
+2024-03-26 15:29:02 +0000  394668 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome6_Solid.ttf
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2097 bytes for ./Payload/NOTA_PROJECT.app/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./Payload/NOTA_PROJECT.app/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2024-03-26 15:29:02 +0000  924 bytes for ./Payload/NOTA_PROJECT.app/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./Payload/NOTA_PROJECT.app/LaunchScreen.storyboardc/Info.plist ... 
+2024-03-26 15:29:02 +0000  258 bytes for ./Payload/NOTA_PROJECT.app/LaunchScreen.storyboardc/Info.plist
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/_CodeSignature/CodeResources ... 
+1798 bytes for ./Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/_CodeSignature/CodeResources
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes ... 
+2024-03-26 15:29:02 +0000  3238656 bytes for ./Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/hermes
+copying file ./Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/Info.plist ... 
+2024-03-26 15:29:02 +0000  815 bytes for ./Payload/NOTA_PROJECT.app/Frameworks/hermes.framework/Info.plist
+copying file ./Payload/NOTA_PROJECT.app/SimpleLineIcons.ttf ... 
+2024-03-26 15:29:02 +0000  54056 bytes for ./Payload/NOTA_PROJECT.app/SimpleLineIcons.ttf
+copying file ./Payload/NOTA_PROJECT.app/FontAwesome6_Brands.ttf ... 
+2024-03-26 15:29:02 +0000  189684 bytes for ./Payload/NOTA_PROJECT.app/FontAwesome6_Brands.ttf
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/embedded.mobileprovision ... 
+2024-03-26 15:29:02 +0000  15928 bytes for ./Payload/NOTA_PROJECT.app/embedded.mobileprovision
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@3x.png ... 
+2024-03-26 15:29:02 +0000  212 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@3x.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@2x.png ... 
+163 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon@2x.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon.png ... 
+2024-03-26 15:29:02 +0000  108 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/drawer/src/views/assets/toggle-drawer-icon.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon@3x.png ... 
+2024-03-26 15:29:02 +0000  761 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon@3x.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon@2x.png ... 
+2024-03-26 15:29:02 +0000  405 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon@2x.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon.png ... 
+290 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon-mask.png ... 
+2024-03-26 15:29:02 +0000  913 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/@react-navigation/elements/src/assets/back-icon-mask.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/react-native-paper/src/assets/back-chevron.png ... 
+489 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/react-native-paper/src/assets/back-chevron.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/react-native-element-dropdown/src/assets/down.png ... 
+2024-03-26 15:29:02 +0000  186 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/react-native-element-dropdown/src/assets/down.png
+copying file ./Payload/NOTA_PROJECT.app/assets/node_modules/react-native-element-dropdown/src/assets/close.png ... 
+2024-03-26 15:29:02 +0000  208 bytes for ./Payload/NOTA_PROJECT.app/assets/node_modules/react-native-element-dropdown/src/assets/close.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vaccine.png ... 
+2024-03-26 15:29:02 +0000  5518 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vaccine.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/doctorcircle.png ... 
+2024-03-26 15:29:02 +0000  146245 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/doctorcircle.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vitals.png ... 
+2024-03-26 15:29:02 +0000  20050 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vitals.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/gradientBg.png ... 
+2024-03-26 15:29:02 +0000  104637 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/gradientBg.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/BookAppointment.png ... 
+2024-03-26 15:29:02 +0000  18449 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/BookAppointment.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/medicalReports.png ... 
+2024-03-26 15:29:02 +0000  19970 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/medicalReports.png
+2024-03-26 15:29:02 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/personImg.png ... 
+2024-03-26 15:29:02 +0000  6190 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/personImg.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/backpain.png ... 
+2024-03-26 15:29:02 +0000  322569 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/backpain.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/dermatologist.png ... 
+2024-03-26 15:29:02 +0000  336906 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/dermatologist.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/thyroid.png ... 
+2024-03-26 15:29:02 +0000  334519 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/thyroid.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/smily.png ... 
+2024-03-26 15:29:02 +0000  3319 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/smily.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/Ellipse.png ... 
+2024-03-26 15:29:02 +0000  37255 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/Ellipse.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/birthWeight.png ... 
+2024-03-26 15:29:02 +0000  3397 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/birthWeight.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/weightImg.jpeg ... 
+2024-03-26 15:29:02 +0000  4477 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/weightImg.jpeg
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/doctorImg.png ... 
+2024-03-26 15:29:02 +0000  237859 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/doctorImg.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/demographics.png ... 
+2024-03-26 15:29:02 +0000  21102 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/demographics.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/visitHistory.png ... 
+2024-03-26 15:29:02 +0000  20721 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/visitHistory.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/generanalPhysician.png ... 
+2024-03-26 15:29:03 +0000  316794 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/generanalPhysician.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/halfStar.png ... 
+2024-03-26 15:29:03 +0000  1471 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/halfStar.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/famMem1.png ... 
+2024-03-26 15:29:03 +0000  43900 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/famMem1.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vaccacine.png ... 
+2024-03-26 15:29:03 +0000  20209 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vaccacine.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/stomachpain.png ... 
+2024-03-26 15:29:03 +0000  296413 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/stomachpain.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/famMem2.png ... 
+2024-03-26 15:29:03 +0000  55219 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/famMem2.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/LabTest.png ... 
+2024-03-26 15:29:03 +0000  14191 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/LabTest.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/takeimage.png ... 
+2024-03-26 15:29:03 +0000  5997 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/takeimage.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/oxysaturation.png ... 
+2024-03-26 15:29:03 +0000  1855 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/oxysaturation.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/resprate.png ... 
+2024-03-26 15:29:03 +0000  2215 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/resprate.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/homeBackgroundImg.png ... 
+2024-03-26 15:29:03 +0000  511904 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/homeBackgroundImg.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/dentist.png ... 
+2024-03-26 15:29:03 +0000  428797 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/dentist.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/e-prescription.png ... 
+2024-03-26 15:29:03 +0000  15091 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/e-prescription.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/backGroundForImage.png ... 
+2024-03-26 15:29:03 +0000  16509 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/backGroundForImage.png
+2024-03-26 15:29:03 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/InstantVideoConsult.png ... 
+2024-03-26 15:29:03 +0000  18382 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/InstantVideoConsult.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/appdoctor.png ... 
+2024-03-26 15:29:03 +0000  182156 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/appdoctor.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/temperature.png ... 
+2024-03-26 15:29:03 +0000  1889 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/temperature.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/backgroundLogin.png ... 
+2024-03-26 15:29:03 +0000  33434 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/backgroundLogin.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/heightImg.png ... 
+2024-03-26 15:29:03 +0000  21383 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/heightImg.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/topBG.png ... 
+2024-03-26 15:29:03 +0000  273080 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/topBG.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/bloodglucose.png ... 
+2024-03-26 15:29:03 +0000  1887 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/bloodglucose.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/InsCardFront.png ... 
+2024-03-26 15:29:03 +0000  61344 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/InsCardFront.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/InsCardBack.png ... 
+2024-03-26 15:29:03 +0000  89822 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/InsCardBack.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/profileImage.jpeg ... 
+2024-03-26 15:29:03 +0000  9283 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/profileImage.jpeg
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/UpcomingAppointment.png ... 
+2024-03-26 15:29:03 +0000  19046 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/UpcomingAppointment.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/allergies.png ... 
+2024-03-26 15:29:03 +0000  22488 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/allergies.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/profile.png ... 
+2024-03-26 15:29:03 +0000  63300 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/profile.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/Insurance.png ... 
+2024-03-26 15:29:03 +0000  16963 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/Insurance.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/pulseRateImg.png ... 
+2024-03-26 15:29:03 +0000  2047 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/pulseRateImg.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/pediatrician.png ... 
+2024-03-26 15:29:03 +0000  374952 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/pediatrician.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/problems.png ... 
+2024-03-26 15:29:03 +0000  20007 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/problems.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-5.png ... 
+2024-03-26 15:29:03 +0000  105094 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-5.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-4.png ... 
+2024-03-26 15:29:03 +0000  79054 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-4.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/star.png ... 
+2024-03-26 15:29:03 +0000  1129 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/star.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/uploadimage.png ... 
+2024-03-26 15:29:03 +0000  6236 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/uploadimage.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-6.png ... 
+2024-03-26 15:29:03 +0000  109174 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-6.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/heartrate.png ... 
+2024-03-26 15:29:03 +0000  2274 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/heartrate.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vertigo.png ... 
+2024-03-26 15:29:03 +0000  319312 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/vertigo.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/medications.png ... 
+2024-03-26 15:29:03 +0000  20069 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/medications.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-3.png ... 
+2024-03-26 15:29:03 +0000  78565 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-3.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/notification.png ... 
+2024-03-26 15:29:03 +0000  6208 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/notification.png
+2024-03-26 15:29:03 +0000  copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/NavalaLogoWithName.jpg ... 
+2024-03-26 15:29:03 +0000  37045 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/NavalaLogoWithName.jpg
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-2.png ... 
+2024-03-26 15:29:03 +0000  103307 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-2.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/back.png ... 
+2024-03-26 15:29:03 +0000  489 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/back.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/bmiImg.png ... 
+2024-03-26 15:29:03 +0000  5041 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/bmiImg.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-1.png ... 
+2024-03-26 15:29:03 +0000  102310 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/provider-1.png
+copying file ./Payload/NOTA_PROJECT.app/assets/src/assets/images/bp.png ... 
+2024-03-26 15:29:03 +0000  1571 bytes for ./Payload/NOTA_PROJECT.app/assets/src/assets/images/bp.png
+copying file ./Payload/NOTA_PROJECT.app/Info.plist ... 
+2024-03-26 15:29:03 +0000  2101 bytes for ./Payload/NOTA_PROJECT.app/Info.plist
+copying file ./Payload/NOTA_PROJECT.app/PkgInfo ... 
+8 bytes for ./Payload/NOTA_PROJECT.app/PkgInfo
+copying file ./Payload/NOTA_PROJECT.app/MaterialIcons.ttf ... 
+2024-03-26 15:29:03 +0000  356840 bytes for ./Payload/NOTA_PROJECT.app/MaterialIcons.ttf
+2024-03-26 15:29:03 +0000  /usr/bin/ditto exited with 0
+2024-03-26 15:29:03 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2024-03-26 15:29:03 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2024-03-26 15:29:03 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2024-03-26 15:29:03 +0000  IDEDistributionItem init <DVTFilePath:0x600058cec080:'/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app/Frameworks/hermes.framework'>
+2024-03-26 15:29:03 +0000  IDEDistributionItem init <DVTFilePath:0x600058ce4c00:'/var/folders/fr/jcbkzhxs595933hdg52x9w2r0000gn/T/XcodeDistPipeline.~~~xFFUyM/Root/Payload/NOTA_PROJECT.app'>
+2024-03-26 15:29:03 +0000  Processing step: IDEDistributionCreateManifestStep

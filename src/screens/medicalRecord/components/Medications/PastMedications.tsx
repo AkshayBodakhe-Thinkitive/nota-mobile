@@ -1,0 +1,131 @@
+import React, {useEffect, useState} from 'react';
+import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
+import {fontType} from '../../../../assets/fontType';
+import {useAppDispatch, useAppSelector} from '../../../../redux/store/hooks';
+import {RootState} from '../../../../redux/store/storeConfig';
+import {responsiveHeight} from 'react-native-responsive-dimensions';
+import {colors} from '../../../../assets/colors';
+import MedicationCard from './MedicationCard';
+import {getPastMedicationsAction} from '../../../../redux/reducers/medicalrecord/aysnc-action/getPastMedicationsAction';
+
+const PastMedications = ({navigation}: any) => {
+  const dispatch = useAppDispatch();
+  const loginData = useAppSelector((state: RootState) => state.auth.loginData);
+  const profileData = useAppSelector(
+    (state: RootState) => state.profile.profileData,
+  );
+  const medicationsData = useAppSelector(
+    (state: RootState) => state.medicalrecord.pastMedicationsData,
+  );
+  const uuidForMedicalRecords = useAppSelector(
+    (state: RootState) => state.medicalrecord.uuidForMedicalRecords,
+  );
+
+  const [patientUUID, setPatientUUID] = useState('');
+
+  const [pageNumber, setPageNumber] = useState(1);
+
+  useEffect(() => {
+    let UUID = profileData?.data?.uuid;
+    if (uuidForMedicalRecords != null && uuidForMedicalRecords != undefined) {
+      UUID = uuidForMedicalRecords;
+    }
+    if (UUID) {
+      setPatientUUID(UUID);
+      dispatch(
+        getPastMedicationsAction({
+          patientUUID: UUID,
+          page: '0',
+        }),
+      );
+    }
+  }, [loginData?.data?.accessToken]);
+
+  const fetchPagedMedications = () => {
+    console.log('fetchPaged past Medications:', medicationsData?.data?.last);
+    if (!medicationsData?.data?.last) {
+      if (pageNumber < medicationsData?.data?.totalPages) {
+        let page = pageNumber + 1;
+        setPageNumber(page);
+        console.log('Page Number updated:', pageNumber);
+        let data = {
+          patientUUID: patientUUID,
+          page: pageNumber,
+        };
+        dispatch(getPastMedicationsAction(data));
+      }
+    }
+  };
+
+  return (
+    <View style={styles.contentContainer}>
+      {medicationsData?.data?.empty === false ? (
+        <FlatList
+          contentContainerStyle={[
+            {paddingHorizontal: 12, paddingTop: 8, paddingBottom: 16},
+          ]}
+          onEndReachedThreshold={0.5}
+          onEndReached={fetchPagedMedications}
+          data={medicationsData?.data?.content}
+          renderItem={({item, index}) => {
+            return (
+              <MedicationCard
+                name={item?.drugCatalog?.medicine}
+                startDate={item?.startDate}
+                endDate={item?.endDate}
+                dosageTime={item?.dosageTime}
+                dosageUnit={item?.dosageUnit}
+                dosageWhen={item?.dosageWhen}
+                duration={item?.duration}
+                sig={item?.sig}
+                note={item?.note}
+              />
+            );
+          }}
+        />
+      ) : (
+        <View style={{height: 100, width: '100%'}}>
+          <Text
+            style={{
+              top: Platform.OS == 'android' ? 80 : 50,
+              alignSelf: 'center',
+              fontFamily: fontType.Roboto,
+              // fontWeight: 20,
+              color: 'black',
+            }}>
+            No medications found!
+          </Text>
+        </View>
+      )}
+    </View>
+  );
+};
+
+export default PastMedications;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.white,
+    paddingBottom: responsiveHeight(15),
+    marginBottom: responsiveHeight(3),
+  },
+  contentContainer: {
+    flex: 1,
+    marginTop: 8,
+  },
+  screenName: {
+    color: colors.navala_grey, // Change the text color as per your design
+    fontSize: 12,
+    marginLeft: 20,
+    // textAlign: 'center',
+  },
+  locationName: {
+    color: colors.new_black, // Change the text color as per your design
+    fontSize: 12,
+    marginLeft: 20,
+    top: 5,
+    // textAlign: 'center',
+    fontFamily: fontType.Roboto_Medium,
+  },
+});

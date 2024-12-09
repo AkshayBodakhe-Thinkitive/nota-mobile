@@ -137,7 +137,7 @@ const ProfileReducer = createSlice({
     updateFieldValue: (state, action) => {
       const {key, value} = action.payload;
 
-      console.log('profile reducer ----> ', state.familyMemberData[key]);
+      // console.log('profile reducer ----> ', state?.familyMemberData[key]);
 
       if (state.familyMemberUuid) {
         // if (state.familyMemberData.address.hasOwnProperty(key)) {

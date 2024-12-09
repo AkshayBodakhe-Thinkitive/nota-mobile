@@ -15,6 +15,12 @@ import {updateFieldValue} from '../../../redux/reducers/profile/ProfileReducer';
 import {useAppDispatch, useAppSelector} from '../../../redux/store/hooks';
 import {RootState} from '../../../redux/store/storeConfig';
 import PhoneWithCountryCode from '../../../components/phonewithcountrycode/PhoneWithCountryCode';
+import Button from '../../../components/ButtonComponent/ButtonComponent';
+import { editFamilyMemberAction } from '../../../redux/reducers/member/async-action/editFamilyMember';
+import { getProfileAction } from '../../../redux/reducers/profile/async-action/getProfileAction';
+import { editDemographicsAction } from '../../../redux/reducers/profile/async-action/editDemographicsAction';
+import { useNavigation } from '@react-navigation/native';
+import Toast from 'react-native-simple-toast';
 
 const ContactScreen = () => {
   const demographicsDataToEdit = useAppSelector(
@@ -28,6 +34,9 @@ const ContactScreen = () => {
   console.log(demographicsDataToEdit2)
 
   const dispatch = useAppDispatch();
+  const navigation = useNavigation()
+
+  const loginData = useAppSelector((state: RootState) => state.auth.loginData);
 
   const handleInputChange = (key: any, value: any) => {
     dispatch(updateFieldValue({key, value}));
@@ -45,6 +54,42 @@ const ContactScreen = () => {
     handleInputChange('homeNumber', newPhoneNumber);
     setCountryCode(newCountryCode);
   };
+
+  const uuidForMedicalRecords = useAppSelector(
+    (state: RootState) => state.medicalrecord.uuidForMedicalRecords,
+  );
+
+
+  const editDemoSubmit = () => {
+    if (uuidForMedicalRecords) {
+      dispatch(editFamilyMemberAction())
+        .then(() => {
+          dispatch(
+            getProfileAction({
+              accessToken: loginData?.data?.accessToken,
+            }),
+          );
+        })
+        .then(() => {
+          Toast.show('Demographic details update successfully', 2);
+          navigation.goBack();
+        });
+    } else {
+      dispatch(editDemographicsAction())
+        .then(() => {
+          dispatch(
+            getProfileAction({
+              accessToken: loginData?.data?.accessToken,
+            }),
+          );
+        })
+        .then(() => {
+          Toast.show('Demographic details update successfully', 2);
+          navigation.goBack();
+        });
+    }
+  };
+
 
   return (
     <KeyboardAvoidingView
@@ -128,6 +173,15 @@ const ContactScreen = () => {
               editable={false}
             />
           </Card>
+        </View>
+        <View
+          style={{
+            bottom: 0,
+            position: 'absolute',
+            paddingHorizontal: 15,
+            width: '100%',
+          }}>
+          <Button title="Save" onPress={editDemoSubmit} />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>

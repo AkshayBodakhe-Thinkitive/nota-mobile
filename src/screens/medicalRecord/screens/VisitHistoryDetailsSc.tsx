@@ -24,7 +24,6 @@ const VisitHistoryDetailsSc = ({navigation}: any) => {
   useEffect(() => {
     console.log('Details:', visitDetails);
     return () => {
-      console.log('Resetting View More VisitDetails');
       dispatch(setViewMoreVisitDetails(null));
     };
   }, []);

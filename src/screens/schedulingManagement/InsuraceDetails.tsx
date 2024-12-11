@@ -27,6 +27,8 @@ const InsuraceDetails = () => {
     navigation.navigate('InsDetails',{response:item})
   }
 
+  // console.log("InsuranceData==>",InsuranceData)
+
   return (
     <View style={styles.insuranceContainer}>
       <Button
@@ -61,7 +63,7 @@ const InsuraceDetails = () => {
                 </Row>
                 <Row style={styles.rowStyle}>
                   <Text>Insurance Name : </Text>
-                  <Text>{item?.insurancePayer?.payerName}</Text>
+                  <Text>{item?.insurancePayer}</Text>
                 </Row>
                 <Row style={styles.rowStyle}>
                   <Text>Plan Name : </Text>

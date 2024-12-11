@@ -25,7 +25,6 @@ export class ProfileService {
       const headers = {
         Authorization: `Bearer ${accessToken}`,
       };
-      //https://dev.api.navalaglobal.com/api/master/patient
       const response = await put('/patient', data, {headers});
       console.log(
         '************ response editProfile *****  ' + JSON.stringify(response),
@@ -39,13 +38,8 @@ export class ProfileService {
   }
 
   static async editDemographics(accessToken: string, data: any) {
-    const id = 'public';
-
     try {
-      console.log(' inside editDemographics api call *******   ');
-      console.log(' Authorization:', accessToken);
       console.log('Edit data editDemographics', data);
-
       const headers = {
         Authorization: `Bearer ${accessToken}`,
       };
@@ -56,7 +50,7 @@ export class ProfileService {
       );
       return response;
     } catch (error: any) {
-      console.log(' ********* error  *********  ' + error.response.data.message);
+      console.log(' ********* error  *********  ' + error);
 
       throw new Error(error.response.data.message);
     }
@@ -70,7 +64,7 @@ export class ProfileService {
       };
       const response = await get('/get/languages', {headers});
       console.log(
-        '************ response get languages *****  ' +
+        // '************ response get languages *****  ' +
           JSON.stringify(response),
       );
       return response;

@@ -37,12 +37,9 @@ export function SignIn({navigation}: any): React.JSX.Element {
   const error = useAppSelector((state: RootState) => state.auth.error);
   const [show, setShow] = useState(false);
   const [envTouchesCNT, setEnvTouchesCNT] = useState(0);
-  const [username, setUsername] = useState('');////android.user@yopmail.com//7020667294
-  //aniket.ward@yopmail.com 
-  // dev :- yasmina.haddad@yopmail.com
-  //Qa:- kim.mayo@yopmail.com
-  const [password, setPassword] = useState('');//Pass@123
-  //Pass@123
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const isFocused = useIsFocused();
   const errorMessage = useAppSelector(
@@ -59,20 +56,13 @@ export function SignIn({navigation}: any): React.JSX.Element {
   };
 
   useEffect(() => {
-    loggedIn && navigation.replace('DrawerNavigationSc');
-  }, [loggedIn]);
-
-  function notifyMessage(msg: string) {
-    if (Platform.OS === 'android') {
-      ToastAndroid.show(msg, ToastAndroid.SHORT);
-    } else {
-      Alert.alert(msg);
-    }
-  }
-  useEffect(() => {
     resetErrorMessage();
   }, []);
+
+  console.log("loginData==>",loggedIn,  loginData)
+
   useEffect(() => {
+
     if (loginData?.data?.accessToken) {
       setShow(true);
       Toast.show('Login successfully', 2);
@@ -82,7 +72,6 @@ export function SignIn({navigation}: any): React.JSX.Element {
         return;
       }
       console.log('error handleSignIn', errorMessage);
-
       createTwoButtonAlert(errorMessage);
       dispatch(resetAuth());
     }
@@ -98,9 +87,6 @@ export function SignIn({navigation}: any): React.JSX.Element {
       if (!username) {
         setErrors({...errors, username: 'Email is required'});
       }
-      // else if (!isValidEmail(username)) {
-      //   setErrors({...errors, username: 'Invalid email address'});
-      // }
       else {
         setErrors({...errors, username: ''});
       }
@@ -140,32 +126,12 @@ export function SignIn({navigation}: any): React.JSX.Element {
 
   const handleSignIn = () => {
     const errors: {[key: string]: string} = {};
-
-    // if (!username) {
-    //   errors.username = 'Email is required';Pass@123
-    // } else if (!isValidEmail(username)) {
-    //   errors.username = 'Invalid email address';
-    // }
-    // if (!password) {
-    //   errors.password = 'Password is required';
-    // }
-
     if (Object.keys(errors).length === 0) {
       dispatch(signInAction({username, password}));
     } else {
       setErrors(errors);
     }
   };
-
-  const isValidEmail = (email: string): boolean => {
-    // Regular expression for email validation
-    const emailRegex = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email);
-  };
-
-  console.log(" loading  ",loading);
-  
-
   return (
     <View style={styles.container}>
       <View style={styles.imageBgContainer}>

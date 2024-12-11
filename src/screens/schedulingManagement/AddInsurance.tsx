@@ -128,7 +128,7 @@ const AddInsurance = ({navigation, route}: any) => {
       }
     };
 
-    fetchInsurancePayers();
+    // fetchInsurancePayers();
   }, []);
 
   const patientUuid = useAppSelector(
@@ -220,7 +220,7 @@ const AddInsurance = ({navigation, route}: any) => {
 
   const handleSubmit = async () => {
     const payload = mapInsuranceDataToFormData(formData);
-    // console.log('payload =>',payload)
+    console.log('payload =>',payload)
     const isValid = validateForm();
 
     if (!isValid) {
@@ -285,18 +285,15 @@ const AddInsurance = ({navigation, route}: any) => {
         {errors.insuranceType ? (
           <Text style={styles.errorText}>{errors.insuranceType}</Text>
         ) : null}
-        <DropdownComponent
-          data={insurancePayers}
+        <TextInput
           label="Insurance Payer"
           placeholder="Select"
-          selectedValue={payer !== '' ? payer : formData.insurancePayer}
-          onValueChange={(value: any, id: any) => {
-            // console.log('-->', value, id);
-            setPayer(value);
-            handleInputChange('insurancePayer', id);
+          value={formData.insurancePayer}
+          // selectedValue={payer !== '' ? payer : formData.insurancePayer}
+          onChangeText={(text: any) => {
+            handleInputChange('insurancePayer', text);
           }}
           style={styles.input}
-          dropDownStyles={{height: responsiveHeight(5.5)}}
           required
         />
         {errors.insurancePayer ? (

@@ -1,9 +1,11 @@
+import { Alert } from 'react-native';
 import { ResponseCode } from '../../../../Interface/responseCode';
 import { post, put } from '../../../../config/AxiosConfig';
 import { resetHome } from '../../home/HomeReducer';
 import { resetMedicalRecordReducer } from '../../medicalrecord/medicalRecordReducer';
 import { resetProfile } from '../../profile/ProfileReducer';
 import { logoutPopup, resetAuth, resetTokens } from '../AuthReducer';
+import { store } from '../../../store/storeConfig';
 export class AuthService {
   static async signUp(
     email: string,
@@ -30,18 +32,51 @@ export class AuthService {
     }
   }
 
+  // static async login(username: string, password: string) {
+  //   const baseUrl = store.getState().auth.baseUrl
+  //   try {
+  //     const response = await post(`${baseUrl}/login`, {username, password, "portalName": "PATIENT"});
+  //     console.log(" response from login ==>",response);
+  //     return response;
+  //   } catch (error: any) {
+  //     console.log('error login==>',error)
+  //     // return error.response.data.message
+  //     Alert.alert('Alert!',error?.message)
+  //     throw new Error(error);
+  //   }
+  // }
+
   static async login(username: string, password: string) {
+    const baseUrl = store.getState().auth.baseUrl;
+    const url = `${baseUrl}/login`;
+    const body = JSON.stringify({ username, password, portalName: "PATIENT" });
+  
     try {
-      const response = await post(`/login`, {username, password, "portalName": "PATIENT"});
-      console.log(" response from login 88888  ",response);
-      
-    
-      return response;
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body,
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        Alert.alert('Alert!', errorData?.message || 'Something went wrong');
+        return errorData
+        // throw new Error(errorData?.message || 'Something went wrong');
+      }
+  
+      const responseData = await response.json();
+      console.log("response from login ==>", responseData);
+      return responseData;
     } catch (error: any) {
-      // return error.response.data.message
-      throw new Error(error);
+      console.log('error login==>', error);
+      // Alert.alert('Alert!', error.message || 'Network error');
+      throw new Error(error.message || 'Network error');
     }
   }
+  
 
   static async sendOPT(email: string) {
     try {

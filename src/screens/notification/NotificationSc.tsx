@@ -105,6 +105,15 @@ const NotificationSc = ({visible, setVisible, navigation,setNotificationCount}: 
     }
   };
 
+  function convertTo12HourFormat(time24:any) {
+    const [hours, minutes, seconds] = time24.split(':');
+    const hoursNum = parseInt(hours, 10);
+    const period = hoursNum >= 12 ? 'PM' : 'AM';
+    const hours12 = hoursNum % 12 || 12;
+    return `${hours12}:${minutes} ${period}`;
+  }
+  
+
   return (
     <Modal visible={visible} transparent={true} animationType="fade">
       <SafeAreaView style={styles.container}>
@@ -178,7 +187,10 @@ const NotificationSc = ({visible, setVisible, navigation,setNotificationCount}: 
                         {isExpanded && (
                           <View>
                             <Text style={styles.moreContent}>
-                            Appointment Date : {`${moment(item?.appointmentDate).format('MM-DD-YYYY') +" "+item?.appointmentStatTime}`}
+                            Appointment Date : {`${moment(item?.appointmentDate).format('MM-DD-YYYY')}`}
+                            </Text>
+                            <Text style={styles.moreContent}>
+                              Start Time : {convertTo12HourFormat(item?.appointmentStatTime)}
                             </Text>
                             <Text style={styles.moreContent}>
                               Visit Type : {`${item?.visitType}`}

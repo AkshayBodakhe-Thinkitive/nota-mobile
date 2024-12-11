@@ -31,8 +31,6 @@ const ContactScreen = () => {
     (state: RootState) => state?.profile?.demographicsData,
   );
 
-  console.log(demographicsDataToEdit2)
-
   const dispatch = useAppDispatch();
   const navigation = useNavigation()
 

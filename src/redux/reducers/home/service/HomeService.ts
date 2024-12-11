@@ -404,8 +404,9 @@ export class HomeService {
       const headers = {
         Authorization: `Bearer ${accessToken}`,
       };
+      console.log('payload add insurance==>',payload)
       const response: any = await post('/insurance', payload, { headers });
-      // console.log('response add insurance =>', JSON.stringify(response));
+      console.log('response add insurance =>', JSON.stringify(response));
       if (response && response.code === 'CREATED') {
         Alert.alert('Success', response.message);
       } else {

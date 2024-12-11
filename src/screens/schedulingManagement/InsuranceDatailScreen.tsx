@@ -66,7 +66,7 @@ const InsuranceDatailScreen = ({navigation, route}: any) => {
           </Text>
           <View style={styles.detailsContainer}>
             <Text style={styles.detailItem}>
-              Insurance Name: {response?.insurancePayer?.payerName || '-'}
+              Insurance Name: {response?.insurancePayer || '-'}
             </Text>
             <Text style={styles.detailItem}>
               Member ID: {response?.memberId || '-'}

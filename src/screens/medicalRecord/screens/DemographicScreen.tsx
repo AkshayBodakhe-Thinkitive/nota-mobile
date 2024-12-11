@@ -107,7 +107,7 @@ const DemographicScreen = ({navigation}: any) => {
     }
   };
 
-  console.log("profileData  ",profileData);
+  // console.log("profileData  ",profileData);
   
 
   const userDataArray = [

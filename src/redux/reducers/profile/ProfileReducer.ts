@@ -68,17 +68,17 @@ export const initialState: any = {
 };
 const processGetLanguageResponse = (state: any, action: any) => {
   let payload = action.payload;
-  console.log('payload code', payload.code);
   switch (payload.code) {
     case ResponseCode.ok:
       state.languages = [];
       let languageData = payload?.data?.content;
-      let languagesArray: {label: any; value: any}[] = [];
-      console.log('language data', languageData);
+      let languagesArray : any = [];
+      // console.log('language data', languageData);
       languageData.forEach((data: any) => {
         languagesArray.push({
           label: data.name,
           value: data.name.toUpperCase(),
+          id : data
         });
       });
 
@@ -140,11 +140,11 @@ const ProfileReducer = createSlice({
       // console.log('profile reducer ----> ', state?.familyMemberData[key]);
 
       if (state.familyMemberUuid) {
-        // if (state.familyMemberData.address.hasOwnProperty(key)) {
-        //   state.familyMemberData.address[key] = value;
-        // } else {
-        //   state.familyMemberData[key] = value;
-        // }
+        if (state.familyMemberData.address.hasOwnProperty(key)) {
+          state.familyMemberData.address[key] = value;
+        } else {
+          state.familyMemberData[key] = value;
+        }
         state.familyMemberData[key] = value;
       } else {
         if (state.demographicsData.address.hasOwnProperty(key)) {

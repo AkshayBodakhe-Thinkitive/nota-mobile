@@ -107,9 +107,9 @@ const ProfileScreen = (routes: any) => {
             ' ' +
             Capitalize(profileData?.data?.legalLastName)}
         </CustomText>
-        <CustomText fontSize={responsiveFontSize(1.7)} color={colors.navala_grey}>
+        {/* <CustomText fontSize={responsiveFontSize(1.7)} color={colors.navala_grey}>
           {profileData?.data?.id}
-        </CustomText>
+        </CustomText> */}
       </View>
       <View style={{flex: 1}}>
         <ProfileTabNavigator></ProfileTabNavigator>

@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -32,42 +32,21 @@ const IdentificationScreen = ({navigation}: any) => {
     {label: 'Widowed', value: 'WIDOWED'},
   ];
 
-  const races = [
-    {label: 'African American', value: 'AFRICAN_AMERICAN'},
-    {label: 'American Indian', value: 'AMERICAN_INDIAN'},
-    {label: 'Asian', value: 'ASIAN'},
-    {label: 'Asian Indian', value: 'ASIAN_INDIAN'},
-    {label: 'Other Race', value: 'OTHER_RACE'},
-    {label: 'White Caucasian', value: 'WHITE_CAUCASIAN'},
-    {label: 'Black African', value: 'BLACK_AFRICAN'},
-    {label: 'Black African American', value: 'BLACK_AFRICAN_AMERICAN'},
-    {label: 'Arab North African', value: 'ARAB_NORTH_AFRICAN'},
-    {label: 'Hispanic Latino', value: 'HISPANIC_LATINO'},
-    {label: 'Berber Amazigh', value: 'BERBER_AMAZIGH'},
-    {label: 'Romani Gypsy', value: 'ROMANI_GYPSY'},
-    {label: 'Asian Pacific Islander', value: 'ASIAN_PACIFIC_ISLANDER'},
-    {label: 'Tuareg', value: 'TUAREG'},
-    {label: 'Ashkenazi Jews', value: 'ASHKENAZI_JEWS'},
-    {label: 'Native American Indigenous', value: 'NATIVE_AMERICAN_INDIGENOUS'},
-    {label: 'Afro Asiatic', value: 'AFRO_ASIATIC'},
-    {label: 'Basque', value: 'BASQUE'},
-    {label: 'Multiracial Mixed Race', value: 'MULTIRACIAL_MIXED_RACE'},
-    {label: 'Nilo Saharan', value: 'NILO_SAHARAN'},
-    {label: 'Celtic', value: 'CELTIC'},
-    {label: 'Bantu', value: 'BANTU'},
-    {label: 'Slavic', value: 'SLAVIC'},
-    {label: 'Khoisan', value: 'KHOISAN'},
-    {label: 'Germanic', value: 'GERMANIC'},
-    {label: 'Ethiopian Somali', value: 'ETHIOPIAN_SOMALI'},
-    {label: 'Mediterranean', value: 'MEDITERRANEAN'},
-  ];
+  const raceData = [
+    {label:'White',value:'WHITE'},
+    {label:'Black',value:'BLACK'},
+    {label:'Asian',value:'ASIAN'},
+    {label:"Native American",value:"NATIVE_AMERICAN"},
+    {label:'Other',value:'OTHER'},
+  ]
 
   const ethnicities = [
-    {label: 'Central American', value: 'CENTRAL_AMERICAN'},
-    {label: 'Cuban', value: 'CUBAN'},
-    {label: 'Dominican', value: 'DOMINICAN'},
-    {label: 'Mexican', value: 'MEXICAN'},
-    {label: 'South American', value: 'SOUTH_AMERICAN'},
+    {label:'Black',value:'BLACK'},
+    {label: 'Hispanic', value: 'HISPANIC'},
+    {label: 'Non Hispanic', value: 'NON_HISPANIC'},
+    {label: 'Asian', value: 'ASIAN'},
+    {label:"Native American",value:"NATIVE_AMERICAN"},
+    {label:'Other',value:'OTHER'},
   ];
 
   const genderType = [
@@ -83,8 +62,6 @@ const IdentificationScreen = ({navigation}: any) => {
     (state: RootState) => state.profile.familyMemberData,
   );
 
-  console.log('familyData  ', familyData);
-
   const languagesData = useAppSelector(
     (state: RootState) => state?.profile?.languages,
   );
@@ -93,7 +70,7 @@ const IdentificationScreen = ({navigation}: any) => {
   );
   // console.log('profleData',profileData)
 
-  const goToNotification = () => navigation.navigate('NotificationSc');
+  // console.log("languagesData-->",languagesData)
 
   function createPayload(data: any) {
     return {
@@ -113,7 +90,7 @@ const IdentificationScreen = ({navigation}: any) => {
       gender: data.gender,
       maritalStatus: data.maritalStatus,
       ssn: data.ssn,
-      language: data.languages || null,
+      languages: data.languages || null,
       ethnicity: data.ethnicity,
       race: data.race,
       motherName: data.motherName,
@@ -143,6 +120,7 @@ const IdentificationScreen = ({navigation}: any) => {
       preferredRadiology: data.preferredRadiology || null, // Assuming preferredRadiology might be null
       avatar: data.avatar,
       newAvatar: data.newAvatar,
+      homeNumber : data?.homeNumber
     };
   }
 
@@ -161,13 +139,7 @@ const IdentificationScreen = ({navigation}: any) => {
   const handleFillData = () => {
     dispatch(fillDataForDemographicsEdit(payload));
   };
-  const Capitalize2 = (str: string) => {
-    if (!str) return '';
-    // Convert the entire string to lowercase and then capitalize the first letter
-    return (
-      str.toLowerCase().charAt(0).toUpperCase() + str.slice(1).toLowerCase()
-    );
-  };
+ 
   useEffect(() => {
     handleFillData();
   }, [profileData, familyData]);
@@ -181,7 +153,7 @@ const IdentificationScreen = ({navigation}: any) => {
     (state: RootState) => state?.profile?.demographicsData,
   );
 
-  // console.log('demographicsDataToEdit +++++ ', demographicsDataToEdit);
+  console.log('demographicsDataToEdit +++++ ', demographicsDataToEdit);
 
   const handleInputChange = (key: any, value: any) => {
     dispatch(updateFieldValue({key, value}));
@@ -198,10 +170,10 @@ const IdentificationScreen = ({navigation}: any) => {
     console.log('Selected maritalStatus value:', value);
   };
 
-  const handleValueChangeForLanguageTypeDropDown = (value: string) => {
-    handleInputChange('languages', value.toUpperCase());
-
-    console.log('Selected language value:', value);
+  const [selectedLang,setSelectedLang] = useState('')
+  const handleValueChangeForLanguageTypeDropDown = (value: string,id:any) => {
+    handleInputChange('languages', [id]);
+    setSelectedLang(value)
   };
 
   const handleValueChangeForRaceTypeDropDown = (value: string) => {
@@ -292,8 +264,9 @@ const IdentificationScreen = ({navigation}: any) => {
               data={languagesData}
               placeholder="Select Lanuage"
               label="Language"
-              selectedValue={demographicsDataToEdit?.languages}
-              onValueChange={handleValueChangeForLanguageTypeDropDown}
+              // selectedValue={demographicsDataToEdit?.languages}
+              selectedValue={selectedLang || demographicsDataToEdit?.language?.[0]?.name?.toUpperCase()}
+              onValueChange={(value:any,id:any) => handleValueChangeForLanguageTypeDropDown(value,id)}
             />
             <DropdownComponent
               data={marritalStatus}
@@ -311,7 +284,7 @@ const IdentificationScreen = ({navigation}: any) => {
             />
 
             <DropdownComponent
-              data={races}
+              data={raceData}
               placeholder="Race"
               label="Race"
               selectedValue={demographicsDataToEdit?.race}

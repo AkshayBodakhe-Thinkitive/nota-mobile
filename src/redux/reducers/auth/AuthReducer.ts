@@ -120,9 +120,11 @@ const AuthReducer = createSlice({
         state.isAPICall = true;
       })
       .addCase(signInAction.fulfilled, (state, action) => {
-        if (action?.payload.message.includes('AxiosError')) {
+        if (action?.payload?.code === "UNAUTHORIZED") {
+          console.log('error-----')
           state.loading = false;
           state.loginData = null;
+          state.loggedIn = false;
         } else {
           state.loginData = action.payload;
           state.loggedIn = true;
@@ -130,13 +132,12 @@ const AuthReducer = createSlice({
           state.isAPICall = true;
           state.login = 'success';
           state.errorMessage = '';
-          state.accessToken = action.payload.accessToken;
-          state.refreshToken = action.payload.refreshToken;
+          state.accessToken = action.payload?.accessToken;
+          state.refreshToken = action.payload?.refreshToken;
         }
       })
       .addCase(signInAction.rejected, (state, action) => {
         console.log(' login rejected  ');
-
         state.loading = false;
         state.error = true;
         state.loggedIn = false;

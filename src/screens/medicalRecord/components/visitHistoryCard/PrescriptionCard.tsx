@@ -104,6 +104,10 @@ const PrescriptionCard = (prescription: any) => {
               duration: medication?.duration,
             })} Days`}
           />
+             <RowContainer
+            label={'Note'}
+            value={`${medication?.note}`}
+          />
         </View>
       </View>
     );

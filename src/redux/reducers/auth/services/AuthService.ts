@@ -1,33 +1,20 @@
-import { Alert } from 'react-native';
-import { ResponseCode } from '../../../../Interface/responseCode';
-import { post, put } from '../../../../config/AxiosConfig';
-import { resetHome } from '../../home/HomeReducer';
-import { resetMedicalRecordReducer } from '../../medicalrecord/medicalRecordReducer';
-import { resetProfile } from '../../profile/ProfileReducer';
-import { logoutPopup, resetAuth, resetTokens } from '../AuthReducer';
-import { store } from '../../../store/storeConfig';
+import {Alert} from 'react-native';
+import {ResponseCode} from '../../../../Interface/responseCode';
+import {post, post2, put} from '../../../../config/AxiosConfig';
+import {resetHome} from '../../home/HomeReducer';
+import {resetMedicalRecordReducer} from '../../medicalrecord/medicalRecordReducer';
+import {resetProfile} from '../../profile/ProfileReducer';
+import {logoutPopup, resetAuth, resetTokens} from '../AuthReducer';
+import {store} from '../../../store/storeConfig';
 export class AuthService {
-  static async signUp(
-    email: string,
-    firstName: string,
-    lastName: string,
-    phone: string,
-    password: string,
-    patientPortal: true,
-    roleType: string,
-  ) {
+  static async signUp(signUpPayload: any) {
+    // console.log("signUpPayload---->",signUpPayload)
     try {
-      const response = await post(`/auth/patient`, {
-        email,
-        firstName,
-        lastName,
-        phone,
-        password,
-        patientPortal,
-        roleType,
-      });
+      const response = await post2(`/auth/patient`, signUpPayload);
+      console.log("response signUp==>",JSON.stringify(response));
       return response;
     } catch (error: any) {
+      console.log("error===>",JSON.stringify(error))
       throw new Error(error.response.data.message);
     }
   }
@@ -49,8 +36,8 @@ export class AuthService {
   static async login(username: string, password: string) {
     const baseUrl = store.getState().auth.baseUrl;
     const url = `${baseUrl}/login`;
-    const body = JSON.stringify({ username, password, portalName: "PATIENT" });
-  
+    const body = JSON.stringify({username, password, portalName: 'PATIENT'});
+
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -59,16 +46,16 @@ export class AuthService {
         },
         body,
       });
-  
+
       if (!response.ok) {
         const errorData = await response.json();
         Alert.alert('Alert!', errorData?.message || 'Something went wrong');
-        return errorData
+        return errorData;
         // throw new Error(errorData?.message || 'Something went wrong');
       }
-  
+
       const responseData = await response.json();
-      console.log("response from login ==>", responseData);
+      console.log('response from login ==>', responseData);
       return responseData;
     } catch (error: any) {
       console.log('error login==>', error);
@@ -76,7 +63,6 @@ export class AuthService {
       throw new Error(error.message || 'Network error');
     }
   }
-  
 
   static async sendOPT(email: string) {
     try {
@@ -100,12 +86,12 @@ export class AuthService {
   }
   static async resetPassword(email: string, newPassword: string) {
     try {
-      console.log('call resetPassword')
+      console.log('call resetPassword');
       const response = await post(`/reset-password`, {email, newPassword});
-      console.log("response  resetPassword =>",response)
+      console.log('response  resetPassword =>', response);
       return response;
     } catch (error: any) {
-      console.log("error ===>",JSON.stringify(error));
+      console.log('error ===>', JSON.stringify(error));
       throw new Error(error.response.data.message);
     }
   }
@@ -127,20 +113,21 @@ export class AuthService {
   }
 
   static async deleteAccount(accessToken: string, patientId: string) {
-    console.log('deleteaccount called',accessToken,patientId)
+    console.log('deleteaccount called', accessToken, patientId);
     try {
       const response = await put(
-        `/patient/access/${patientId}?active=false`,null,
+        `/patient/access/${patientId}?active=false`,
+        null,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
         },
       );
-      console.log('delete ac res =>',response)
+      console.log('delete ac res =>', response);
       return response;
     } catch (error: any) {
-      console.log('delete ac error =>',error)
+      console.log('delete ac error =>', error);
       throw error.response.status;
     }
   }
@@ -164,16 +151,16 @@ export class AuthService {
         case ResponseCode.ok:
           let tokens = {
             accessToken: response?.data?.accessToken,
-            refreshToken: response?.data?.refreshToken
-          }
-          dispatch(resetTokens(tokens))
-          return true
+            refreshToken: response?.data?.refreshToken,
+          };
+          dispatch(resetTokens(tokens));
+          return true;
         case ResponseCode.unauthorized:
-          return false
+          return false;
         case ResponseCode.badRequest:
-          return false
+          return false;
         default:
-          return false
+          return false;
       }
     } catch (error: any) {
       dispatch(resetAuth());
@@ -182,7 +169,7 @@ export class AuthService {
       dispatch(resetProfile());
       dispatch(logoutPopup(false));
       // return error.response?.status;
-      return false
+      return false;
     }
   }
 }

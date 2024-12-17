@@ -35,6 +35,13 @@ const SignUpSc = ({navigation}: any) => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{[key: string]: string}>({});
 
+  const [line1, setLine1] = useState('');
+  const [line2, setLine2] = useState('');
+  const [city, setCity] = useState('');
+  const [stateName, setStateName] = useState('');
+  const [country, setCountry] = useState('');
+  const [zipcode, setZipcode] = useState('');
+
   const [countryCode, setCountryCode] = useState('');
 
   const handlePhoneChange = (
@@ -43,7 +50,7 @@ const SignUpSc = ({navigation}: any) => {
   ) => {
     setCountryCode(newCountryCode);
     setPhonenumber(newPhoneNumber);
-    handleChange('phone',newPhoneNumber)
+    handleChange('phone', newPhoneNumber);
   };
 
   const handleBlur = (fieldName: string) => {
@@ -99,6 +106,43 @@ const SignUpSc = ({navigation}: any) => {
           setErrors({...errors, password: passValidationResult.value});
         } else {
           setErrors({...errors, password: ''});
+        }
+      }
+    }
+    // Add these cases in handleBlur
+    else if (fieldName === 'line1') {
+      if (!line1) {
+        setErrors({...errors, line1: 'Address Line 1 is required'});
+      } else {
+        setErrors({...errors, line1: ''});
+      }
+    } else if (fieldName === 'city') {
+      if (!city) {
+        setErrors({...errors, city: 'City is required'});
+      } else {
+        setErrors({...errors, city: ''});
+      }
+    } else if (fieldName === 'stateName') {
+      if (!stateName) {
+        setErrors({...errors, stateName: 'State is required'});
+      } else {
+        setErrors({...errors, stateName: ''});
+      }
+    } else if (fieldName === 'country') {
+      if (!country) {
+        setErrors({...errors, country: 'Country is required'});
+      } else {
+        setErrors({...errors, country: ''});
+      }
+    } else if (fieldName === 'zipcode') {
+      if (!zipcode) {
+        setErrors({...errors, zipcode: 'Zipcode is required'});
+      } else {
+        const regex = /^[0-9]{5}$/;
+        if (!regex.test(zipcode)) {
+          setErrors({...errors, zipcode: 'Invalid zipcode format'});
+        } else {
+          setErrors({...errors, zipcode: ''});
         }
       }
     }
@@ -172,10 +216,47 @@ const SignUpSc = ({navigation}: any) => {
         }
       }
     }
+    // Add these cases in handleChange
+    else if (fieldName === 'line1') {
+      setLine1(value);
+      if (!value) {
+        setErrors({...errors, line1: 'Address Line 1 is required'});
+      } else if (errors.line1) {
+        setErrors({...errors, line1: ''});
+      }
+    } else if (fieldName === 'city') {
+      setCity(value);
+      if (!value) {
+        setErrors({...errors, city: 'City is required'});
+      } else if (errors.city) {
+        setErrors({...errors, city: ''});
+      }
+    } else if (fieldName === 'stateName') {
+      setStateName(value);
+      if (!value) {
+        setErrors({...errors, stateName: 'State is required'});
+      } else if (errors.stateName) {
+        setErrors({...errors, stateName: ''});
+      }
+    } else if (fieldName === 'country') {
+      setCountry(value);
+      if (!value) {
+        setErrors({...errors, country: 'Country is required'});
+      } else if (errors.country) {
+        setErrors({...errors, country: ''});
+      }
+    } else if (fieldName === 'zipcode') {
+      setZipcode(value);
+      const regex = /^[0-9]{5}$/;
+      if (!regex.test(value)) {
+        setErrors({...errors, zipcode: 'Invalid zipcode format'});
+      } else if (errors.zipcode) {
+        setErrors({...errors, zipcode: ''});
+      }
+    }
   };
 
   const handleSignUp = () => {
-    console.log('Enter in to the handleSignUp ');
     console.log(firstName);
     const errors: {[key: string]: string} = {};
     if (!firstName) {
@@ -205,10 +286,26 @@ const SignUpSc = ({navigation}: any) => {
         'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character';
     }
 
+    if (!line1) {
+      errors.line1 = 'Line 1 is required';
+    }
+    if (!city) {
+      errors.city = 'City is required';
+    }
+    if (!stateName) {
+      errors.stateName = 'State name is required';
+    }
+    if (!country) {
+      errors.country = 'Country is required';
+    }
+    if (!zipcode) {
+      errors.zipcode = 'Zip Code is required';
+    }
+
     if (Object.keys(errors).length === 0) {
       const patientPortal = true;
       const roleType = 'PATIENT';
-      console.log(
+      const signUpPayload = {
         email,
         firstName,
         lastName,
@@ -216,21 +313,17 @@ const SignUpSc = ({navigation}: any) => {
         password,
         patientPortal,
         roleType,
-        countryCode
-      );
-
-      dispatch(
-        signUpAction({
-          email,
-          firstName,
-          lastName,
-          phone,
-          password,
-          patientPortal,
-          roleType,
-          countryCode
-        }),
-      );
+        countryCode,
+        address: {
+          line1,
+          line2,
+          city,
+          stateName,
+          country,
+          zipcode,
+        },
+      };
+      dispatch(signUpAction(signUpPayload));
     } else {
       setErrors(errors);
     }
@@ -273,17 +366,15 @@ const SignUpSc = ({navigation}: any) => {
     }
   };
   const validatePhoneNumber = (inputValue: string) => {
-    const regex = /^[0-9]{10}$/; // Regular expression for a 10-digit phone number
+    const regex = /^[0-9]{10}$/;
     let errorMessage = 'Please enter 10 digit contact number';
     if (!regex.test(inputValue)) {
-      console.log('Enter into  validatePhoneNumber error');
       setContctIsCorrect(false);
       return {value: errorMessage, isError: true};
     } else {
       setContctIsCorrect(true);
       return {value: inputValue, isError: false};
     }
-    // return regex.test(inputValue);
   };
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -342,21 +433,10 @@ const SignUpSc = ({navigation}: any) => {
               // required
             />
             {errors.email && <Text style={styles.error}>{errors.email}</Text>}
-            {/* <TextInput
-              style={{marginTop: 10}}
-              value={phone}
-              placeholder="Contact Number"
-              label="Contact Number"
-              keyboardType="number-pad"
-              onChangeText={value => handleChange('phone', value)}
-              isValid={errors.phone}
-              onBlur={() => handleBlur('phone')}
-              required
-            /> */}
             <PhoneWithCountryCode
-              countryCode={countryCode} // Pass the current country code
-              number={phone} // Pass the current phone number
-              onChange={handlePhoneChange} // Handler to update state
+              countryCode={countryCode}
+              number={phone}
+              onChange={handlePhoneChange}
             />
             {errors.phone && <Text style={styles.error}>{errors.phone}</Text>}
             <TextInput
@@ -372,6 +452,75 @@ const SignUpSc = ({navigation}: any) => {
             />
             {errors.password && (
               <Text style={styles.error}>{errors.password}</Text>
+            )}
+            <TextInput
+              value={line1}
+              placeholder="Address Line 1"
+              label="Address Line 1"
+              style={{marginTop: 10}}
+              onChangeText={value => handleChange('line1', value)}
+              isValid={errors.line1}
+              onBlur={() => handleBlur('line1')}
+            />
+            {errors.line1 && <Text style={styles.error}>{errors.line1}</Text>}
+
+            <TextInput
+              value={line2}
+              placeholder="Address Line 2 (Optional)"
+              label="Address Line 2"
+              style={{marginTop: 10}}
+              onChangeText={value => setLine2(value)}
+            />
+
+            <TextInput
+              value={city}
+              placeholder="City"
+              label="City"
+              style={{marginTop: 10}}
+              onChangeText={value => handleChange('city', value)}
+              isValid={errors.city}
+              onBlur={() => handleBlur('city')}
+            />
+            {errors.city && <Text style={styles.error}>{errors.city}</Text>}
+
+            <TextInput
+              value={stateName}
+              placeholder="State"
+              label="State"
+              style={{marginTop: 10}}
+              onChangeText={value => handleChange('stateName', value)}
+              isValid={errors.stateName}
+              onBlur={() => handleBlur('stateName')}
+            />
+            {errors.stateName && (
+              <Text style={styles.error}>{errors.stateName}</Text>
+            )}
+
+            <TextInput
+              value={country}
+              placeholder="Country"
+              label="Country"
+              style={{marginTop: 10}}
+              onChangeText={value => handleChange('country', value)}
+              isValid={errors.country}
+              onBlur={() => handleBlur('country')}
+            />
+            {errors.country && (
+              <Text style={styles.error}>{errors.country}</Text>
+            )}
+
+            <TextInput
+              value={zipcode}
+              placeholder="Zipcode"
+              label="Zipcode"
+              keyboardType="numeric"
+              style={{marginTop: 10}}
+              onChangeText={value => handleChange('zipcode', value)}
+              isValid={errors.zipcode}
+              onBlur={() => handleBlur('zipcode')}
+            />
+            {errors.zipcode && (
+              <Text style={styles.error}>{errors.zipcode}</Text>
             )}
             <View style={{paddingTop: 20}}>
               <Button title={'Create New Patient'} onPress={handleSignUp} />

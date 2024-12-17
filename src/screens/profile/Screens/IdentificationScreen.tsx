@@ -62,6 +62,8 @@ const IdentificationScreen = ({navigation}: any) => {
     (state: RootState) => state.profile.familyMemberData,
   );
 
+  // console.log("familyData===>",familyData)
+
   const languagesData = useAppSelector(
     (state: RootState) => state?.profile?.languages,
   );
@@ -74,7 +76,7 @@ const IdentificationScreen = ({navigation}: any) => {
 
   function createPayload(data: any) {
     return {
-      uuid: data.uuid,
+      uuid: data?.uuid,
       provider: {
         uuid: null,
       },
@@ -221,12 +223,12 @@ const IdentificationScreen = ({navigation}: any) => {
               placeholder="Enter Legal First Name"
               onChangeText={value => handleInputChange('legalFirstName', value)}
             />
-            <TextInput
+          {!uuidForMedicalRecords &&  <TextInput
               value={demographicsDataToEdit?.middleName}
               label="Middle Name"
               placeholder="Enter Middle Name, Suffix"
               onChangeText={value => handleInputChange('middleName', value)}
-            />
+            />}
             <TextInput
               value={
                 demographicsDataToEdit?.birthDate === null

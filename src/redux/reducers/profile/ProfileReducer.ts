@@ -140,7 +140,7 @@ const ProfileReducer = createSlice({
       // console.log('profile reducer ----> ', state?.familyMemberData[key]);
 
       if (state.familyMemberUuid) {
-        if (state.familyMemberData.address.hasOwnProperty(key)) {
+        if (state.familyMemberData?.address?.hasOwnProperty(key)) {
           state.familyMemberData.address[key] = value;
         } else {
           state.familyMemberData[key] = value;
@@ -159,7 +159,18 @@ const ProfileReducer = createSlice({
       state.message = '';
     },
     familyMemberDataById: (state, action) => {
-      state.familyMemberData = action.payload;
+      state.familyMemberData = {
+        ...action.payload,
+        address: action.payload.address ?? {
+          id: "",
+          line1: "",
+          line2: "",
+          city: "",
+          state: "",
+          country: "",
+          zipcode: "",
+        },
+      };
     },
     storeFamilyMemberUuid: (state, action) => {
       state.familyMemberUuid = action.payload;

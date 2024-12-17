@@ -67,8 +67,6 @@ const DemographicScreen = ({navigation}: any) => {
     return str?.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  console.log(' uuidForMedicalRecords  ', uuidForMedicalRecords);
-
   useEffect(() => {
     const fetchProfileData = async () => {
       if (uuidForMedicalRecords) {
@@ -110,47 +108,52 @@ const DemographicScreen = ({navigation}: any) => {
   // console.log("profileData  ",profileData);
   
 
-  const userDataArray = [
-    {
-      lastName: getValidatedString({
-        data: Capitalize(profileData?.data?.legalLastName),
-      }),
-      firstName: getValidatedString({
-        data: Capitalize(profileData?.data?.legalFirstName),
-      }),
-      firstNameUsed: getValidatedString({
-        data: Capitalize(profileData?.data?.firstNameUsed),
-      }),
-      middleNameSuffix: getValidatedString({
-        data: Capitalize(profileData?.data?.middleName),
-      }),
-      dob: getValidatedString({
-        data: profileData?.data?.birthDate
-          ? moment(profileData?.data?.birthDate).format('MM/DD/YYYY')
-          : '-',
-      }),
-      previousName: getValidatedString({
-        data: Capitalize(profileData?.data?.firstNameUsed),
-      }),
-      ssn: getValidatedString({data: profileData?.data?.ssn}),
-      legalSex: getValidatedString({
-        data: Capitalize2(profileData?.data?.gender),
-      }),
-      motherName: getValidatedString({data: profileData?.data?.motherName}),
-      languages: getValidatedString({
-        data: Capitalize2(profileData?.data?.languages?.[0]?.name),
-      }),
-      race: getValidatedString({data: Capitalize2(profileData?.data?.race)}),
-      ethnicity: getValidatedString({
-        data: Capitalize2(profileData?.data?.ethnicity),
-      }),
-      maritalStatus: getValidatedString({
-        data: Capitalize2(profileData?.data?.maritalStatus),
-      }),
-      sexualOrientation: '-',
-      genderIdentity: '-',
-    },
-  ];
+  let userDataObject = {
+    lastName: getValidatedString({
+      data: Capitalize(profileData?.data?.legalLastName),
+    }),
+    firstName: getValidatedString({
+      data: Capitalize(profileData?.data?.legalFirstName),
+    }),
+    firstNameUsed: getValidatedString({
+      data: Capitalize(profileData?.data?.firstNameUsed),
+    }),
+    middleNameSuffix: getValidatedString({
+      data: Capitalize(profileData?.data?.middleName),
+    }),
+    dob: getValidatedString({
+      data: profileData?.data?.birthDate
+        ? moment(profileData?.data?.birthDate).format('MM/DD/YYYY')
+        : '-',
+    }),
+    previousName: getValidatedString({
+      data: Capitalize(profileData?.data?.firstNameUsed),
+    }),
+    ssn: getValidatedString({ data: profileData?.data?.ssn }),
+    legalSex: getValidatedString({
+      data: Capitalize2(profileData?.data?.gender),
+    }),
+    motherName: getValidatedString({ data: profileData?.data?.motherName }),
+    languages: getValidatedString({
+      data: Capitalize2(profileData?.data?.languages?.[0]?.name),
+    }),
+    race: getValidatedString({ data: Capitalize2(profileData?.data?.race) }),
+    ethnicity: getValidatedString({
+      data: Capitalize2(profileData?.data?.ethnicity),
+    }),
+    maritalStatus: getValidatedString({
+      data: Capitalize2(profileData?.data?.maritalStatus),
+    }),
+    sexualOrientation: '-',
+    genderIdentity: '-',
+  };
+  
+  const userDataArray = [userDataObject];
+
+  if (uuidForMedicalRecords) {
+    delete KEY_MAPPING_OBJECT?.middleNameSuffix
+  }
+  
   const contactArray = [
     {
       address:
@@ -174,70 +177,7 @@ const DemographicScreen = ({navigation}: any) => {
       mobilePhone: getValidatedString({data: profileData?.data?.contactNumber}),
     },
   ];
-  const data = [
-    {
-      key: 'Consent to Call',
-      value:
-        profileData?.data?.callConsent === null
-          ? false
-          : profileData?.data?.callConsent,
-    },
-    {
-      key: 'Consent to Message',
-      value:
-        profileData?.data?.messageConsent === null
-          ? false
-          : profileData?.data?.messageConsent,
-    },
-    {
-      key: 'Consent to Email',
-      value:
-        profileData?.data?.emailConsent === null
-          ? false
-          : profileData?.data?.emailConsent,
-    },
-  ];
 
-  const policyHolder = [
-    {
-      entityType: '',
-      policyId: '',
-      lastName: getValidatedString({
-        data: Capitalize(profileData?.data?.legalFirstName),
-      }),
-      firstName: getValidatedString({
-        data: Capitalize(profileData?.data?.legalLastName),
-      }),
-      middleNameSuffix: '-',
-      address:
-        profileData?.data?.address === null
-          ? '-'
-          : getValidatedString({data: profileData?.data?.address?.line1}) +
-            ' ' +
-            getValidatedString({
-              data: profileData?.data?.address?.line2,
-              returningValidationChar: '',
-            }) +
-            ' ' +
-            getValidatedString({
-              data: profileData?.data?.address?.city,
-              returningValidationChar: '',
-            }),
-      zipCode: getValidatedString({data: profileData?.data?.address?.zipCode}),
-      state: getValidatedString({data: profileData?.data?.address?.state}),
-      country: getValidatedString({data: profileData?.data?.address?.country}),
-      dob: getValidatedString({
-        data: profileData?.data?.birthDate
-          ? moment(profileData?.data?.birthDate).format('MM/DD/YYYY')
-          : '-',
-      }),
-      previousName: getValidatedString({
-        data: Capitalize(profileData?.data?.firstNameUsed),
-      }),
-      ssn: getValidatedString({data: profileData?.data?.ssn}),
-      sex: getValidatedString({data: Capitalize2(profileData?.data?.gender)}),
-    },
-  ];
   return (
     <View style={styles.container}>
       <HeaderBg height={Platform.OS === 'android' ? '25%' : '22%'}>
@@ -264,28 +204,8 @@ const DemographicScreen = ({navigation}: any) => {
           />
         </DemographicsCard>
         <View style={{marginBottom: 50}}>
-          {/* <DemographicsCard bordered title={'Privacy'}>
-          {data.map((item: any, index: any) => (
-            <View key={index} style={styles1.row}>
-              <Text style={styles1.label}>{item.key} : </Text>
-              <RadioButton
-                label="Yes"
-                disabled
-                selected={item.value === true}
-                onSelect={(value: any) => handleValueChange(item.key, value)}
-              />
-              <RadioButton
-                label="No"
-                disabled
-                selected={item.value === false}
-                onSelect={(value: any) => handleValueChange(item.key, value)}
-              />
-            </View>
-          ))}
-        </DemographicsCard> */}
         </View>
       </ScrollView>
-      {/* {!uuidForMedicalRecords && ( */}
       <View
         style={{
           height: '8%',
@@ -315,7 +235,6 @@ const DemographicScreen = ({navigation}: any) => {
           </Text>
         </TouchableOpacity>
       </View>
-      {/* )} */}
       {/* {loading || profileLoading && <Loader />} */}
     </View>
   );

@@ -1,4 +1,4 @@
-export const KEY_MAPPING_OBJECT = {
+export const KEY_MAPPING_OBJECT : any = {
   lastName: 'Legal Last Name',
   firstName: 'Legal First Name',
   // firstNameUsed: 'First Name Used',

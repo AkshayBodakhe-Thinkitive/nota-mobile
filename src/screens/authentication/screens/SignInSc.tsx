@@ -59,8 +59,6 @@ export function SignIn({navigation}: any): React.JSX.Element {
     resetErrorMessage();
   }, []);
 
-  console.log("loginData==>",loggedIn,  loginData)
-
   useEffect(() => {
 
     if (loginData?.data?.accessToken) {

@@ -5,19 +5,8 @@ import {AuthService} from '../services/AuthService';
 
 export const signUpAction = createAsyncThunk<any, any, {state: RootState}>(
   AUTH_REDUCER + '/auth/patient',
-  async (
-    {email, firstName, lastName, phone, patientPortal, roleType, password},
-    thunkApi,
-  ) => {
-    const response = AuthService.signUp(
-      email,
-      firstName,
-      lastName,
-      phone,
-      password,
-      patientPortal,
-      roleType,
-    );
+  async (signUpPayload, thunkApi) => {
+    const response = AuthService.signUp(signUpPayload);
     return response;
   },
 );

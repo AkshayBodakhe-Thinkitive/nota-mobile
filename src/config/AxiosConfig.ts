@@ -40,6 +40,14 @@ const get = <R>(url: string, config?: AxiosRequestConfig): Promise<R> =>
   instance.get(url, config).then(({data}) => {
     return data;
   });
+  const post2 = <D, R>(
+    url: string,
+    data?: D,
+    config?: AxiosRequestConfig,
+  ): Promise<R> =>
+    instance.post(url, data, config).then((res: any) => {
+      return res?.data;
+    });
 
 const post = <D, R>(
   url: string,
@@ -49,11 +57,10 @@ const post = <D, R>(
   instance
     .post(url, data, config)
     .then(res => {
-      // console.log('response from post     ****   ', config);
       return res.data;
     })
     .catch(error => {
-      console.log(' errror   ***  ', error);
+      console.log('error ==>', error);
       // return error;
       throw new Error(error);
     });
@@ -76,4 +83,4 @@ const patch = <D, R>(
   config?: AxiosRequestConfig,
 ): Promise<R> => instance.patch(url, data, config).then(({data}) => data);
 
-export {_delete, get, instance, patch, post, put};
+export {_delete, get, instance, patch, post, put,post2};

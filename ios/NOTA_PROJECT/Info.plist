@@ -42,7 +42,7 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>bluetoothDecription</string>
 	<key>NSCameraUsageDescription</key>
-	<string>cameraDesciption</string>
+    <string>This app requires access to your camera to capture and upload documents securely.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>NSMicrophoneUsageDescription</key>

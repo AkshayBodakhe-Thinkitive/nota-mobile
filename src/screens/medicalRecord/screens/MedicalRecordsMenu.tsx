@@ -15,9 +15,14 @@ import {setUUIDForMedicalRecords} from '../../../redux/reducers/medicalrecord/me
 import {RootState} from '../../../redux/store/storeConfig';
 import Row from '../../../components/Row/Row';
 import {EvilIcons} from '../../../components/Icons/EvilIcons';
-import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions';
-import { EntypoIcons } from '../../../components/Icons/EntypoIcons';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
+import {EntypoIcons} from '../../../components/Icons/EntypoIcons';
 import ShareMedRecordModal from '../components/ShareMedRecord';
+import {fontType} from '../../../assets/fontType';
 export const MedicalRecordsMenu = (routes: any) => {
   const {navigation, route} = routes && routes;
   const [isBack, setIsBack] = useState(
@@ -71,7 +76,7 @@ export const MedicalRecordsMenu = (routes: any) => {
   };
   const {height, width} = Dimensions.get('screen');
 
-  const [showShareModal,setShowShareModal] = useState(false)
+  const [showShareModal, setShowShareModal] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -85,14 +90,35 @@ export const MedicalRecordsMenu = (routes: any) => {
         </TouchableOpacity>
       )}
       <View style={styles.mainView}>
-        <Row style={{justifyContent: 'space-between', paddingHorizontal: 10,top:15,alignItems:'center'}}>
+        <Row
+          style={{
+            justifyContent: 'space-between',
+            paddingHorizontal: 10,
+            top: 15,
+            alignItems: 'center',
+          }}>
           <Text style={styles.heading}>Medical Records</Text>
-         <TouchableOpacity onPress={()=>setShowShareModal(true)}>
-         <Row style={{marginRight:10,backgroundColor:colors.primary,padding:5,borderRadius:8}}>
-            <EntypoIcons name="share" style={{color: 'white',fontSize:responsiveFontSize(2),marginRight:5}} />
-            <Text style={{color: 'white',fontSize:responsiveFontSize(2)}}>Share</Text>
-          </Row>
-         </TouchableOpacity>
+          <TouchableOpacity onPress={() => setShowShareModal(true)}>
+            <Row
+              style={{
+                marginRight: 10,
+                backgroundColor: colors.primary,
+                padding: 5,
+                borderRadius: 8,
+              }}>
+              <EntypoIcons
+                name="share"
+                style={{
+                  color: 'white',
+                  fontSize: responsiveFontSize(2),
+                  marginRight: 5,
+                }}
+              />
+              <Text style={{color: 'white', fontSize: responsiveFontSize(2)}}>
+                Share
+              </Text>
+            </Row>
+          </TouchableOpacity>
         </Row>
         <View style={styles.recordContainer}>
           <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
@@ -159,7 +185,7 @@ export const MedicalRecordsMenu = (routes: any) => {
           </View>
         </View>
       </View>
-      <ShareMedRecordModal show={showShareModal} setShow={setShowShareModal}/>
+      <ShareMedRecordModal show={showShareModal} setShow={setShowShareModal} />
     </View>
   );
 };
@@ -176,21 +202,22 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 2,
     borderColor: '#c6c5c5',
-    marginBottom: Dimensions.get('window').height * 0.11,
-    margin: 16,
-    height: Platform.OS === 'android' ? responsiveHeight(35) : responsiveHeight(30),
+    marginBottom: Dimensions.get('window').height * 0.1,
+    margin: responsiveFontSize(2),
+    height: Platform.OS === 'android' ? responsiveHeight(35) : '38%'
   },
   recordContainer: {
     backgroundColor: 'transparent',
-    margin: 8,
-    height: '86%',
+    margin: responsiveFontSize(1),
+    height: '85%',
     justifyContent: 'space-evenly',
   },
 
   icon: {
-    height: Dimensions.get('window').width * 0.19,
-    width: Dimensions.get('window').width * 0.19,
-    borderRadius: 24,
+    // height: Dimensions.get('window').width * 0.19,
+    // width: Dimensions.get('window').width * 0.19,
+    height: responsiveHeight(8),
+    width: responsiveWidth(20),
   },
 
   heading: {
@@ -201,8 +228,8 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 12,
-    fontWeight: '400',
+    fontSize: responsiveFontSize(1.5),
+    fontFamily: fontType.Roboto_Regular,
     color: 'white',
   },
 });

@@ -141,6 +141,7 @@ const DocumentsScreen = () => {
             </View>
           }
           renderItem={({item, index}) => {
+            // console.log('item------->',item)
             return (
               <View style={{paddingHorizontal: '2%', marginVertical: '2%'}}>
                 <Card
@@ -166,12 +167,12 @@ const DocumentsScreen = () => {
                     <Text style={styles.keyStyle}>Document Name : </Text>
                     <Text style={styles.valueStyle}>{item?.documentName}</Text>
                   </Row>
-                  <Row style={styles.row1}>
+                  {/* <Row style={styles.row1}>
                     <Text style={styles.keyStyle}>Document Type : </Text>
                     <Text style={styles.valueStyle}>
                       {item?.documentType?.type}
                     </Text>
-                  </Row>
+                  </Row> */}
                   <Row style={styles.row1}>
                     <Text style={styles.keyStyle}>Document Date : </Text>
                     <Text style={styles.valueStyle}>{item?.recordedDate}</Text>

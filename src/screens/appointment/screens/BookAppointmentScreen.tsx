@@ -350,7 +350,7 @@ const BookAppointmentScreen = (routes: any) => {
     return sortedSlots;
   };
 
-  // console.log("slotData =>",slotData)
+  
 
   const moringSlot =
     slotData &&
@@ -380,6 +380,8 @@ const BookAppointmentScreen = (routes: any) => {
       '24:00:00',
       '18:00:00',
     );
+
+    console.log("eveningSlot =>",eveningSlot)
 
   const eveningSlotForClinic =
     slotsClinicTime &&

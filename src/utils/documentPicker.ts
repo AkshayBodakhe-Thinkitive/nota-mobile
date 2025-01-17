@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Alert } from 'react-native';
 import DocumentPicker, {types} from 'react-native-document-picker';
 import RNFS from 'react-native-fs';
 
@@ -57,6 +58,7 @@ export const captureAndUploadPhotoMultipart: any = async () => {
 
     console.log("response===>",response)
 
+
     if (response.didCancel) {
       console.log('User cancelled the camera');
       return null; 
@@ -71,7 +73,6 @@ export const captureAndUploadPhotoMultipart: any = async () => {
       console.error('No photo data available');
       return null;
     }
-
     const fileUri = photo.uri;
     const fileName = photo.fileName || 'captured_photo.jpg'; // Default file name if not provided
     const fileType = photo.type || 'image/jpeg'; // Default to JPEG
@@ -87,6 +88,7 @@ export const captureAndUploadPhotoMultipart: any = async () => {
     return {
       fileUri,
       fileName,
+      fileSize: photo.fileSize || 0,
       formattedFileType,
       fileType
     };

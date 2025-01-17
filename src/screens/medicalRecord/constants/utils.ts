@@ -94,3 +94,49 @@ export const getVitalNameStr = (name: string) => {
       return '-';
   }
 };
+
+
+export const calculateBMI = (height:any, weight:any, heightUnit:any, weightUnit:any) => {
+  if (!height || !weight || height <= 0 || weight <= 0) {
+    return { isError: true, message: 'Invalid height or weight value' };
+  }
+
+  let heightInMeters = 0;
+  let weightInKg = weight;
+
+  // Convert height to meters based on heightUnit
+  switch (heightUnit) {
+    case 'Feet':
+      heightInMeters = height * 0.3048; // Convert feet to meters
+      break;
+    case 'Inches':
+      heightInMeters = height * 0.0254; // Convert inches to meters
+      break;
+    case 'Meter':
+      heightInMeters = height; // Already in meters
+      break;
+    case 'Centimeters':
+      heightInMeters = height / 100; // Convert cm to meters
+      break;
+    default:
+      return { isError: true, message: 'Invalid height unit' };
+  }
+
+  // Convert weight to kilograms based on weightUnit
+  switch (weightUnit) {
+    case 'Lbs':
+      weightInKg = weight * 0.453592; // Convert pounds to kilograms
+      break;
+    case 'Kg':
+      weightInKg = weight; // Already in kilograms
+      break;
+    default:
+      return { isError: true, message: 'Invalid weight unit' };
+  }
+
+  // Calculate BMI
+  const bmi = weightInKg / (heightInMeters * heightInMeters);
+
+  // Return rounded BMI
+  return { isError: false, bmi: bmi.toFixed(2) };
+};

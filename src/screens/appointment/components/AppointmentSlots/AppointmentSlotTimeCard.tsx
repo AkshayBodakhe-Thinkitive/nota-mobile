@@ -24,6 +24,7 @@ const AppointmentSlotTimeCard = ({firstSlot, secondSlot,thirdSlot,firstData,seco
   const onPress = (item: any, index: number, name: string) => {
     let todaysConvertedDate = moment().format('YYYY-MM-DD'); // Corrected format
     let currentTime = moment().format('HH:mm');
+
     let selectedFromTime = moment(item?.from, 'HH:mm').format('HH:mm');
 
     // Check if the selected slot is in the past

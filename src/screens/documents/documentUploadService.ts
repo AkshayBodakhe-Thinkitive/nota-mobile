@@ -48,7 +48,7 @@ export const uploadDocument: any = async (uploadDocPayload: any) => {
         },
       },
     );
-    // console.log(' rensponse from fetch=>', response);
+    console.log(' rensponse from uploadDocument=>', response);
     return response;
   } catch (error) {
     console.log('uploadDocument error =>', error);

@@ -31,11 +31,15 @@ import {getConsultedProvidersAction} from '../../redux/reducers/home/aysnc-actio
 import Row from '../../components/Row/Row';
 import {ImagePath} from '../../assets/images/ImagePaths';
 import {MaterialIcons} from '../../components/Icons/MaterialIcons';
-import {responsiveFontSize} from 'react-native-responsive-dimensions';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 import NotificationSc from '../notification/NotificationSc';
 import TextInput from '../../components/TextInput/TextInput';
-import { Ionicons } from '../../components/Icons/Ionicons';
-import { colors } from '../../assets/colors';
+import {Ionicons} from '../../components/Icons/Ionicons';
+import {colors} from '../../assets/colors';
 
 const HomeSc = ({navigation}: any) => {
   const dispatch = useAppDispatch();
@@ -51,6 +55,7 @@ const HomeSc = ({navigation}: any) => {
   const consentFormData = useAppSelector(
     (state: RootState) => state.home.consentFormData,
   );
+
   const providerData = useAppSelector(
     (state: RootState) => state.home.providerDataUuid?.data,
   );
@@ -60,7 +65,10 @@ const HomeSc = ({navigation}: any) => {
     setSelectedProvider(data);
     if (providerData) {
       dispatch(resetproviderDataUuid());
-      navigation.navigate('bookappointment', {providerData, selectedProvider:data});
+      navigation.navigate('bookappointment', {
+        providerData,
+        selectedProvider: data,
+      });
     }
   };
 
@@ -201,35 +209,44 @@ const HomeSc = ({navigation}: any) => {
         </TouchableOpacity>
       </View>
       <View style={{width: '100%', height: '90%'}}>
-
         <ScrollView contentContainerStyle={{paddingBottom: 50, paddingTop: 15}}>
-        <View style={homeScStyles.searchProvInputContainer}>
-          <TouchableOpacity
-            onPress={navigateToProviderFun}
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '80%',
-              zIndex: 1,
-            }}></TouchableOpacity>
-          <TextInput
-            editable={false}
-            ref={inputRef}
-            placeholder="Search clinic name"
-            leftIcon={
-              <Ionicons
-                name={'search'}
-                color={colors.grey70}
-                style={{fontSize: responsiveFontSize(3)}}
-              />
-            }
-          />
-        </View>
+          <View style={homeScStyles.searchProvInputContainer}>
+            <TouchableOpacity
+              onPress={navigateToProviderFun}
+              style={{
+                position: 'absolute',
+                width: '100%',
+                height: '80%',
+                zIndex: 1,
+              }}></TouchableOpacity>
+            <TextInput
+              editable={false}
+              ref={inputRef}
+              placeholder="Search clinic name"
+              leftIcon={
+                <Ionicons
+                  name={'search'}
+                  color={colors.grey70}
+                  style={{fontSize: responsiveFontSize(3)}}
+                />
+              }
+            />
+          </View>
           <View style={homeScStyles.imageBackgroundView}>
             <ImageBackground
               style={homeScStyles.image2}
               source={ImagePath1.homeBackgroundImage}>
-              <Text style={homeScStyles.titleText}>Navala</Text>
+              <Row style={{top:responsiveHeight(1),paddingLeft:'4%'}}>
+                <Image
+                  source={ImagePath1.navalalogo}
+                  style={{
+                    resizeMode: 'contain',
+                    height: responsiveHeight(6),
+                    width: responsiveWidth(10),
+                  }}
+                />
+                <Text style={homeScStyles.titleText}>Navala</Text>
+              </Row>
               <View style={{flexDirection: 'row'}}>
                 <Text style={homeScStyles.welcomeText}>
                   Welcome {profileData?.data?.legalFirstName}

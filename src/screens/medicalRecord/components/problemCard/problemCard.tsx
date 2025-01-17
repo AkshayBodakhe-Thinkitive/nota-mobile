@@ -58,7 +58,7 @@ const ProblemCard = ({
           fontFamily: fontType.Roboto_Bold,
           fontWeight: 'bold',
         }}>
-        {name}
+        {name || '-'}
       </Text>
       <View style={style.row}>
         <CustomText style={[style.label]}>{'Status'}: </CustomText>

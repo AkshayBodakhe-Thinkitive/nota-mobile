@@ -38,8 +38,8 @@ export function SignIn({navigation}: any): React.JSX.Element {
   const [show, setShow] = useState(false);
   const [envTouchesCNT, setEnvTouchesCNT] = useState(0);
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState(''); // dane.west12@yopmail.com
+  const [password, setPassword] = useState(''); // Test@123
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const isFocused = useIsFocused();
   const errorMessage = useAppSelector(

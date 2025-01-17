@@ -25,6 +25,7 @@ import {RootState} from '../../../redux/store/storeConfig';
 import {post, put} from '../../../config/AxiosConfig';
 import Toast from 'react-native-simple-toast';
 import {useRoute} from '@react-navigation/native';
+import { calculateBMI } from '../constants/utils';
 
 const Title = ({children}: any) => {
   return (
@@ -77,6 +78,15 @@ const AddVitalsScreen = ({navigation}: any) => {
   const [weight, setWeight] = useState('');
   const [weightUnitValue, setWeightUnitValue] = useState('');
   const [note, setNote] = useState('');
+
+
+  useEffect(()=>{
+    const bmiValue = calculateBMI(height,weight,heightUnit,weightUnitValue)
+    console.log("bmiValue===>",bmiValue)
+    if(!bmiValue?.isError){
+      setBmi(bmiValue?.bmi)
+    }
+  },[height,weight,heightUnit,weightUnit])
 
   const [formValidation, setFormValidation] = useState({
     date: true,
@@ -303,6 +313,7 @@ const AddVitalsScreen = ({navigation}: any) => {
         />
       </HeaderBg>
       <ScrollView style={styles.page}>
+        <View style={{margin:'3%'}}>
         <Row
           style={{
             justifyContent: 'space-between',
@@ -421,6 +432,7 @@ const AddVitalsScreen = ({navigation}: any) => {
             value={bmi}
             onChangeText={setBmi}
             style={{width: '49%'}}
+            editable={false}
           />
         </Row>
         <Row style={{justifyContent: 'space-between'}}>
@@ -488,6 +500,7 @@ const AddVitalsScreen = ({navigation}: any) => {
           placeholder="Enter"
           onChangeText={setNote}
         />
+        </View>
       </ScrollView>
       <Row
         style={{
@@ -520,7 +533,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   page: {
-    padding: '3%',
+    // padding: '3%',
     flex: 1,
     paddingBottom: 100,
   },

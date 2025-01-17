@@ -17,11 +17,6 @@ import Toast from '../../components/Toast/Toast';
 import {useAppSelector, useAppDispatch} from '../../redux/store/hooks';
 import {RootState} from '../../redux/store/storeConfig';
 import {
-  captureAndUploadPhotoMultipart,
-  pickAndUploadDocument,
-  pickAndUploadDocumentMultipart,
-} from '../../utils/documentPicker';
-import {
   fetchDocumentTypes,
   uploadDocument,
   getDocuments,
@@ -33,8 +28,6 @@ import DropdownComponent from '../../components/Dropdown/DropDown';
 import TextInput from '../../components/TextInput/TextInput';
 import {fontType} from '../../assets/fontType';
 import Button from '../../components/ButtonComponent/ButtonComponent';
-import DocumentPicker from 'react-native-document-picker';
-import RNFS from 'react-native-fs';
 import ImagePickerModal from './DocumentPickerModal';
 
 type FinishProps = {
@@ -88,7 +81,7 @@ const DocumentUploadScreen = () => {
   };
 
   useEffect(() => {
-    getDocumentTypes();
+    // getDocumentTypes();
   }, []);
 
   const handleFileSelect = (file: any) => {
@@ -96,7 +89,7 @@ const DocumentUploadScreen = () => {
     setFileName(file.fileName);
   };
 
-  console.log('documentDetails==>', documentDetails);
+  // console.log('documentDetails==>', documentDetails);
 
   const [toastVisible, setToastVisible] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
@@ -109,7 +102,7 @@ const DocumentUploadScreen = () => {
 
     const formData = new FormData();
     formData.append('patientId', uuidForMedicalRecords ? uuidForMedicalRecords : patientId);
-    formData.append('documentTypes', selectedDocumentTypeId);
+    // formData.append('documentTypes', selectedDocumentTypeId);
     formData.append('documentType', documentDetails?.formattedFileType);
     formData.append('recordedDate', new Date().toISOString().split('T')[0]);
     formData.append('documentName', documentName);
@@ -157,7 +150,9 @@ const DocumentUploadScreen = () => {
     }
   };
 
-  const isButtonDisabled = !selectedDocumentTypeId || !documentName || !date;
+  // const isButtonDisabled = !selectedDocumentTypeId || !documentName || !date;
+
+  const isButtonDisabled = documentDetails === null || !documentName
 
   const goToNotification = () => navigation.navigate('NotificationSc');
 
@@ -177,14 +172,14 @@ const DocumentUploadScreen = () => {
         />
       </HeaderBg>
       <View style={styles.pageContainer}>
-        <DropdownComponent
+        {/* <DropdownComponent
           label="Document Type"
           data={documentTypes}
           dropDownStyles={{height: responsiveHeight(5.5)}}
           placeholder="Select Document Type"
           onValueChange={(value: any) => setSelectedDocumentTypeId(value)}
           style={{marginBottom: '5%'}}
-        />
+        /> */}
         <TextInput
           label="Document Name"
           placeholder="Enter document name"
@@ -223,17 +218,17 @@ const DocumentUploadScreen = () => {
           Supported formats: JPEG, PNG, PDF
         </Text>
         <Row style={styles.buttonsContainer}>
-          <Button
+          {/* <Button
             outlined
             title="+ Manage Document Types"
             buttonStyle={{width: '48%'}}
             onPress={() => setShowAddModal(true)}
             textStyle={{fontSize: responsiveFontSize(1.3)}}
-          />
+          /> */}
           <Button
             disabled={isButtonDisabled}
             title="Save"
-            buttonStyle={{width: '48%'}}
+            buttonStyle={{width: '100%'}}
             onPress={handleUpload}
           />
         </Row>

@@ -37,4 +37,5 @@ export const ImagePath = {
   uploadimage : require('../assets/images/uploadimage.png'),
   takeimage : require('../assets/images/takeimage.png'),
   noresult : require('../assets/images/NoResult.png'),
+ 
 };

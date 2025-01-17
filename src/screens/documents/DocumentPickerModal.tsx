@@ -9,6 +9,7 @@ import {
   Dimensions,
   Easing,
   Image,
+  Alert,
 } from 'react-native';
 import {OctiIcons} from '../../components/Icons/OctiIcons';
 import {
@@ -48,14 +49,39 @@ const ImagePickerModal = ({ visible, onClose, onFileSelect }: any) => {
   const handleFilePick = async (option: string) => {
     try {
       let result = null;
+  
       if (option === 'camera') {
         result = await captureAndUploadPhotoMultipart(); // File picking logic for camera
       } else {
         result = await pickAndUploadDocumentMultipart(); // File picking logic for gallery/documents
       }
-
+  
+      console.log('Result object:', result); // Debugging the result structure
+  
       if (result) {
-        onFileSelect(result); // Return the result to the parent
+        const { fileSize } = result;
+
+        console.log("fileSize++++",fileSize)
+  
+        if (fileSize && !isNaN(fileSize)) {
+          const fileSizeMB = fileSize / (1024 * 1024); // Convert to MB
+          console.log('File size in MB:', fileSizeMB);
+  
+          if (fileSizeMB > 2) {
+            Alert.alert(
+              'File Size Too Large',
+              `The selected file is more than 2 MB. Please select a file smaller than 2 MB.`,
+              [{ text: 'OK' }]
+            );
+            return; // Stop further processing if file size exceeds limit
+          }
+        } else {
+          console.error('Invalid fileSize:', fileSize);
+          Alert.alert('Error', 'Unable to determine file size. Please try again.');
+          return; // Exit if fileSize is invalid
+        }
+  
+        onFileSelect(result); // Pass the file to the parent if valid
       }
     } catch (error) {
       console.log('Error selecting file:', error);
@@ -63,6 +89,8 @@ const ImagePickerModal = ({ visible, onClose, onFileSelect }: any) => {
       onClose(); // Close the modal after selection
     }
   };
+  
+  
 
   return (
     <Modal transparent visible={visible} animationType="none">

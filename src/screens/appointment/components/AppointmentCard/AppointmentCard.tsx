@@ -150,7 +150,7 @@ const AppointmentCard = ({type, status, data}: Props) => {
                 style={{marginRight: 10}}
               />
               <CustomText fontSize={responsiveFontSize(1.8)}>
-              {moment(result?.startTime, 'HH:mm').format('hh:mm A') + ' to ' + moment(result?.endTime, 'HH:mm').format('hh:mm A')}
+              {moment(data?.startTime, 'HH:mm').format('hh:mm A') + ' to ' + moment(data?.endTime, 'HH:mm').format('hh:mm A')}
               </CustomText>
             </Row>
           )}

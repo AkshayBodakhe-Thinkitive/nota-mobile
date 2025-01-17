@@ -43,7 +43,7 @@ const AddDiagnosis = ({navigation}: any) => {
 
   useEffect(() => {
     if (update && item) {
-      setDiagnosisName(item?.billingCodes?.uuid || '');
+      setDiagnosisName(item?.billingCodes || '');
       setStatus(item?.active);
       setType(item?.type || 'CHRONIC');
       setOnsetDate(item?.diagnosedDate ? new Date(item.diagnosedDate) : null);
@@ -93,7 +93,7 @@ const AddDiagnosis = ({navigation}: any) => {
       }
     };
 
-    fetchDiagnosesData();
+    // fetchDiagnosesData();
   }, []);
 
   const validateForm = () => {
@@ -114,9 +114,7 @@ const AddDiagnosis = ({navigation}: any) => {
       archive: false,
       id: '',
       uuid: item ? item?.uuid : '',
-      billingCodes: {
-        uuid: diagnosisName,
-      },
+      billingCodes: diagnosisName,
       patient: {
         uuid: uuidForMedicalRecords ? uuidForMedicalRecords : patientId,
       },
@@ -163,7 +161,7 @@ const AddDiagnosis = ({navigation}: any) => {
       </HeaderBg>
       <ScrollView>
       <View style={{margin:'3%'}}>
-        <DropdownComponent
+        {/* <DropdownComponent
           label="Select Diagnoses"
           placeholder="Select Diagnoses"
           data={diagnosesData}
@@ -175,6 +173,18 @@ const AddDiagnosis = ({navigation}: any) => {
           isValid={!formValidation.diagnosisName}
           errorText="billingCodes cannot be null"
           required
+        /> */}
+        <TextInput
+        label='Diagnosis'
+        placeholder='Enter Diagnosis'
+        value={diagnosisName}
+        onChangeText={(value: any) => {
+          setDiagnosisName(value);
+          setFormValidation(prev => ({...prev, diagnosisName: !!value}));
+        }}
+        isValid={!formValidation.diagnosisName}
+        errorText="Diagnosis cannot be empty"
+        required
         />
 
         {/* Status */}

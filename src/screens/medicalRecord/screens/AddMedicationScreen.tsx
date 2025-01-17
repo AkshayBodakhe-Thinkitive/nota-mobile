@@ -34,7 +34,7 @@ const AddMedication = () => {
   // console.log('item =======>', item);
 
   const [medicineName, setMedicineName] = useState(
-    update ? item?.drugCatalog?.id : '',
+    update ? item?.drugCatalog : '',
   );
   const [sig, setSig] = useState(update ? item?.sig : '');
   const [dosageWhen, setDosageWhen] = useState(
@@ -88,7 +88,7 @@ const AddMedication = () => {
     console.log('value ==>', value);
     setFormValidation(prev => ({
       ...prev,
-      medicineName: !!value?.medicine?.trim(),
+      medicineName: !!value?.trim(),
     }));
   };
 
@@ -176,7 +176,7 @@ const AddMedication = () => {
     const payload = {
       id: '',
       uuid: item ? item?.uuid : '',
-      drugCatalog: medicineDetail,
+      drugCatalog: medicineName,
       patient: {
         uuid: uuidForMedicalRecords ? uuidForMedicalRecords : patientId,
       },
@@ -221,8 +221,8 @@ const AddMedication = () => {
           isbuttonshow={true}
         />
       </HeaderBg>
-      <ScrollView style={{padding: '3%'}}>
-        <DropdownComponent
+      <ScrollView>
+        {/* <DropdownComponent
           data={medicines}
           label="Medicines"
           placeholder="Select Medicine"
@@ -234,6 +234,21 @@ const AddMedication = () => {
           }}
           isValid={!formValidation.medicineName}
           errorText="Please select the medicine name"
+        /> */}
+        <View style={{margin: '3%'}}>
+         <TextInput
+           label="Medicine"
+          style={styles.input}
+          placeholder="Enter Medicine"
+          value={medicineName}
+          onChangeText={(value: any) => {
+            setMedicineName(value);
+            // setMedicineDetail(id);
+            validateMedicineName(value);
+          }}
+          isValid={!formValidation.medicineName}
+          errorText="Please Enter the medicine name"
+          containerStyles={{height: responsiveHeight(4.5)}}
         />
         <TextInput
           style={styles.input}
@@ -311,6 +326,7 @@ const AddMedication = () => {
           value={note}
           onChangeText={setNote}
         />
+         </View>
       </ScrollView>
       <Row
         style={{

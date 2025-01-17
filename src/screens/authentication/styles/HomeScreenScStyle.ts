@@ -58,18 +58,17 @@ const homeScStyles = StyleSheet.create({
     fontFamily: fontType.Roboto_Medium,
   },
   titleText: {
-    top: 20,
-    left: 20,
+    // top: 20,
+    // left: 20,
     fontWeight: 'bold',
     fontFamily: fontType.Roboto_Medium,
     color: colors.app_color1,
     fontSize: 24,
   },
   welcomeText: {
-    top: 35,
+    top: responsiveHeight(2),
     fontWeight: '600',
     left: 20,
-    // fontFamily: fontType.Roboto_Medium,
     color: '#1A1A1A',
     fontSize: 18,
   },
@@ -100,7 +99,7 @@ const homeScStyles = StyleSheet.create({
     // borderWidth:1
   },
   txt3: {
-    top: 50,
+    top: responsiveHeight(4),
     left: 20,
     color: '#1A1A1A',
     fontFamily: fontType.Roboto_Regular,
@@ -114,7 +113,7 @@ const homeScStyles = StyleSheet.create({
   btn1: {
     height: '19%',
     width: '32%',
-    top: '35%',
+    top: '25%',
     left: 20,
     backgroundColor: colors.app_color1,
 },
@@ -131,9 +130,10 @@ const homeScStyles = StyleSheet.create({
     height: responsiveHeight(35),
     width: '100%',
     paddingVertical: 10,
+    // borderWidth:1
   },
   cardstyle: {
-    height: 125,
+    height: responsiveHeight(17),
     width: '33%',
   },
   imageStyle: {

@@ -70,7 +70,7 @@ const CurrentMedications = ({navigation}: any) => {
           renderItem={({item, index}) => {
             return (
               <MedicationCard
-                name={item?.drugCatalog?.medicine}
+                name={item?.drugCatalog}
                 startDate={item?.startDate}
                 endDate={item?.endDate}
                 dosageTime={item?.dosageTime}

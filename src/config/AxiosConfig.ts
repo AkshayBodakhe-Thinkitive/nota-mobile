@@ -1,10 +1,6 @@
 import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
 import {getStore} from '../redux/store/storeConfig';
 
-// export let BASE_URL = 'https://dev.api.navalaglobal.com/api/master';
-//https://dev-api-thinkemr.telapractice.com/api/master
-// https://dev.api.navalaglobal.com
-
 const envData = getStore().getState().auth.selectedEnvironment;
 
 const BASE_URLData = () => {

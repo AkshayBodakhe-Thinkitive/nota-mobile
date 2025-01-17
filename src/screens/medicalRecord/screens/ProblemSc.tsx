@@ -78,9 +78,10 @@ const ProblemSc = ({navigation}: any) => {
           contentContainerStyle={{marginBottom:50}}
             data={problemData?.data?.content}
             renderItem={({item, index}) => {
+              console.log(item)
               return (
                 <ProblemCard
-                  name={item?.billingCodes?.code + ' ' +  item?.billingCodes?.description}
+                  name={item?.billingCodes}
                   status={item?.active === true ? 'Active': 'Historical'} 
                   type={item?.type}
                   note={item?.note}

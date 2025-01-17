@@ -72,4 +72,5 @@ export const ImagePath1 = {
   donegif: require('../assets/videos/donegif.gif'), //donegif
   messageArrivedGIF: require('../assets/videos/messageArrivedgif.gif'), //messageArrivedgif
   vitalicon: require('../assets/images/vitalicon.png'),
+  navalalogo : require('../assets/images/navalalogo.png'),
 };

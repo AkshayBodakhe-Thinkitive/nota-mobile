@@ -56,7 +56,6 @@ export const getSlotWithLocationAction = createAsyncThunk<any, any, { state: Roo
     thunkApi,
   ) => {
     try {
-      console.log('**** getSlotWithLocationAction ****');
       const response: any = await HomeService.getslotsWithLocation(
         accessToken,
         providerUUID,
@@ -65,9 +64,7 @@ export const getSlotWithLocationAction = createAsyncThunk<any, any, { state: Roo
         appointmentDate,
         locationUUID
       );
-
-      console.log('response getSlotWithLocationAction:', JSON.stringify(response));
-
+      // console.log('response getSlotWithLocationAction:', JSON.stringify(response));
       if (response?.code === 'OK' && response?.data?.timeIntervalSet?.length === 0) {
         Toast.show('The Provider is not available for the selected date!', 2);
         return response; // Early return if no slots are available

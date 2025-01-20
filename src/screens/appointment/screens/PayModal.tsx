@@ -37,7 +37,7 @@ const PayModal = ({
       value: item?.uuid,
     };
   });
-  console.log('firstTime  ', firstTime);
+
 
   const makePayementFun = async () => {
     if (selectedCard === '') {

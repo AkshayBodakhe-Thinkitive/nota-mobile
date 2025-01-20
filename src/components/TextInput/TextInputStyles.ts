@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native";
-// import { colors } from "../../constants/Colors";
 import { responsiveFontSize, responsiveHeight } from "react-native-responsive-dimensions";
 import { colors } from "../../assets/colors";
-// import { FontType } from "../../constants/FontType";
 import { fontType } from "../../assets/fontType";
 
 
@@ -47,11 +45,10 @@ export const TextInputStyles = StyleSheet.create({
     },
     eye: {
         position: 'absolute',
-        right: 15,
-        padding: 5,
-        // paddingLeft: 10,
-        top: 10,
-        // borderWidth:1
+        right:  responsiveFontSize(1),
+        padding: responsiveFontSize(1),
+        paddingLeft: 10,
+        top :responsiveFontSize(0.3),
     },
     icon: {
         position: 'absolute',

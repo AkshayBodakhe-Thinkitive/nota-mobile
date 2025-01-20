@@ -28,6 +28,7 @@ import {signInAction} from '../../../redux/reducers/auth/async-actions/signInAct
 import {useAppDispatch, useAppSelector} from '../../../redux/store/hooks';
 import {RootState} from '../../../redux/store/storeConfig';
 import {SignInScreenScStyles as styles} from '../styles/SignInScreenScStyles';
+import { envChangerFunction } from '../../../config/AxiosConfig';
 
 export function SignIn({navigation}: any): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -58,6 +59,12 @@ export function SignIn({navigation}: any): React.JSX.Element {
   useEffect(() => {
     resetErrorMessage();
   }, []);
+
+  const env = useAppSelector((state:RootState)=>state.auth.baseUrl);
+  
+    useEffect(()=>{
+      envChangerFunction(env);
+    },[])
 
   useEffect(() => {
 

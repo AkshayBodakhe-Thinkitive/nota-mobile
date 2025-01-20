@@ -15,6 +15,7 @@ import { TextInputStyles as styles } from './TextInputStyles';
 // import {colors} from '../../constants/Colors';
 import { responsiveWidth } from 'react-native-responsive-dimensions';
 import { colors } from '../../assets/colors';
+import { Ionicons } from '../Icons/Ionicons';
 
 const TextInput = forwardRef(
   
@@ -91,19 +92,20 @@ ref: any,
         <Text style={styles.errorText}>{errorText}</Text>
       )}
       {/* {secureTextEntry === true && text.length > 0 && ( */}
-      {secureTextEntry === true && (
-        <TouchableOpacity
-          onPress={() => {
-            setShowPass(!showPass);
-          }}
-          style={[styles.eye,label ? {top:'40%'} : null]}>
-          <Icon
-            name={showPass ? 'eye-off' : 'eye'}
-            color={"#1A1A1A33"}
-            size={24}
-          />
-        </TouchableOpacity>
-      )}
+      {secureTextEntry === true 
+        && (
+          <TouchableOpacity
+            onPress={() => {
+              setShowPass(!showPass);
+            }}
+            style={styles.eye}>
+            <Ionicons
+              name={!showPass ? 'eye' : 'eye-off-sharp'}
+              color={colors.grey60}
+              size={24}
+            />
+          </TouchableOpacity>
+        )}
     </View>
   );
 })

@@ -1,36 +1,34 @@
 import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
-import {getStore} from '../redux/store/storeConfig';
+import {getStore, store} from '../redux/store/storeConfig';
 
-const envData = getStore().getState().auth.selectedEnvironment;
+const BASE_URL_DEV = 'https://dev.api.navalaglobal.com/api/master';
+const BASE_URL_QA = 'https://qa.api.navalaglobal.com/api/master';
+const BASE_URL_PROD ='https://api.navalaglobal.com/api/master';
 
-const BASE_URLData = () => {
-  let BASE_URL = 'https://dev.api.navalaglobal.com/api/master';
-  switch (envData) {
-    case 'PROD':
-      BASE_URL = 'https://api.navalaglobal.com/api/master';
-      break;
-    case 'DEV':
-      BASE_URL = 'https://dev.api.navalaglobal.com/api/master';
-      break;
-    case 'QA':
-      BASE_URL = 'https://qa.api.navalaglobal.com/api/master';
-      break;
-    default:
-      BASE_URL = 'https://dev.api.navalaglobal.com/api/master';
-      break;
-  }
-  return BASE_URL;
-};
-
-export {BASE_URLData};
 
 const instance: AxiosInstance = axios.create({
-  baseURL: BASE_URLData(),
+  baseURL: BASE_URL_DEV,
   headers: {
     'Content-Type': 'application/json',
   },
   timeout: 16000,
 });
+
+
+export const envChangerFunction = (type: string) => {
+  console.log('Env======>',type)
+  instance.defaults.baseURL = type;
+  // switch (type) {
+  //   case 'DEV':
+  //     instance.defaults.baseURL = BASE_URL_DEV;
+  //     break;
+  //   case 'QA':
+  //     instance.defaults.baseURL = BASE_URL_QA;
+  //     break
+  //   case 'PROD':
+  //     instance.defaults.baseURL = BASE_URL_PROD;
+  // }
+};
 
 const get = <R>(url: string, config?: AxiosRequestConfig): Promise<R> =>
   instance.get(url, config).then(({data}) => {

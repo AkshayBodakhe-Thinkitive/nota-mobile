@@ -53,8 +53,6 @@ const PhoneWithCountryCode: React.FC<PhoneWithCountryCodeProps> = ({
     onChange(currentCountryCode, value); 
   };
 
-  console.log(currentCountryCode)
-
   return (
     <View style={styles.mainContainer}>
          {label && <Text style={styles.label}>{label} {required && (<Text style={{color:'red'}}>*</Text>)}</Text>}

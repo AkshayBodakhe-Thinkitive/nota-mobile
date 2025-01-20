@@ -23,15 +23,18 @@ const ProviderListItem = ({
 }: any) => {
   const navigation = useNavigation<any>();
 
-  function formatVitalName(input: any) {
+  function formatVitalName(input: string) {
     if (input.startsWith('NAVALA') && input.length > 6) {
-      const formatted = input.slice(0, 6) + ' ' + input.slice(6);
+      const formatted = input.slice(0, 6) + ' ' + input.slice(6); // Splits into "NAVALA GLOBAL"
       return formatted
-        .toLowerCase()
-        .replace(/\b\w/g, char => char.toUpperCase());
+        .split(' ') // Split into words ["NAVALA", "GLOBAL"]
+        .map(word => word[0]) // Get the first letter of each word
+        .join(''); // Combine them into "NG"
     }
     return input;
   }
+
+  console.log('providerData====> ', providerData);
 
   return (
     <View style={[styles.container, styles.shadow]}>
@@ -55,10 +58,13 @@ const ProviderListItem = ({
             numberOfLines={2}>
             {name}
           </CustomText>
-         <View >
-         <Text
-            style={{fontSize: responsiveFontSize(1.5),color : portalName === 'NAVALAGLOBAL' ? 'green' : '#0097F0'}}>{`${formatVitalName(portalName)}`}</Text>
-         </View>
+          <View>
+            <Text
+              style={{
+                fontSize: responsiveFontSize(1.5),
+                color: portalName === 'NAVALAGLOBAL' ? 'green' : '#0097F0',
+              }}>{`${formatVitalName(portalName)}`}</Text>
+          </View>
         </View>
 
         <CustomText
@@ -72,9 +78,12 @@ const ProviderListItem = ({
         <Row style={styles.providerFooter}>
           <CustomText
             style={{paddingTop: 8}}
+            color="grey"
             fontFamily={fontType.Roboto_Medium}
-            fontSize={responsiveFontSize(2)}>
-            {contact}
+            fontSize={responsiveFontSize(1.8)}>
+            {providerData?.specialities?.length > 1
+              ? 'Multi Specialist'
+              : providerData?.specialities?.[0]?.name || ''}
           </CustomText>
           <SmallButton
             title="Book"

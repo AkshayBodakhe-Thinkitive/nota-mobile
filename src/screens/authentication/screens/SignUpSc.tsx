@@ -20,6 +20,7 @@ import {useAppDispatch, useAppSelector} from '../../../redux/store/hooks';
 import {RootState} from '../../../redux/store/storeConfig';
 import {OnboardingTopView} from '../components/OnboardingTopView';
 import PhoneWithCountryCode from '../../../components/phonewithcountrycode/PhoneWithCountryCode';
+import {responsiveFontSize} from 'react-native-responsive-dimensions';
 
 const SignUpSc = ({navigation}: any) => {
   const dispatch = useAppDispatch();
@@ -260,7 +261,6 @@ const SignUpSc = ({navigation}: any) => {
     console.log(firstName);
     const errors: {[key: string]: string} = {};
     if (!firstName) {
-      console.log('First name is required');
       errors.firstName = 'First name is required';
     }
 
@@ -292,15 +292,15 @@ const SignUpSc = ({navigation}: any) => {
     if (!city) {
       errors.city = 'City is required';
     }
-    if (!stateName) {
-      errors.stateName = 'State name is required';
-    }
+    // if (!stateName) {
+    //   errors.stateName = 'State name is required';
+    // }
     if (!country) {
       errors.country = 'Country is required';
     }
-    if (!zipcode) {
-      errors.zipcode = 'Zip Code is required';
-    }
+    // if (!zipcode) {
+    //   errors.zipcode = 'Zip Code is required';
+    // }
 
     if (Object.keys(errors).length === 0) {
       const patientPortal = true;
@@ -439,12 +439,20 @@ const SignUpSc = ({navigation}: any) => {
               onChange={handlePhoneChange}
             />
             {errors.phone && <Text style={styles.error}>{errors.phone}</Text>}
+            <Text
+              style={{
+                color: colors.grey70,
+                marginBottom: 10,
+                fontSize: responsiveFontSize(1.7),
+              }}>
+              Password
+            </Text>
             <TextInput
               secureTextEntry
               style={{marginVertical: 10}}
               value={password}
               placeholder="Password"
-              label="Password"
+              // label="Password"
               onChangeText={value => handleChange('password', value)}
               isValid={errors.password}
               onBlur={() => handleBlur('password')}

@@ -27,8 +27,6 @@ const AppointmentButtons = ({
 
   const buttonWidth = isSpecialStatus ? '30%' : '45%';
 
-  console.log('data from ajinkya ', data);
-
   const dispatch = useAppDispatch();
 
   const [showPayModal, setShowPayModal] = useState(false);

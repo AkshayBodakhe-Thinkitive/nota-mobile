@@ -2,15 +2,16 @@ import { ThunkDispatch, configureStore } from '@reduxjs/toolkit';
 import { persistStore } from 'redux-persist';
 import { thunk } from 'redux-thunk';
 import { persistedReducer } from './persistConfig';
+import { addTokenToAxiosInstance } from '../../config/ApiConfig';
 
 export const createStore = () => {
   const store = configureStore({
     reducer: persistedReducer,
     devTools: true,
     middleware: getDefaultMiddleware =>
-      getDefaultMiddleware({serializableCheck: false}).concat(thunk),
+      getDefaultMiddleware({serializableCheck: false, immutableCheck: false}).concat(thunk),
   });
-
+  addTokenToAxiosInstance(store)
   return store;
 };
 

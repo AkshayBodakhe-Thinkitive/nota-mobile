@@ -381,8 +381,6 @@ const BookAppointmentScreen = (routes: any) => {
       '18:00:00',
     );
 
-    console.log("eveningSlot =>",eveningSlot)
-
   const eveningSlotForClinic =
     slotsClinicTime &&
     filterAndSortSlots2(slotsClinicTime, '24:00:00', '18:00:00');
@@ -611,8 +609,7 @@ const BookAppointmentScreen = (routes: any) => {
 
     fetchSpecialities();
   }, []);
-  
-  console.log("slotData?.data?.timeIntervalSet     ",slotData);
+
   
 
   return (

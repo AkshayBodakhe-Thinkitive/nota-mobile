@@ -55,7 +55,7 @@ export class AuthService {
       }
 
       const responseData = await response.json();
-      console.log('response from login ==>', responseData);
+      // console.log('response from login ==>', responseData);
       return responseData;
     } catch (error: any) {
       console.log('error login==>', error);

@@ -40,6 +40,8 @@ const ProvidersListScreen = ({navigation}: any) => {
   const [notification, setNotification] = useState(false);
   const providersData = JSON.stringify(providerData);
 
+  console.log("providersData====>",providersData)
+
   const renderFooter = () => {
     if (lodaing) {
       return <ActivityIndicator size="large" color={colors.primary} />;
@@ -159,16 +161,9 @@ const ProvidersListScreen = ({navigation}: any) => {
                   image={item?.avatar}
                   name={item?.name}
                   address={
-                    item?.physicalAddress?.line1 +
-                    ' ' +
-                    item?.physicalAddress?.line2 +
                     item?.physicalAddress?.city +
                     ' ' +
-                    item?.physicalAddress?.state +
-                    ' ' +
-                    item?.physicalAddress?.country +
-                    ' ' +
-                    item?.physicalAddress?.zipcode
+                    item?.physicalAddress?.country
                   }
                   contact={item?.phone}
                   portalName={item?.portalName}
@@ -176,9 +171,8 @@ const ProvidersListScreen = ({navigation}: any) => {
               );
             }}
             keyExtractor={(item, index) => index.toString()}
-            onEndReached={fetchData} // Load more data when end is reached
-            onEndReachedThreshold={0.5} // Load more data when 90% of the list has been scrolled
-            // ListFooterComponent={renderFooter}
+            onEndReached={fetchData} 
+            onEndReachedThreshold={0.5}
           />
         ) : (
           <View style={{height: 100, width: '100%'}}>

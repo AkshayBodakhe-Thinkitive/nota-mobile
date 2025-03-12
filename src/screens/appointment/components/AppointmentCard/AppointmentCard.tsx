@@ -34,9 +34,10 @@ type Props = {
   status?: string;
   navigation: any;
   data: any;
+  paymentSuccessCallback:()=>void;
 };
 
-const AppointmentCard = ({type, status, data}: Props) => {
+const AppointmentCard = ({type, status, data, paymentSuccessCallback}:Props) => {
   const dispatch = useAppDispatch();
   const loginData = useAppSelector((state: RootState) => state.auth.loginData);
   const navigation = useNavigation<any>();
@@ -297,10 +298,11 @@ const AppointmentCard = ({type, status, data}: Props) => {
           </View>
           {type === 'upcoming' ? (
             <AppointmentButtons
-            data={data} 
-            onPressJoinCall={onPressJoinCall} 
-            setShowCancel={setShowCancel} 
-          />
+              data={data} 
+              onPressJoinCall={onPressJoinCall} 
+              setShowCancel={setShowCancel}
+              successCallback={paymentSuccessCallback}
+            />
           ) : (
             <>
            {data?.encounterUuid && <Row style={{flex: 0.3, justifyContent: 'flex-end'}}>

@@ -31,8 +31,17 @@ const UpcomingAppointments = ({navigation}: any) => {
     }
   }, [loginData?.data?.accessToken,isFocused]);
 
-  console.log(" upcomingAppointmentData?.data?.content   ",upcomingAppointmentData?.data?.content);
-  
+  const handlePaymentSuccess = ()=>{
+    console.log("CallBack - Payment Success");
+    
+    dispatch(
+      getUpcomingAppointmentAction({
+        accessToken: loginData?.data?.accessToken,
+        patientUUID: profileData?.data?.uuid,
+        appointmentState:'FUTURE'
+      }),
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -41,7 +50,7 @@ const UpcomingAppointments = ({navigation}: any) => {
         data={upcomingAppointmentData?.data?.content}
         contentContainerStyle={{padding: 10}}
         renderItem={({item}) => {
-          return <AppointmentCard type="upcoming" status={item.status} navigation={navigation} data = {item}/>;
+          return <AppointmentCard type="upcoming" status={item.status} navigation={navigation} data = {item} paymentSuccessCallback={handlePaymentSuccess} />;
         }}
       />
       ) :  <View

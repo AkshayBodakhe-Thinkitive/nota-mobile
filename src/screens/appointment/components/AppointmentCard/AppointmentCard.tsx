@@ -295,6 +295,26 @@ const AppointmentCard = ({type, status, data, paymentSuccessCallback}:Props) => 
                 </CustomText>
               </Row>
             )}
+
+            {/* new field (paid or unpaid) */}
+              <Row style={{marginTop: 10}}>
+                <CustomText
+                  style={{
+                    width: '40%',
+                    color: '#00000066',
+                    fontSize: responsiveFontSize(1.8),
+                  }}>
+                  {"Payment"}
+                </CustomText>
+                <CustomText
+                  style={{
+                    width: '50%',
+                    fontSize: responsiveFontSize(1.8),
+                  }}>
+                  {data?.paymentStatus == 'FINAL'? "Paid":"Unpaid"}
+                </CustomText>
+              </Row>
+
           </View>
           {type === 'upcoming' ? (
             <AppointmentButtons

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import Row from '../../../../components/Row/Row';
 import SmallButton from '../../../../components/SmallButton/SmallButton';
@@ -10,6 +10,7 @@ import RescheduleAppointment from '../../screens/RescheduleAppointment';
 import PaymentModal from './PaymentModal';
 import PaymentScreen from '../../components/AppointmentCard/PaymentScreen';
 import PaymentScreen_Stripe from '../../components/AppointmentCard/PaymentScreen';
+import PaymentSuccessModal from './PaymentSuccessModal';
 
 const AppointmentButtons = ({
   successCallback,
@@ -35,12 +36,24 @@ const AppointmentButtons = ({
 
   const [showPayModal, setShowPayModal] = useState(false);
 
+  const [isPaymentSuccess, setIsPaymentSuccess] = useState(false);
+
   const handleNavigateToPay = async () => {
     await dispatch(getCardsAction());
     setShowPayModal(!showPayModal);
 
     //navigation.navigate("PaymentScreen_Stripe",{data:data})
   };
+
+  const handlePaymentSuccess = ()=>{
+    console.log("CHECKKKKK");
+    setIsPaymentSuccess(true);
+  }
+
+  const handleSuccessCallback = ()=>{
+    console.log("handle succes callback");
+    successCallback()
+  }
 
   const [showRescModal, setShowRescModal] = useState(false);
 
@@ -95,8 +108,11 @@ const AppointmentButtons = ({
       /> */}
 
       {showPayModal ? (
-        <PaymentModal success={successCallback} visible={setShowPayModal} appointmentUuid={data?.appointmentUuid} />) : ""}
+        <PaymentModal success={handlePaymentSuccess} visible={setShowPayModal} appointmentUuid={data?.appointmentUuid} />) : ""}
       {/* <RescheduleAppointment data={data} show={showRescModal} setShow={setShowRescModal} /> */}
+
+
+      {isPaymentSuccess? (<PaymentSuccessModal setVisible={setIsPaymentSuccess} onClose={handleSuccessCallback}/>): ""}
     </>
   );
 };

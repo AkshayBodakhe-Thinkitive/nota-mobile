@@ -70,7 +70,6 @@ import AddMedication from '../screens/medicalRecord/screens/AddMedicationScreen'
 import AddAllergy from '../screens/medicalRecord/screens/AddAllergyScreen';
 import AddVaccine from '../screens/medicalRecord/screens/AddVaccine';
 import AddDiagnosis from '../screens/medicalRecord/screens/AddDiagnosis';
-import PaymentScreen_Stripe from '../screens/appointment/components/AppointmentCard/PaymentScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -117,8 +116,6 @@ const AppNavigator = (): JSX.Element => {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName={!loggedIn ? 'SignIn' : 'DrawerNavigationSc'}>
-
-          <Stack.Screen name='PaymentScreen_Stripe'component={PaymentScreen_Stripe}/>
 
           <Stack.Screen
             name="SignIn"

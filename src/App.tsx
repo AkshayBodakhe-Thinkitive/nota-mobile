@@ -3,10 +3,11 @@ import {StyleSheet, View} from 'react-native';
 import {ZoomVideoSdkProvider} from '@zoom/react-native-videosdk';
 import {Provider} from 'react-redux';
 import AppNavigator from './navigation/AppNavigator';
-import {store} from './redux/store/storeConfig';
+import {RootState, store} from './redux/store/storeConfig';
 import NetInfo from '@react-native-community/netinfo';
 import NoInternetScreen from './screens/NoInternetScreen';
 import { StripeProvider } from '@stripe/stripe-react-native';
+import { useAppSelector } from './redux/store/hooks';
 
 const App = () => {
   const [isConnected, setIsConnected] = useState(true);
@@ -28,10 +29,8 @@ const App = () => {
     return <NoInternetScreen onRetry={handleRetry} />;
   }
 
-  const pubKey = "pk_test_51QgjuSFyq8hFB20LVDlrM3ZI2RRjIhhv2dERfqTLuOoq3zbYyIfh1Q62duPDimIJeSEMRTdjmRcQkPXg3n3tCC5k00rJI7vX87"
-  //const pubKey = "pk_live_51QX0cgFDolZMURpEaCg6tKBKxpGgc41LycSaqv1wXEUGrfh7vdLZ1rTX8WSDkf0UZ1RBDuvZBWGuMbpkY7BEe6mY003e2OjWQF"
   return (
-    <StripeProvider publishableKey= {pubKey} setReturnUrlSchemeOnAndroid={true}>
+    <StripeProvider publishableKey= {""}>
       <Provider store={store}>
         <View style={styles.container}>
           <ZoomVideoSdkProvider

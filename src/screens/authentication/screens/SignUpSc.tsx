@@ -21,6 +21,9 @@ import {RootState} from '../../../redux/store/storeConfig';
 import {OnboardingTopView} from '../components/OnboardingTopView';
 import PhoneWithCountryCode from '../../../components/phonewithcountrycode/PhoneWithCountryCode';
 import {responsiveFontSize} from 'react-native-responsive-dimensions';
+import CustomDateTextField from '../../../components/CustomDateField';
+import DatePickerInput from '../../../components/DatePicker/DatePickerInput';
+import DropdownComponent from '../../../components/Dropdown/DropDown';
 
 const SignUpSc = ({navigation}: any) => {
   const dispatch = useAppDispatch();
@@ -44,6 +47,9 @@ const SignUpSc = ({navigation}: any) => {
   const [zipcode, setZipcode] = useState('');
 
   const [countryCode, setCountryCode] = useState('');
+
+  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [gender, setGender] = useState('');
 
   const handlePhoneChange = (
     newCountryCode: string,
@@ -85,7 +91,27 @@ const SignUpSc = ({navigation}: any) => {
           }
         }
       }
-    } else if (fieldName === 'email') {
+    }
+    
+    else if (fieldName === 'dateOfBirth') {
+      setDateOfBirth(dateOfBirth);
+      if (!dateOfBirth) {
+      setErrors({...errors, dateOfBirth: 'DOB is required'});
+    } else if (errors.dateOfBirth) {
+      setErrors({...errors, dateOfBirth: ''});
+    }
+  } 
+  
+  else if (fieldName === 'gender') {
+    setGender(gender);
+    if (!gender) {
+      setErrors({...errors, city: 'Gender is required'});
+    } else if (errors.gender) {
+      setErrors({...errors, gender: ''});
+    }
+  } 
+    
+    else if (fieldName === 'email') {
       if (!email) {
         setErrors({...errors, email: ''});
         setUsername(null);
@@ -139,8 +165,9 @@ const SignUpSc = ({navigation}: any) => {
       if (!zipcode) {
         setErrors({...errors, zipcode: 'Zipcode is required'});
       } else {
-        const regex = /^[0-9]{5}$/;
-        if (!regex.test(zipcode)) {
+        // const regex = /^[0-9]{5}$/;
+        // if (!regex.test(zipcode)) {
+          if (!zipcode) {
           setErrors({...errors, zipcode: 'Invalid zipcode format'});
         } else {
           setErrors({...errors, zipcode: ''});
@@ -184,8 +211,28 @@ const SignUpSc = ({navigation}: any) => {
             setErrors({...errors, lastName: ''});
           }
         }
+        }
+      } 
+
+      else if (fieldName === 'dateOfBirth') {
+        setDateOfBirth(value);
+        if (!value) {
+        setErrors({...errors, dateOfBirth: 'DOB is required'});
+      } else if (errors.dateOfBirth) {
+        setErrors({...errors, dateOfBirth: ''});
       }
-    } else if (fieldName === 'email') {
+    } 
+    
+    else if (fieldName === 'gender') {
+      setGender(value);
+      if (!value) {
+        setErrors({...errors, city: 'Gender is required'});
+      } else if (errors.gender) {
+        setErrors({...errors, gender: ''});
+      }
+    } 
+    
+    else if (fieldName === 'email') {
       setUsername(value);
       if (!validateEmail(value)) {
         setErrors({...errors, email: 'Invalid email address'});
@@ -243,13 +290,14 @@ const SignUpSc = ({navigation}: any) => {
       setCountry(value);
       if (!value) {
         setErrors({...errors, country: 'Country is required'});
-      } else if (errors.country) {
+      } else if (errors.country ){
         setErrors({...errors, country: ''});
       }
     } else if (fieldName === 'zipcode') {
       setZipcode(value);
-      const regex = /^[0-9]{5}$/;
-      if (!regex.test(value)) {
+      // const regex = /^[0-9]{5}$/;
+      // if (!regex.test(value)) {
+        if (!value) {
         setErrors({...errors, zipcode: 'Invalid zipcode format'});
       } else if (errors.zipcode) {
         setErrors({...errors, zipcode: ''});
@@ -266,6 +314,19 @@ const SignUpSc = ({navigation}: any) => {
 
     if (!lastName) {
       errors.lastName = 'Last name is required';
+    }
+
+
+    if (!lastName) {
+      errors.lastName = 'Last name is required';
+    }
+
+    if (!dateOfBirth) {
+      errors.dateOfBirth = 'DOB is required';
+    }
+
+    if (!gender) {
+      errors.gender = 'Gender is required';
     }
 
     if (!phone) {
@@ -292,9 +353,9 @@ const SignUpSc = ({navigation}: any) => {
     if (!city) {
       errors.city = 'City is required';
     }
-    // if (!stateName) {
-    //   errors.stateName = 'State name is required';
-    // }
+    if (!stateName) {
+      errors.stateName = 'State name is required';
+    }
     if (!country) {
       errors.country = 'Country is required';
     }
@@ -314,6 +375,8 @@ const SignUpSc = ({navigation}: any) => {
         patientPortal,
         roleType,
         countryCode,
+        gender,
+        birthDate: dateOfBirth,
         address: {
           line1,
           line2,
@@ -381,6 +444,13 @@ const SignUpSc = ({navigation}: any) => {
     return regex.test(email);
   };
 
+  const genderType = [
+    {label: 'Female', value: 'FEMALE'},
+    {label: 'Male', value: 'MALE'},
+    {label: 'Other', value: 'OTHER'},
+    {label: 'Transgender', value: 'TRANSGENDER'},
+  ];
+
   return (
     <KeyboardAvoidingView
       style={{flex: 1}}
@@ -421,6 +491,38 @@ const SignUpSc = ({navigation}: any) => {
             {errors.lastName && (
               <Text style={styles.error}>{errors.lastName}</Text>
             )}
+
+            <DatePickerInput
+              label="Date of Birth"
+              date={dateOfBirth}
+              setDate={(date: any) => handleChange('dateOfBirth', date)}
+              containerStyles={{marginBottom: 10, marginTop: 5}}
+              maximumDate={new Date()}
+              required
+            />
+             {errors.dateOfBirth && (
+              <Text style={styles.error}>{errors.dateOfBirth}</Text>
+            )}
+
+            <DropdownComponent
+              label="Gender"
+              data={genderType}
+              placeholder="Select Gender"
+              selectedValue={gender}
+              onValueChange={(value: any) => {
+                // setGenderError(false)
+                handleChange('gender', value)
+              }}
+              // isValid={genderError}
+              // errorText={genderError === true ? 'Please Select Gender' : ''}
+              required
+            />
+
+          {errors.gender && (
+              <Text style={styles.error}>{errors.gender}</Text>
+            )}
+            
+
             <TextInput
               style={{marginTop: 10}}
               value={email}
@@ -469,6 +571,7 @@ const SignUpSc = ({navigation}: any) => {
               onChangeText={value => handleChange('line1', value)}
               isValid={errors.line1}
               onBlur={() => handleBlur('line1')}
+              required
             />
             {errors.line1 && <Text style={styles.error}>{errors.line1}</Text>}
 
@@ -488,6 +591,7 @@ const SignUpSc = ({navigation}: any) => {
               onChangeText={value => handleChange('city', value)}
               isValid={errors.city}
               onBlur={() => handleBlur('city')}
+              required
             />
             {errors.city && <Text style={styles.error}>{errors.city}</Text>}
 
@@ -499,6 +603,7 @@ const SignUpSc = ({navigation}: any) => {
               onChangeText={value => handleChange('stateName', value)}
               isValid={errors.stateName}
               onBlur={() => handleBlur('stateName')}
+              required
             />
             {errors.stateName && (
               <Text style={styles.error}>{errors.stateName}</Text>
@@ -512,6 +617,7 @@ const SignUpSc = ({navigation}: any) => {
               onChangeText={value => handleChange('country', value)}
               isValid={errors.country}
               onBlur={() => handleBlur('country')}
+              required
             />
             {errors.country && (
               <Text style={styles.error}>{errors.country}</Text>

@@ -1,20 +1,26 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {Ionicons} from '../Icons/Ionicons';
-import {colors} from '../../Constants1/Colors';
 import {responsiveFontSize} from 'react-native-responsive-dimensions';
+import { colors } from '../../assets/colors';
 
 const RadioButton = ({
   label,
   selected,
+  value,
   onSelect,
   disabled,
 }: RadioButtonProps) => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<any>(false);
+  
+  useEffect(() => {
+    setChecked(selected);
+  }, [selected]);
 
   const handleSelected = () => {
-    onSelect && onSelect(!checked);
-    setChecked(!checked);
+    onSelect && onSelect(value);
+    // setChecked(!checked); // this is causing deselect 
+    setChecked(true);
   };
 
   return (
@@ -25,7 +31,7 @@ const RadioButton = ({
       <Ionicons
         name={checked ? 'radio-button-on' : 'radio-button-off'}
         size={20}
-        color={checked ? colors.primary : colors.grey70}
+        color={checked ? colors.primary : colors.grey90}
       />
       <Text style={styles.radioLabel}>{label}</Text>
     </TouchableOpacity>
@@ -39,15 +45,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
+    marginRight : 5
   },
   radioLabel: {
-    fontSize: responsiveFontSize(1.4),
+    // fontFamily : FontType.Roboto_Regular,
+    fontSize: responsiveFontSize(1.8),
     marginLeft: 5,
-    color: colors.grey70,
+    color: colors.grey90
   },
 });
 
 interface RadioButtonProps {
+  value?:any,
   label?: string;
   selected?: boolean;
   onSelect?: (selected: boolean) => void;

@@ -36,7 +36,7 @@ instance.interceptors.response.use(
   (error) => {
     const accessToken =  store.getState().auth?.loginData?.data?.accessToken
     const refreshToken =  store.getState().auth?.loginData?.data?.refreshToken
-    console.log("axios error", error)
+    console.log("axios error", JSON.stringify(error))
     if (error.response && error.response.status) {
       if (error.response.status === 401) {
          store.dispatch(logoutAction({accessToken,refreshToken}));

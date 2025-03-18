@@ -116,6 +116,7 @@ const AppNavigator = (): JSX.Element => {
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName={!loggedIn ? 'SignIn' : 'DrawerNavigationSc'}>
+
           <Stack.Screen
             name="SignIn"
             component={SignIn}

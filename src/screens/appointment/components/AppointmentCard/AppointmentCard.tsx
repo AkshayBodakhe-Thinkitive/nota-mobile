@@ -34,9 +34,10 @@ type Props = {
   status?: string;
   navigation: any;
   data: any;
+  paymentSuccessCallback:()=>void;
 };
 
-const AppointmentCard = ({type, status, data}: Props) => {
+const AppointmentCard = ({type, status, data, paymentSuccessCallback}:Props) => {
   const dispatch = useAppDispatch();
   const loginData = useAppSelector((state: RootState) => state.auth.loginData);
   const navigation = useNavigation<any>();
@@ -294,13 +295,34 @@ const AppointmentCard = ({type, status, data}: Props) => {
                 </CustomText>
               </Row>
             )}
+
+            {/* new field (paid or unpaid) */}
+              <Row style={{marginTop: 10}}>
+                <CustomText
+                  style={{
+                    width: '40%',
+                    color: '#00000066',
+                    fontSize: responsiveFontSize(1.8),
+                  }}>
+                  {"Payment"}
+                </CustomText>
+                <CustomText
+                  style={{
+                    width: '50%',
+                    fontSize: responsiveFontSize(1.8),
+                  }}>
+                  {data?.paymentStatus == 'FINAL'? "Paid":"Unpaid"}
+                </CustomText>
+              </Row>
+
           </View>
           {type === 'upcoming' ? (
             <AppointmentButtons
-            data={data} 
-            onPressJoinCall={onPressJoinCall} 
-            setShowCancel={setShowCancel} 
-          />
+              data={data} 
+              onPressJoinCall={onPressJoinCall} 
+              setShowCancel={setShowCancel}
+              successCallback={paymentSuccessCallback}
+            />
           ) : (
             <>
            {data?.encounterUuid && <Row style={{flex: 0.3, justifyContent: 'flex-end'}}>

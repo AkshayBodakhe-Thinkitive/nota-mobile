@@ -54,7 +54,7 @@ const post = <D, R>(
       return res.data;
     })
     .catch(error => {
-      console.log('error ==>', error);
+      // console.log('error ==>', error);
       // return error;
       throw new Error(error);
     });

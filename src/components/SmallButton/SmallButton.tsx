@@ -1,24 +1,26 @@
 import React from 'react';
 import {
+  ActivityIndicator,
   StyleProp,
   StyleSheet,
   Text,
   TextStyle,
   TouchableOpacity,
-  ViewStyle
+  ViewStyle,
 } from 'react-native';
 // import {colors} from '../../constants/Colors';
 // import {FontType} from '../../constants/FontType';
-import { colors } from '../../assets/colors';
-import { fontType } from '../../assets/fontType';
- 
+import {colors} from '../../assets/colors';
+import {fontType} from '../../assets/fontType';
+
 interface SmallButtonProps {
   title: string;
   onPress?: () => void;
   containerStyle?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   outlined?: boolean;
-  disabled?: boolean
+  disabled?: boolean;
+  loading?: boolean;
 }
 
 const SmallButton: React.FC<SmallButtonProps> = ({
@@ -28,6 +30,7 @@ const SmallButton: React.FC<SmallButtonProps> = ({
   textStyle,
   outlined,
   disabled = false,
+  loading
 }) => {
   return (
     <TouchableOpacity
@@ -37,14 +40,21 @@ const SmallButton: React.FC<SmallButtonProps> = ({
         containerStyle,
         outlined && {backgroundColor: 'transparent'},
         {
-            backgroundColor: disabled ? colors.grey : outlined ? 'transparent' : colors.primary
-        }
+          backgroundColor: disabled
+            ? colors.grey
+            : outlined
+            ? 'transparent'
+            : colors.primary,
+        },
+        disabled && {borderColor: colors.grey},
       ]}
       onPress={onPress}>
-      <Text
-        style={[styles.text, outlined && {color: colors.primary},textStyle]}>
+     {loading ? 
+      <ActivityIndicator size="small" color={colors.white} />
+     : <Text
+        style={[styles.text, outlined && {color: colors.primary}, textStyle]}>
         {title}
-      </Text>
+      </Text>}
     </TouchableOpacity>
   );
 };
@@ -60,7 +70,6 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
     // fontFamily: fontType.Roboto_Medium,
-    
   },
 });
 

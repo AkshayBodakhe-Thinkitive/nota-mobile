@@ -8,8 +8,6 @@ import PayModal from '../../screens/PayModal';
 import { useNavigation } from '@react-navigation/native';
 import RescheduleAppointment from '../../screens/RescheduleAppointment';
 import PaymentModal from './PaymentModal';
-import PaymentScreen from '../../components/AppointmentCard/PaymentScreen';
-import PaymentScreen_Stripe from '../../components/AppointmentCard/PaymentScreen';
 import PaymentSuccessModal from './PaymentSuccessModal';
 
 const AppointmentButtons = ({

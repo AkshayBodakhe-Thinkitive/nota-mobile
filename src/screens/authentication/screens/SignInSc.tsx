@@ -163,10 +163,11 @@ export function SignIn({navigation}: any): React.JSX.Element {
         keyboardShouldPersistTaps="handled">
         <View style={styles.signInFormContainer}>
           <TouchableWithoutFeedback
-            onPress={() => {
-              let count = envTouchesCNT + 1;
-              setEnvTouchesCNT(count);
-            }}>
+            // onPress={() => {
+            //   let count = envTouchesCNT + 1;
+            //   setEnvTouchesCNT(count);
+            // }}
+            >
             <View>
               <Text style={styles.signInTxt}>Sign In</Text>
             </View>

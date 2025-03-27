@@ -325,8 +325,8 @@ const BookAppointmentScreen = (routes: any) => {
   }, [slotData]);
 
   const filterAndSortSlots = (data, time) => {
-    console.log("data  ",data);
-    
+    console.log('data  ', data);
+
     const slotsBeforeOrEqualToTime = data?.filter(slot => {
       return slot.to <= time;
     });
@@ -349,8 +349,6 @@ const BookAppointmentScreen = (routes: any) => {
 
     return sortedSlots;
   };
-
-  
 
   const moringSlot =
     slotData &&
@@ -610,8 +608,6 @@ const BookAppointmentScreen = (routes: any) => {
     fetchSpecialities();
   }, []);
 
-  
-
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView
@@ -670,13 +666,33 @@ const BookAppointmentScreen = (routes: any) => {
                 selectedValue={selectedValueForAppoinmentType}
                 onValueChange={handleValueChangeForAppoinmentTypeDropDown}
               />
-              <Dropdown
-                data={visitType}
-                label="Select Visit Type"
-                placeholder="Visit Type"
-                selectedValue={selectedValueForVisitType}
-                onValueChange={handleValueChangeForVisitTypeDropDown}
-              />
+              <Row style={{justifyContent: 'space-between'}}>
+                <Dropdown
+                  data={visitType}
+                  label="Select Visit Type"
+                  placeholder="Visit Type"
+                  selectedValue={selectedValueForVisitType}
+                  onValueChange={handleValueChangeForVisitTypeDropDown}
+                  style={{width: '60%'}}
+                />
+                {selectedValueForVisitType && (
+                  <TextInput
+                    label="Amount"
+                    value={
+                      selectedValueForVisitType === 'Virtual'
+                        ? `$ ${route?.params?.providerData?.virtualAmount?.toString()}`
+                        : `$ ${route?.params?.providerData?.inPersonAmount?.toString()} `
+                    }
+                    editable={false}
+                    containerStyles={{
+                      width: '35%',
+                      height: responsiveHeight(5),
+                    }}
+                    style={{marginStart: '5%'}}
+                  />
+                )}
+              </Row>
+
               {selectedValueForVisitType === 'In-Person' && (
                 <Dropdown
                   data={locations}

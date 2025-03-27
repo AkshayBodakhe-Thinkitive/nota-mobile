@@ -16,7 +16,6 @@ import { ForgotPasswordStyles as styles } from '../styles/ForgotPasswordStyles';
 
 const VerifyOtp = (routes: any) => {
   const {navigation, route} = routes && routes;
-  console.log(' VerifyOtp route email', JSON.stringify(route?.params?.email));
   const dispatch = useAppDispatch();
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const [otp, setOtp] = useState<any>();
@@ -47,7 +46,6 @@ const VerifyOtp = (routes: any) => {
       setErrors({...errors, otp: 'please enter OTP'});
     }
   };
-  console.log('verifyOTPData: data ', verifyOTPData?.data);
 
   useEffect(() => {
     if (otpData?.data) {

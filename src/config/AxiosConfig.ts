@@ -16,7 +16,7 @@ const instance: AxiosInstance = axios.create({
 
 
 export const envChangerFunction = (type: string) => {
-  console.log('Env======>',type)
+  // console.log('Env======>',type)
   instance.defaults.baseURL = type;
   // switch (type) {
   //   case 'DEV':

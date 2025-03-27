@@ -130,10 +130,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginRight: 5,
     fontSize: responsiveFontSize(1.7),
-    width:'40%'
+    width:'40%',
+    color: '#000',
   },
   value: {
     flex: 1,
     fontSize: responsiveFontSize(1.7),
+    color: '#000',
   },
 });

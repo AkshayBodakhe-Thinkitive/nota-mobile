@@ -26,28 +26,31 @@ import {
   responsiveFontSize,
   responsiveHeight,
 } from 'react-native-responsive-dimensions';
+import {get, post} from '../../../../config/AxiosConfig';
+import {colors} from '../../../../assets/colors';
 
-const PaymentModal = ({success, visible, appointmentUuid}: any) => {
-  const BASE_URL_DEV = 'https://dev.api.navalaglobal.com/api/master';
-  const BASE_URL_QA = 'https://qa.api.navalaglobal.com/api/master';
-  const BASE_URL_PROD = 'https://api.navalaglobal.com/api/master';
+const PaymentModal = ({
+  success,
+  visible,
+  appointmentUuid,
+  providerGroupUuid,
+  presentType,
+  appointmentData,
+}: any) => {
+  // console.log("appointmentData-->",appointmentData)
 
   const env = useAppSelector((state: RootState) => state.auth.baseUrl);
 
   let pubKey = '';
 
   if (env === 'https://api.navalaglobal.com/api/master') {
-    console.log('Live strip');
-
     pubKey =
       'pk_live_51QX0cgFDolZMURpEaCg6tKBKxpGgc41LycSaqv1wXEUGrfh7vdLZ1rTX8WSDkf0UZ1RBDuvZBWGuMbpkY7BEe6mY003e2OjWQF';
   } else {
-    console.log('Dev strip');
     pubKey =
       'pk_test_51QgjuSFyq8hFB20LVDlrM3ZI2RRjIhhv2dERfqTLuOoq3zbYyIfh1Q62duPDimIJeSEMRTdjmRcQkPXg3n3tCC5k00rJI7vX87';
   }
 
-  // Function to initialize Stripe
   const initializeStripe = async () => {
     try {
       await initStripe({publishableKey: pubKey});
@@ -56,8 +59,22 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
     }
   };
 
+  const [pgGroupDetails, setPGGroupDetails] = useState<any>();
+
+  const getCost = async () => {
+    try {
+      const headers = {
+        Authorization: `Bearer ${accessToken}`,
+      };
+      const response: any = await get(`/auth/${providerGroupUuid}`, {headers});
+      // console.log('getCost response ===>', response);
+      setPGGroupDetails(response?.data);
+    } catch (error) {}
+  };
+
   useEffect(() => {
     initializeStripe();
+    getCost();
   }, []);
 
   const profileData = useAppSelector(
@@ -67,8 +84,6 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
   const accessToken = useAppSelector(
     (state: RootState) => state?.auth.loginData?.data?.accessToken,
   );
-
-  //console.log("TOKEN: "+accessToken);
 
   const instance: AxiosInstance = axios.create({
     headers: {
@@ -88,7 +103,7 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
   const [validAmount, setValidAmount] = useState(true);
 
   const [selectedCurrency, setSelectedCurrency] = useState('USD ');
-  const [clientStripId, setClientStripId] = useState(null);
+  const [clientStripId, setClientStripId] = useState<any>(null);
   const [exchangeRates, setExchangeRates] = useState<any>();
   const [amountInUSD, setAmountInUSD] = useState(amount);
 
@@ -100,22 +115,6 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
       console.log('Error', 'Failed to fetch exchange rates.');
     }
   };
-
-  // const getStripCurrencies = async () => {
-  //   try {
-  //     const forTotalElements = await instance.get("${env}/get/currencies");
-  //     const totalElements = forTotalElements?.data?.data?.totalElements;
-
-  //     const response = await instance.get(`${env}/get/currencies?size=${totalElements}`);
-
-  //     console.log("RATE: " + JSON.stringify(response?.data));
-
-  //     setCurrencyList(response.data?.data?.content)
-
-  //   } catch (error) {
-  //     console.log("Error", "Failed to fetch exchange currencies.");
-  //   }
-  // };
 
   const currencyList = [
     'USD ',
@@ -159,7 +158,9 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
       setSelectedCurrency('USD ');
       setValidAmount(true);
     } else {
-      setAmount('0');
+      presentType === 'VIRTUAL'
+        ? setAmount(pgGroupDetails?.virtualAmount?.toString())
+        : setAmount(pgGroupDetails?.inPersonAmount?.toString());
     }
   };
 
@@ -167,7 +168,7 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
 
   // console.log('APM_ID: ' + appointmentUuid);
   // console.log('UUID: ' + profileData?.data?.uuid);
-  // console.log('ClientStripId: ' + clientStripId);
+  console.log('ClientStripId: ' + clientStripId);
 
   const [cashPayLoading, setCashPayLoading] = useState(false);
 
@@ -200,9 +201,8 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
     }
   };
 
-  // Handle currency change and convert amount
   const handleCurrencyChange = (curr: string) => {
-    if (paymentType === 'deposit_online') {
+    if (paymentType === 'deposit') {
       setAmount('5.00');
       const currency = curr.trim();
 
@@ -226,21 +226,37 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
   const handleAmountChange = (newAmount: string, currency: string) => {
     setAmount(newAmount);
 
-    if (paymentType === 'deposit_online' && exchangeRates[currency]) {
+    if (paymentType === 'deposit' && exchangeRates[currency]) {
       const convertedUSD = (
         parseFloat(newAmount || '0') / exchangeRates[currency]
       ).toFixed(2);
-      setAmountInUSD(convertedUSD); // Store in USD
+      setAmountInUSD(convertedUSD);
     }
   };
 
   const getCustomerStripId = async () => {
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
     if (!clientStripId) {
       try {
         const response = await instance.get(
           `${env}/patient/${profileData?.data?.uuid}`,
         );
-
+        console.log("response--->",response?.data?.data)
+        if(response?.data?.data?.customerStripeId === null){
+          const addCustomerStripeId: any = await post(
+            `/patient/stripe/add-customer/${appointmentData?.patientUuid}`,
+            null,
+            {headers},
+          )
+          console.log("addCustomerStripeId res 1--->",addCustomerStripeId)
+          const response = await instance.get(
+            `${env}/patient/${profileData?.data?.uuid}`,
+          );
+          setClientStripId(response?.data?.data?.customerStripeId);
+          return
+         }
         setClientStripId(response?.data?.data?.customerStripeId);
       } catch (err) {
         console.log('ERROR: ' + err);
@@ -321,6 +337,10 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
   };
 
   const handlePay = async () => {
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+
     const paymentAmount = paymentType === 'deposit' ? '5.00' : amount;
 
     if (!paymentAmount || parseFloat(paymentAmount) <= 0) {
@@ -331,7 +351,6 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
     }
 
     const cs = await getPaymentClientSecrete();
-
     await setupPaymentSheet(cs);
   };
 
@@ -354,20 +373,7 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
             }}>
             Payment
           </Text>
-
-          {/*Radio Buttons*/}
-          {/* <TouchableOpacity onPress={() => handleSelection("deposit_online")}>
-            <Text>{paymentType === "deposit_online" ? "🔘" : "⚪"} Deposit - Online</Text>
-          </TouchableOpacity>
-          <View style={{ height: 12 }}></View>
-          <TouchableOpacity onPress={() => handleSelection("deposit_cash")}>
-          <Text>{paymentType === "deposit_cash" ? "🔘" : "⚪"} Deposit - Cash</Text>
-          </TouchableOpacity>
-          <View style={{ height: 12 }}></View>
-          <TouchableOpacity onPress={() => handleSelection("full")}>
-            <Text>{paymentType === "full" ? "🔘" : "⚪"} Full Payment</Text>
-          </TouchableOpacity> */}
-          <Row style={{borderWidth: 0, alignItems: 'flex-start'}}>
+          <Row style={{borderWidth: 0}}>
             <RadioButton
               selected={paymentType === 'deposit'}
               label="Deposit"
@@ -386,17 +392,19 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
                 borderCurve: 'circular',
                 borderRadius: 5,
                 width: '38%',
-                height: responsiveHeight(5),
+                height: responsiveHeight(3.5),
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
               <Picker
                 selectedValue={selectedCurrency}
                 onValueChange={itemValue => handleCurrencyChange(itemValue)}
+                dropdownIconColor="#000"
                 style={{
                   width: '100%',
                   borderWidth: 2,
                   borderColor: '#000',
+                  color: colors.grey90,
                 }}>
                 {currencyList.length > 0
                   ? currencyList.map(item => (
@@ -424,7 +432,7 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
             </Row>
           )}
 
-          {paymentType !== '' && paymentMode === "cash" && (
+          {paymentType !== '' && paymentMode === 'cash' && (
             <Row style={{borderWidth: 0, justifyContent: 'space-between'}}>
               <View style={{width: '100%'}}>
                 <TextInput
@@ -438,20 +446,22 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
                     borderCurve: 'circular',
                     borderRadius: 5,
                     fontSize: 16,
-                    height: responsiveHeight(7),
+                    height: responsiveHeight(5),
                     paddingLeft: 10,
+                    color: colors.grey90,
+                    fontWeight: '600',
                   }}
                 />
                 {!validAmount ? <Text>*Please enter a valid amount</Text> : ''}
               </View>
             </Row>
           )}
-           <RadioButton
-          selected={paymentMode === 'online'}
-          label="Online Payment"
-          onSelect={() =>  setPaymentMode("online")}
-        />
-         {paymentType !== '' && paymentMode === "online" && (
+          <RadioButton
+            selected={paymentMode === 'online'}
+            label="Online Payment"
+            onSelect={() => setPaymentMode('online')}
+          />
+          {paymentType !== '' && paymentMode === 'online' && (
             <Row style={{borderWidth: 0, justifyContent: 'space-between'}}>
               <View style={{width: '100%'}}>
                 <TextInput
@@ -465,8 +475,10 @@ const PaymentModal = ({success, visible, appointmentUuid}: any) => {
                     borderCurve: 'circular',
                     borderRadius: 5,
                     fontSize: 16,
-                    height: responsiveHeight(7),
+                    height: responsiveHeight(5),
                     paddingLeft: 10,
+                    color: colors.grey90,
+                    fontWeight: '600',
                   }}
                 />
                 {!validAmount ? <Text>*Please enter a valid amount</Text> : ''}

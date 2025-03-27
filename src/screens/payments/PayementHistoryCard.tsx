@@ -22,11 +22,11 @@ const PaymentHistoryCard = ({item}: any) => {
       </View>
       <View style={styles.row}>
         <Text style={styles.label}>Trx Amount:</Text>
-        <Text style={styles.value}>{item.txAmount}</Text>
+        <Text style={styles.value}>{item?.txAmount / 100}</Text>
       </View>
       <View style={styles.row}>
         <Text style={styles.label}>Payment Mode:</Text>
-        <Text style={styles.value}>{item.paymentMode}</Text>
+        <Text style={styles.value}>{item?.paymentMode}</Text>
       </View>
       <View style={styles.row}>
         <Text style={styles.label}>Appointment Date:</Text>
@@ -42,7 +42,7 @@ const PaymentHistoryCard = ({item}: any) => {
 
       <View style={styles.row}>
         <Text style={styles.label}>Transaction Status:</Text>
-        <Text style={styles.value}>{item.status}</Text>
+        <Text style={styles.value}>{item?.status}</Text>
       </View>
     </Card>
   );
@@ -71,10 +71,12 @@ const styles = StyleSheet.create({
     marginRight: 5,
     fontSize: responsiveFontSize(1.7),
     width: '40%',
+    color: '#000',
   },
   value: {
     flex: 1,
     fontSize: responsiveFontSize(1.7),
+    color: '#000',
   },
 });
 

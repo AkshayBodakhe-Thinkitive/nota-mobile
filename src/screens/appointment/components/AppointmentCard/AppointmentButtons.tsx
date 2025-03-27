@@ -106,7 +106,7 @@ const AppointmentButtons = ({
       /> */}
 
       {showPayModal ? (
-        <PaymentModal success={handlePaymentSuccess} visible={setShowPayModal} appointmentUuid={data?.appointmentUuid} />) : ""}
+        <PaymentModal success={handlePaymentSuccess} visible={setShowPayModal} appointmentUuid={data?.appointmentUuid} providerGroupUuid={data?.providerGroupUuid} appointmentData={data}  presentType={data?.presentType}/>) : ""}
       {/* <RescheduleAppointment data={data} show={showRescModal} setShow={setShowRescModal} /> */}
 
 

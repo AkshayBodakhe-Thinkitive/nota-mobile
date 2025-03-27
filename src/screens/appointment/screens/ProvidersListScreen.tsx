@@ -40,7 +40,7 @@ const ProvidersListScreen = ({navigation}: any) => {
   const [notification, setNotification] = useState(false);
   const providersData = JSON.stringify(providerData);
 
-  console.log("providersData====>",providersData)
+  // console.log("providersData====>",providersData)
 
   const renderFooter = () => {
     if (lodaing) {

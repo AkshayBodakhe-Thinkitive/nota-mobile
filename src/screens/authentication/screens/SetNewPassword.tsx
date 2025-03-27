@@ -97,6 +97,7 @@ const SetNewPassword = (routes: any) => {
             newPassword: newPassword,
           })
         ).then((res:any)=>{
+          console.log("res-->",res)
           if(res?.error){
             Alert.alert("Failed!",res?.error?.message,[
               {text: 'OK', onPress: ()=>{}},

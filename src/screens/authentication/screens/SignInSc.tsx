@@ -39,6 +39,9 @@ export function SignIn({navigation}: any): React.JSX.Element {
   const [show, setShow] = useState(false);
   const [envTouchesCNT, setEnvTouchesCNT] = useState(0);
 
+  //annie.ward32@yopmail.com
+  // Pass@123
+
   const [username, setUsername] = useState(''); // dane.west12@yopmail.com
   const [password, setPassword] = useState(''); // Test@123
   const [errors, setErrors] = useState<{[key: string]: string}>({});
@@ -163,10 +166,10 @@ export function SignIn({navigation}: any): React.JSX.Element {
         keyboardShouldPersistTaps="handled">
         <View style={styles.signInFormContainer}>
           <TouchableWithoutFeedback
-            // onPress={() => {
-            //   let count = envTouchesCNT + 1;
-            //   setEnvTouchesCNT(count);
-            // }}
+            onPress={() => {
+              let count = envTouchesCNT + 1;
+              setEnvTouchesCNT(count);
+            }}
             >
             <View>
               <Text style={styles.signInTxt}>Sign In</Text>
@@ -234,7 +237,7 @@ export function SignIn({navigation}: any): React.JSX.Element {
           </View>
         </View>
       </ScrollView>
-      {loading && <Loader />}
+      {/* {loading && <Loader />} */}
     </View>
   );
 }

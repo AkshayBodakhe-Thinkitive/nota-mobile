@@ -34,7 +34,7 @@ const ProviderListItem = ({
     return input;
   }
 
-  console.log('providerData====> ', providerData);
+  // console.log('providerData====> ', providerData);
 
   return (
     <View style={[styles.container, styles.shadow]}>

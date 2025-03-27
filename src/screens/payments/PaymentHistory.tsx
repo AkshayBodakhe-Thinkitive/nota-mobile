@@ -29,6 +29,8 @@ const PaymentHistory = () => {
     (state: RootState) => state.payments?.paymentsHistoryData?.data?.content,
   );
 
+  // console.log("paymentHistory-->",paymentHistory);
+
   const paymentHis = useAppSelector(
     (state: RootState) => state.payments?.paymentsHistoryData?.data,
   );

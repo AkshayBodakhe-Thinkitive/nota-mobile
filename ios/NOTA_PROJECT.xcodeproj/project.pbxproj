@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* NOTA_PROJECTTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NOTA_PROJECTTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-NOTA_PROJECT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-NOTA_PROJECT.a */; };
+		0F04A6C0B459EB2241E19FAA /* libPods-NOTA_PROJECT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C530AA3F511FCC9308CD1B30 /* libPods-NOTA_PROJECT.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D3FDE22687F056B0216D1068 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7038CB0F4B353A9FED659AF /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +36,13 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NOTA_PROJECT/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NOTA_PROJECT/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = NOTA_PROJECT/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NOTA_PROJECT-NOTA_PROJECTTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-NOTA_PROJECT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT.debug.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-NOTA_PROJECT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT.release.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-NOTA_PROJECT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NOTA_PROJECT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23E7818A8B7F1A1A6ECEC64F /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NOTA_PROJECT/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig"; sourceTree = "<group>"; };
+		B7038CB0F4B353A9FED659AF /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NOTA_PROJECT-NOTA_PROJECTTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B826F431EA70109C2A37CAA7 /* Pods-NOTA_PROJECT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT.debug.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT.debug.xcconfig"; sourceTree = "<group>"; };
+		C0E6C9F9F1BB320C9FDF3144 /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig"; sourceTree = "<group>"; };
+		C530AA3F511FCC9308CD1B30 /* libPods-NOTA_PROJECT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NOTA_PROJECT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63E413E150184EA9E8DED51 /* Pods-NOTA_PROJECT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOTA_PROJECT.release.xcconfig"; path = "Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F42FFB312BFDD5EE0010AD33 /* NOTA_PROJECT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = NOTA_PROJECT.entitlements; path = NOTA_PROJECT/NOTA_PROJECT.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a in Frameworks */,
+				D3FDE22687F056B0216D1068 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-NOTA_PROJECT.a in Frameworks */,
+				0F04A6C0B459EB2241E19FAA /* libPods-NOTA_PROJECT.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-NOTA_PROJECT.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a */,
+				C530AA3F511FCC9308CD1B30 /* libPods-NOTA_PROJECT.a */,
+				B7038CB0F4B353A9FED659AF /* libPods-NOTA_PROJECT-NOTA_PROJECTTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,10 +142,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-NOTA_PROJECT.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-NOTA_PROJECT.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig */,
+				B826F431EA70109C2A37CAA7 /* Pods-NOTA_PROJECT.debug.xcconfig */,
+				C63E413E150184EA9E8DED51 /* Pods-NOTA_PROJECT.release.xcconfig */,
+				23E7818A8B7F1A1A6ECEC64F /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig */,
+				C0E6C9F9F1BB320C9FDF3144 /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -157,12 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NOTA_PROJECTTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				FC86BA187591CB7FCC85CA1F /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				A8F2EE54B11F197FBFACEE42 /* [CP] Embed Pods Frameworks */,
+				F81C38F745DB134242E5C8F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,14 +178,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "NOTA_PROJECT" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				51E67EED6863032813376918 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				E3ECAF7DFBFB3E0EBB18647B /* [CP] Embed Pods Frameworks */,
+				FB63D9AF8AFB06958E940CA7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,46 +269,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NOTA_PROJECT-NOTA_PROJECTTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		51E67EED6863032813376918 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,7 +291,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+		A8F2EE54B11F197FBFACEE42 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -347,7 +308,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		E3ECAF7DFBFB3E0EBB18647B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F81C38F745DB134242E5C8F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB63D9AF8AFB06958E940CA7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -364,21 +359,26 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT/Pods-NOTA_PROJECT-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+		FC86BA187591CB7FCC85CA1F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NOTA_PROJECT-NOTA_PROJECTTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOTA_PROJECT-NOTA_PROJECTTests/Pods-NOTA_PROJECT-NOTA_PROJECTTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -433,7 +433,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig */;
+			baseConfigurationReference = 23E7818A8B7F1A1A6ECEC64F /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,7 +462,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig */;
+			baseConfigurationReference = C0E6C9F9F1BB320C9FDF3144 /* Pods-NOTA_PROJECT-NOTA_PROJECTTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,21 +488,22 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-NOTA_PROJECT.debug.xcconfig */;
+			baseConfigurationReference = B826F431EA70109C2A37CAA7 /* Pods-NOTA_PROJECT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NOTA_PROJECT/NOTA_PROJECT.entitlements;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 55P57D4W27;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = NOTA_PROJECT/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NAVALA;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -518,20 +519,21 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-NOTA_PROJECT.release.xcconfig */;
+			baseConfigurationReference = C63E413E150184EA9E8DED51 /* Pods-NOTA_PROJECT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NOTA_PROJECT/NOTA_PROJECT.entitlements;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 55P57D4W27;
 				INFOPLIST_FILE = NOTA_PROJECT/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NAVALA;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -614,7 +616,10 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -684,7 +689,10 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -112,6 +112,7 @@ const DrawerNavigationSc = ({navigation}: any) => {
   useEffect(() => {
     loggedIn === false  && navigation.replace('SignIn');
   }, [loggedIn,loginData]);
+
   const profileData = useAppSelector(
     (state: RootState) => state.profile.profileData,
   );
@@ -127,13 +128,14 @@ const DrawerNavigationSc = ({navigation}: any) => {
   const horizontalScale = (size: number) => (width / guidelineBaseWidth) * size;
 
 
-  const handlelogout = () => {
-    dispatch(
+  const handlelogout = async () => {
+   await dispatch(
       logoutAction({
         accessToken: loginData?.data?.accessToken,
         refreshToken: loginData?.data?.refreshToken,
       }),
     );
+    navigation.replace('SignIn');
   };
 
   const logoutFun = () => {
@@ -309,7 +311,7 @@ const DrawerNavigationSc = ({navigation}: any) => {
           />
         </View>
         <View
-          style={{height: Platform.OS === 'android' ? '40%' : '65%'}}></View>
+          style={{height: Platform.OS === 'android' ? '40%' : '50%'}}></View>
         <View
           style={{
             width: '100%',

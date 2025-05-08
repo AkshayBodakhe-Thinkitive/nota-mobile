@@ -85,7 +85,7 @@ const HomeSc = ({navigation}: any) => {
         getTopRatedProviderAction({accessToken: loginData.data.accessToken}),
       );
     }
-  }, [loginData?.data?.accessToken, dispatch]);
+  }, []);
 
   const getConsultedProviders = useCallback(() => {
     if (profileData?.data?.uuid && loginData?.data?.accessToken) {

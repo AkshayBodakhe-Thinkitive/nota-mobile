@@ -3,10 +3,8 @@ import React, {useEffect, useState} from 'react';
 import {
   Alert,
   ImageBackground,
-  Platform,
   ScrollView,
   Text,
-  ToastAndroid,
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
@@ -14,132 +12,95 @@ import {
 import {useIsFocused} from '@react-navigation/native';
 import Toast from 'react-native-simple-toast';
 import Button from '../../../components/ButtonComponent/ButtonComponent';
-import Checkbox from '../../../components/CheckBox/CheckBox';
 import Loader from '../../../components/Loader/Loader';
-import Row from '../../../components/Row/Row';
 import TextInput from '../../../components/TextInput/TextInput';
 import {ImagePath1} from '../../../Constants1/ImagePathConstant1';
 import {RootStackParamList} from '../../../navigation/AppNavigator';
-import {
-  resetAuth,
-  resetErrorMessage,
-} from '../../../redux/reducers/auth/AuthReducer';
+import {resetErrorMessage} from '../../../redux/reducers/auth/AuthReducer';
 import {signInAction} from '../../../redux/reducers/auth/async-actions/signInAction';
 import {useAppDispatch, useAppSelector} from '../../../redux/store/hooks';
 import {RootState} from '../../../redux/store/storeConfig';
 import {SignInScreenScStyles as styles} from '../styles/SignInScreenScStyles';
-import { envChangerFunction } from '../../../config/AxiosConfig';
+import {envChangerFunction} from '../../../config/AxiosConfig';
 
-export function SignIn({navigation}: any): React.JSX.Element {
+type SignInProps = NativeStackScreenProps<RootStackParamList>;
+
+interface FormErrors {
+  username?: string;
+  password?: string;
+}
+
+export function SignIn({navigation}: SignInProps): React.JSX.Element {
   const dispatch = useAppDispatch();
-  const loading = useAppSelector((state: RootState) => state.auth.loading);
-  const loggedIn = useAppSelector((state: RootState) => state.auth.loggedIn);
-  const loginData = useAppSelector((state: RootState) => state.auth.loginData);
-  const error = useAppSelector((state: RootState) => state.auth.error);
-  const [show, setShow] = useState(false);
-  const [envTouchesCNT, setEnvTouchesCNT] = useState(0);
-
-  //annie.ward32@yopmail.com
-  // Pass@123
-
-  const [username, setUsername] = useState(''); // dane.west12@yopmail.com
-  const [password, setPassword] = useState(''); // Test@123
-  const [errors, setErrors] = useState<{[key: string]: string}>({});
+  const env = useAppSelector((state: RootState) => state.auth.baseUrl);
   const isFocused = useIsFocused();
-  const errorMessage = useAppSelector(
-    (state: RootState) => state.auth.errorMessage,
-  );
-  const createTwoButtonAlert = (msg: string) => {
-    Alert.alert(
-      // 'Please check your username and password and try again.',
-      msg,
-      '',
-      [{text: 'OK', onPress: () => console.log('OK Pressed')}],
-      {cancelable: false},
-    );
-  };
+
+  const [formData, setFormData] = useState({
+    username: 'vaibhav.patil@yopmail.com',
+    password: 'Pass@123',
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [envTouchesCNT, setEnvTouchesCNT] = useState(0);
 
   useEffect(() => {
     resetErrorMessage();
-  }, []);
-
-  const env = useAppSelector((state:RootState)=>state.auth.baseUrl);
-  
-    useEffect(()=>{
-      envChangerFunction(env);
-    },[])
+    envChangerFunction(env);
+  }, [env]);
 
   useEffect(() => {
-
-    if (loginData?.data?.accessToken) {
-      setShow(true);
-      Toast.show('Login successfully', 2);
-      navigation.navigate('DrawerNavigationSc');
-    } else if (error) {
-      if (errorMessage == '' || errorMessage == null) {
-        return;
-      }
-      console.log('error handleSignIn', errorMessage);
-      createTwoButtonAlert(errorMessage);
-      dispatch(resetAuth());
+    if (envTouchesCNT === 5) {
+      navigation.navigate('Signup' as any);
     }
-  }, [loginData?.data?.accessToken, error]);
+    const timer = setTimeout(() => setEnvTouchesCNT(0), 2000);
+    return () => clearTimeout(timer);
+  }, [envTouchesCNT, navigation]);
+
+  useEffect(() => {
+    if (isFocused) {
+      setErrors({});
+    }
+  }, [isFocused]);
+
+  const handleBlur = (fieldName: keyof FormErrors) => {
+    const value = formData[fieldName];
+    if (!value) {
+      setErrors(prev => ({
+        ...prev,
+        [fieldName]: `${fieldName === 'username' ? 'Email' : 'Password'} is required`,
+      }));
+    } else {
+      setErrors(prev => ({...prev, [fieldName]: ''}));
+    }
+  };
+
+  const handleChange = (fieldName: keyof FormErrors, value: string) => {
+    setFormData(prev => ({...prev, [fieldName]: value}));
+    if (errors[fieldName]) {
+      setErrors(prev => ({...prev, [fieldName]: ''}));
+    }
+  };
+
+  const handleSignIn = async () => {
+    setLoginLoading(true);
+    try {
+      const resLogin = await dispatch(signInAction(formData));
+      if (resLogin?.payload?.code === 'OK') {
+        Toast.show('Login successfully', 2);
+        navigation.replace('HomeSc' as any);
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Login failed. Please try again.');
+    } finally {
+      setLoginLoading(false);
+    }
+  };
 
   const goToSignUp = () => {
     resetErrorMessage();
-    navigation.navigate('SignUpSc');
+    navigation.navigate('Signup' as any);
   };
 
-  const handleBlur = (fieldName: string) => {
-    if (fieldName === 'username') {
-      if (!username) {
-        setErrors({...errors, username: 'Email is required'});
-      }
-      else {
-        setErrors({...errors, username: ''});
-      }
-    } else if (fieldName === 'password') {
-      if (!password) {
-        setErrors({...errors, password: 'Password is required'});
-      } else {
-        setErrors({...errors, password: ''});
-      }
-    }
-  };
-  useEffect(() => {
-    if (envTouchesCNT == 5) {
-      navigation.navigate('EnvironmentSetup');
-    }
-    setTimeout(() => {
-      setEnvTouchesCNT(0);
-    }, 2000);
-  }, [envTouchesCNT]);
-  useEffect(() => {
-    setErrors({...errors, password: '', username: ''});
-  }, [isFocused]);
-
-  const handleChange = (fieldName: string, value: string) => {
-    if (fieldName === 'username') {
-      setUsername(value);
-      if (errors.username) {
-        setErrors({...errors, username: ''});
-      }
-    } else if (fieldName === 'password') {
-      setPassword(value);
-      if (errors.password) {
-        setErrors({...errors, password: ''});
-      }
-    }
-  };
-
-  const handleSignIn = () => {
-    const errors: {[key: string]: string} = {};
-    if (Object.keys(errors).length === 0) {
-      dispatch(signInAction({username, password}));
-    } else {
-      setErrors(errors);
-    }
-  };
   return (
     <View style={styles.container}>
       <View style={styles.imageBgContainer}>
@@ -161,22 +122,20 @@ export function SignIn({navigation}: any): React.JSX.Element {
           </View>
         </ImageBackground>
       </View>
+
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
         keyboardShouldPersistTaps="handled">
         <View style={styles.signInFormContainer}>
           <TouchableWithoutFeedback
-            onPress={() => {
-              let count = envTouchesCNT + 1;
-              setEnvTouchesCNT(count);
-            }}
-            >
+            onPress={() => setEnvTouchesCNT(prev => prev + 1)}>
             <View>
               <Text style={styles.signInTxt}>Sign In</Text>
             </View>
           </TouchableWithoutFeedback>
+
           <TextInput
-            value={username}
+            value={formData.username}
             placeholder="Email or phone"
             keyboardType="email-address"
             onChangeText={value => handleChange('username', value)}
@@ -187,29 +146,29 @@ export function SignIn({navigation}: any): React.JSX.Element {
           {errors.username && (
             <Text style={styles.error}>{errors.username}</Text>
           )}
+
           <TextInput
             placeholder="Password"
             onChangeText={value => handleChange('password', value)}
             onBlur={() => handleBlur('password')}
-            value={password}
+            value={formData.password}
             isValid={errors.password}
             secureTextEntry
           />
           {errors.password && (
             <Text style={styles.error}>{errors.password}</Text>
           )}
+
           <View style={styles.forgotPassRow}>
-            {/* <Row>
-              <Checkbox />
-              <Text style={styles.remMeTxt}>Remember me</Text>
-            </Row> */}
-            <View></View>
+            <View />
             <TouchableOpacity
-              onPress={() => navigation.navigate('ForgotPassword')}>
+              onPress={() => navigation.navigate('ForgotPassword' as any)}>
               <Text style={styles.forgPassTxt}>Forgot Password?</Text>
             </TouchableOpacity>
           </View>
+
           <Button title="Continue" onPress={handleSignIn} />
+
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
             <Text
               style={{
@@ -237,7 +196,7 @@ export function SignIn({navigation}: any): React.JSX.Element {
           </View>
         </View>
       </ScrollView>
-      {/* {loading && <Loader />} */}
+      {loginLoading && <Loader />}
     </View>
   );
 }

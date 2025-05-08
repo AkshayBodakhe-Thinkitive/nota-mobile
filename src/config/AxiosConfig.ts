@@ -54,10 +54,18 @@ const post = <D, R>(
       return res.data;
     })
     .catch(error => {
-      // console.log('error ==>', error);
+      console.log('error ==>', error);
       // return error;
       throw new Error(error);
     });
+
+    const post3 = <P, R>(
+      url: string,
+      payload?: P,
+      config?: AxiosRequestConfig,
+    ): Promise<R> =>
+      instance.post(url, payload, config).then(({ data }) => data);
+    
 
 const put = <D, R>(
   url: string,
@@ -77,4 +85,4 @@ const patch = <D, R>(
   config?: AxiosRequestConfig,
 ): Promise<R> => instance.patch(url, data, config).then(({data}) => data);
 
-export {_delete, get, instance, patch, post, put,post2};
+export {_delete, get, instance, patch, post, put,post2,post3};

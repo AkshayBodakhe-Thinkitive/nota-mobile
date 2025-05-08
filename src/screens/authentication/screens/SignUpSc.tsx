@@ -149,31 +149,34 @@ const SignUpSc = ({navigation}: any) => {
       } else {
         setErrors({...errors, city: ''});
       }
-    } else if (fieldName === 'stateName') {
-      if (!stateName) {
-        setErrors({...errors, stateName: 'State is required'});
-      } else {
-        setErrors({...errors, stateName: ''});
-      }
-    } else if (fieldName === 'country') {
+    } 
+    // else if (fieldName === 'stateName') {
+    //   if (!stateName) {
+    //     setErrors({...errors, stateName: 'State is required'});
+    //   } else {
+    //     setErrors({...errors, stateName: ''});
+    //   }
+    // } 
+    else if (fieldName === 'country') {
       if (!country) {
         setErrors({...errors, country: 'Country is required'});
       } else {
         setErrors({...errors, country: ''});
       }
-    } else if (fieldName === 'zipcode') {
-      if (!zipcode) {
-        setErrors({...errors, zipcode: 'Zipcode is required'});
-      } else {
-        // const regex = /^[0-9]{5}$/;
-        // if (!regex.test(zipcode)) {
-          if (!zipcode) {
-          setErrors({...errors, zipcode: 'Invalid zipcode format'});
-        } else {
-          setErrors({...errors, zipcode: ''});
-        }
-      }
-    }
+    } 
+    // else if (fieldName === 'zipcode') {
+    //   if (!zipcode) {
+    //     setErrors({...errors, zipcode: 'Zipcode is required'});
+    //   } else {
+    //     // const regex = /^[0-9]{5}$/;
+    //     // if (!regex.test(zipcode)) {
+    //       if (!zipcode) {
+    //       setErrors({...errors, zipcode: 'Invalid zipcode format'});
+    //     } else {
+    //       setErrors({...errors, zipcode: ''});
+    //     }
+    //   }
+    // }
   };
 
   const handleChange = (fieldName: string, value: string) => {
@@ -279,34 +282,36 @@ const SignUpSc = ({navigation}: any) => {
       } else if (errors.city) {
         setErrors({...errors, city: ''});
       }
-    } else if (fieldName === 'stateName') {
+    } 
+      else if (fieldName === 'stateName') {
       setStateName(value);
-      if (!value) {
-        setErrors({...errors, stateName: 'State is required'});
-      } else if (errors.stateName) {
-        setErrors({...errors, stateName: ''});
-      }
-    } else if (fieldName === 'country') {
+      // if (!value) {
+      //   setErrors({...errors, stateName: 'State is required'});
+      // } else if (errors.stateName) {
+      //   setErrors({...errors, stateName: ''});
+      // }
+    }
+     else if (fieldName === 'country') {
       setCountry(value);
       if (!value) {
         setErrors({...errors, country: 'Country is required'});
       } else if (errors.country ){
         setErrors({...errors, country: ''});
       }
-    } else if (fieldName === 'zipcode') {
-      setZipcode(value);
-      // const regex = /^[0-9]{5}$/;
-      // if (!regex.test(value)) {
-        if (!value) {
-        setErrors({...errors, zipcode: 'Invalid zipcode format'});
-      } else if (errors.zipcode) {
-        setErrors({...errors, zipcode: ''});
-      }
-    }
+    } 
+    // else if (fieldName === 'zipcode') {
+    //   setZipcode(value);
+    //   // const regex = /^[0-9]{5}$/;
+    //   // if (!regex.test(value)) {
+    //     if (!value) {
+    //     setErrors({...errors, zipcode: 'Invalid zipcode format'});
+    //   } else if (errors.zipcode) {
+    //     setErrors({...errors, zipcode: ''});
+    //   }
+    // }
   };
 
   const handleSignUp = () => {
-    console.log(firstName);
     const errors: {[key: string]: string} = {};
     if (!firstName) {
       errors.firstName = 'First name is required';
@@ -353,9 +358,9 @@ const SignUpSc = ({navigation}: any) => {
     if (!city) {
       errors.city = 'City is required';
     }
-    if (!stateName) {
-      errors.stateName = 'State name is required';
-    }
+    // if (!stateName) {
+    //   errors.stateName = 'State name is required';
+    // }
     if (!country) {
       errors.country = 'Country is required';
     }
@@ -383,7 +388,7 @@ const SignUpSc = ({navigation}: any) => {
           city,
           stateName,
           country,
-          zipcode,
+          // zipcode,
         },
       };
       dispatch(signUpAction(signUpPayload));
@@ -418,15 +423,15 @@ const SignUpSc = ({navigation}: any) => {
   };
 
   const validateInput = (inputValue: string) => {
-    const regex = /[!@#$%^&*()_+\-=\[\]{};`':"\\|,.<>\/?0-9]/;
-    if (regex.test(inputValue)) {
-      return {
-        value: 'Input should not contain special characters or numbers',
-        isError: true,
-      };
-    } else {
+    // const regex = /[!@#$%^&*()_+\-=\[\]{};`':"\\|,.<>\/?0-9]/;
+    // if (regex.test(inputValue)) {
+    //   return {
+    //     value: 'Input should not contain special characters or numbers',
+    //     isError: true,
+    //   };
+    // } else {
       return {value: inputValue, isError: false};
-    }
+    // }
   };
   const validatePhoneNumber = (inputValue: string) => {
     const regex = /^[0-9]{10}$/;
@@ -603,7 +608,7 @@ const SignUpSc = ({navigation}: any) => {
               onChangeText={value => handleChange('stateName', value)}
               isValid={errors.stateName}
               onBlur={() => handleBlur('stateName')}
-              required
+              // required
             />
             {errors.stateName && (
               <Text style={styles.error}>{errors.stateName}</Text>
@@ -623,7 +628,7 @@ const SignUpSc = ({navigation}: any) => {
               <Text style={styles.error}>{errors.country}</Text>
             )}
 
-            <TextInput
+            {/* <TextInput
               value={zipcode}
               placeholder="Zipcode"
               label="Zipcode"
@@ -635,7 +640,7 @@ const SignUpSc = ({navigation}: any) => {
             />
             {errors.zipcode && (
               <Text style={styles.error}>{errors.zipcode}</Text>
-            )}
+            )} */}
             <View style={{paddingTop: 20}}>
               <Button title={'Create New Patient'} onPress={handleSignUp} />
             </View>

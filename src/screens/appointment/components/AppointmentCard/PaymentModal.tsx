@@ -26,7 +26,7 @@ import {
   responsiveFontSize,
   responsiveHeight,
 } from 'react-native-responsive-dimensions';
-import {get, post} from '../../../../config/AxiosConfig';
+import {get, post, post3} from '../../../../config/AxiosConfig';
 import {colors} from '../../../../assets/colors';
 
 const PaymentModal = ({
@@ -164,11 +164,7 @@ const PaymentModal = ({
     }
   };
 
-  // console.log("paymentType-->",paymentType)
-
-  // console.log('APM_ID: ' + appointmentUuid);
-  // console.log('UUID: ' + profileData?.data?.uuid);
-  console.log('ClientStripId: ' + clientStripId);
+  // console.log('ClientStripId: ' + clientStripId);
 
   const [cashPayLoading, setCashPayLoading] = useState(false);
 
@@ -177,7 +173,7 @@ const PaymentModal = ({
       console.log('SELECTED C:' + selectedCurrency);
       console.log('AMOUNT: ' + amount);
       setCashPayLoading(true);
-      const chargeResponse = await instance.post(
+      const chargeResponse = await post(
         `${env}/stripe-payment/charge-stripe/${appointmentUuid}`,
         {
           amount: `${amount}`,
@@ -185,10 +181,16 @@ const PaymentModal = ({
           currency: {name: `${selectedCurrency}`},
           paymentMode: 'CASH',
         },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+        },
       );
       setCashPayLoading(false);
 
-      console.log('STRIP CLIENT SECREAT: ' + JSON.stringify(chargeResponse));
+      console.log('STRIP CLIENT SECREAT:---->' + JSON.stringify(chargeResponse));
 
       if (chargeResponse.data?.code == 'OK') {
         console.log('Payment  In cash Success');
@@ -243,20 +245,20 @@ const PaymentModal = ({
         const response = await instance.get(
           `${env}/patient/${profileData?.data?.uuid}`,
         );
-        console.log("response--->",response?.data?.data)
-        if(response?.data?.data?.customerStripeId === null){
+        // console.log('response--->', response?.data?.data);
+        if (response?.data?.data?.customerStripeId === null) {
           const addCustomerStripeId: any = await post(
             `/patient/stripe/add-customer/${appointmentData?.patientUuid}`,
             null,
             {headers},
-          )
-          console.log("addCustomerStripeId res 1--->",addCustomerStripeId)
+          );
+          // console.log('addCustomerStripeId res 1--->', addCustomerStripeId);
           const response = await instance.get(
             `${env}/patient/${profileData?.data?.uuid}`,
           );
           setClientStripId(response?.data?.data?.customerStripeId);
-          return
-         }
+          return;
+        }
         setClientStripId(response?.data?.data?.customerStripeId);
       } catch (err) {
         console.log('ERROR: ' + err);
@@ -288,7 +290,7 @@ const PaymentModal = ({
       console.log('SELECTED C:' + selectedCurrency);
       console.log('AMOUNT: ' + amount);
 
-      const chargeResponse = await instance.post(
+      const chargeResponse = await post3(
         `${env}/stripe-payment/charge-stripe/${appointmentUuid}`,
         {
           amount: '' + amount,
@@ -296,15 +298,22 @@ const PaymentModal = ({
           currency: {name: `${selectedCurrency}`},
           paymentMode: 'ONLINE',
         },
+        {
+          headers : {
+            Authorization : `Bearer ${accessToken}`,
+          }
+        }
       );
 
-      clientSecret = chargeResponse?.data?.data;
+      // console.log("chargeResponse--->",chargeResponse)
+
+      clientSecret = chargeResponse?.data;
 
       console.log('STRIP CLIENT SECREAT: ' + clientSecret);
 
       return clientSecret;
     } catch (error) {
-      console.error('Error processing payment:', JSON.stringify(error));
+      console.error('Error processing payment:', error?.response?.data?.message);
     }
   };
 
@@ -316,6 +325,7 @@ const PaymentModal = ({
       merchantDisplayName: 'NOTA',
       allowsDelayedPaymentMethods: true,
       style: 'automatic',
+      returnURL: 'nota://stripe-redirect',
     });
 
     if (error) {
@@ -386,7 +396,7 @@ const PaymentModal = ({
             />
             <View
               style={{
-                borderWidth: 1,
+                // borderWidth: 1,
                 borderColor: '#000',
                 backgroundColor: '#fff',
                 borderCurve: 'circular',
@@ -402,13 +412,12 @@ const PaymentModal = ({
                 dropdownIconColor="#000"
                 style={{
                   width: '100%',
-                  borderWidth: 2,
                   borderColor: '#000',
                   color: colors.grey90,
                 }}>
                 {currencyList.length > 0
                   ? currencyList.map(item => (
-                      <Picker.Item key={item} label={item} value={item} />
+                      <Picker.Item key={item} label={item} value={item}/>
                     ))
                   : ''}
               </Picker>

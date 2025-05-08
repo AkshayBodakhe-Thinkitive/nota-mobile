@@ -8,7 +8,7 @@ import {logoutPopup, resetAuth, resetTokens} from '../AuthReducer';
 import {store} from '../../../store/storeConfig';
 export class AuthService {
   static async signUp(signUpPayload: any) {
-    // console.log("signUpPayload---->",signUpPayload)
+    console.log("signUpPayload---->",signUpPayload)
     try {
       const response = await post2(`/auth/patient`, signUpPayload);
       console.log("response signUp==>",JSON.stringify(response));
@@ -97,20 +97,26 @@ export class AuthService {
   }
   static async logOut(accessToken: string, refreshToken: string) {
     try {
-      const response = await post(
-        `/logout`,
-        {refreshToken},
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
+      const response = await fetch(`/logout`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      );
-      return response;
+        body: JSON.stringify({ refreshToken }),
+      });
+  
+      if (!response.ok) {
+        throw response;
+      }
+  
+      const data = await response.json();
+      return data;
     } catch (error: any) {
-      throw error.response.status;
+      const status = error.status || 500;
+      throw status;
     }
   }
+  
 
   static async deleteAccount(accessToken: string, patientId: string) {
     console.log('deleteaccount called', accessToken, patientId);

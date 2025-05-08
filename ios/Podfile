@@ -11,7 +11,10 @@ def node_require(script)
   node_require('react-native/scripts/react_native_pods.rb')
   node_require('react-native-permissions/scripts/setup.rb')
  
-
+  MIN_IOS_OVERRIDE = '13.0'
+  if Gem::Version.new(MIN_IOS_OVERRIDE) > Gem::Version.new(min_ios_version_supported)
+      min_ios_version_supported = MIN_IOS_OVERRIDE
+  end
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 

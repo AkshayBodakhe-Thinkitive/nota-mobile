@@ -35,9 +35,12 @@ export function SignIn({navigation}: SignInProps): React.JSX.Element {
   const env = useAppSelector((state: RootState) => state.auth.baseUrl);
   const isFocused = useIsFocused();
 
+  // vaibhav.patil@yopmail.com
+  // Pass@123
+
   const [formData, setFormData] = useState({
-    username: 'vaibhav.patil@yopmail.com',
-    password: 'Pass@123',
+    username: '',
+    password: '',
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [loginLoading, setLoginLoading] = useState(false);
@@ -50,7 +53,7 @@ export function SignIn({navigation}: SignInProps): React.JSX.Element {
 
   useEffect(() => {
     if (envTouchesCNT === 5) {
-      navigation.navigate('Signup' as any);
+      navigation.navigate('EnvironmentSetup' as any);
     }
     const timer = setTimeout(() => setEnvTouchesCNT(0), 2000);
     return () => clearTimeout(timer);
@@ -87,7 +90,7 @@ export function SignIn({navigation}: SignInProps): React.JSX.Element {
       const resLogin = await dispatch(signInAction(formData));
       if (resLogin?.payload?.code === 'OK') {
         Toast.show('Login successfully', 2);
-        navigation.replace('HomeSc' as any);
+        navigation.replace('DrawerNavigationSc' as any);
       }
     } catch (error) {
       Alert.alert('Error', 'Login failed. Please try again.');
@@ -98,7 +101,7 @@ export function SignIn({navigation}: SignInProps): React.JSX.Element {
 
   const goToSignUp = () => {
     resetErrorMessage();
-    navigation.navigate('Signup' as any);
+    navigation.navigate('SignUpSc' as any);
   };
 
   return (
@@ -128,7 +131,8 @@ export function SignIn({navigation}: SignInProps): React.JSX.Element {
         keyboardShouldPersistTaps="handled">
         <View style={styles.signInFormContainer}>
           <TouchableWithoutFeedback
-            onPress={() => setEnvTouchesCNT(prev => prev + 1)}>
+            // onPress={() => setEnvTouchesCNT(prev => prev + 1)}
+            >
             <View>
               <Text style={styles.signInTxt}>Sign In</Text>
             </View>

@@ -46,11 +46,13 @@ const AppointmentButtons = ({
   const handlePaymentSuccess = ()=>{
     console.log("CHECKKKKK");
     setIsPaymentSuccess(true);
+    setShowPayModal(false);
   }
 
   const handleSuccessCallback = ()=>{
     console.log("handle succes callback");
-    successCallback()
+    setIsPaymentSuccess(false);
+    successCallback();
   }
 
   const [showRescModal, setShowRescModal] = useState(false);

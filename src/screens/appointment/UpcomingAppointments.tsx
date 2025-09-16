@@ -1,6 +1,6 @@
 import { useIsFocused } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { FlatList, StyleSheet, Text, View, RefreshControl } from 'react-native';
 import { fontType } from '../../assets/fontType';
 import { getUpcomingAppointmentAction } from '../../redux/reducers/home/aysnc-actions/getUpcomingAppointment';
 import { useAppDispatch, useAppSelector } from '../../redux/store/hooks';
@@ -10,6 +10,7 @@ import AppointmentCard from './components/AppointmentCard/AppointmentCard';
 const UpcomingAppointments = ({navigation}: any) => {
   const dispatch = useAppDispatch();
   const isFocused = useIsFocused();
+  const [refreshing, setRefreshing] = useState(false);
   const loginData = useAppSelector((state: RootState) => state.auth.loginData);
   const profileData = useAppSelector(
     (state: RootState) => state.profile.profileData,
@@ -17,6 +18,19 @@ const UpcomingAppointments = ({navigation}: any) => {
   const upcomingAppointmentData = useAppSelector((state: RootState) => state.home.upcomingAppointmentData);
 
   // console.log("upcomingAppointmentData =>",JSON.stringify(upcomingAppointmentData?.data?.content)) 
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    if (loginData?.data?.accessToken) {
+      dispatch(
+        getUpcomingAppointmentAction({
+          accessToken: loginData?.data?.accessToken,
+          patientUUID: profileData?.data?.uuid,
+          appointmentState:'FUTURE'
+        }),
+      ).finally(() => setRefreshing(false));
+    }
+  }, [loginData?.data?.accessToken, profileData?.data?.uuid]);
 
   useEffect(() => {
     if (loginData?.data?.accessToken) {
@@ -49,6 +63,12 @@ const UpcomingAppointments = ({navigation}: any) => {
       <FlatList
         data={upcomingAppointmentData?.data?.content}
         contentContainerStyle={{padding: 10}}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
         renderItem={({item}) => {
           return <AppointmentCard type="upcoming" status={item.status} navigation={navigation} data = {item} paymentSuccessCallback={handlePaymentSuccess} />;
         }}

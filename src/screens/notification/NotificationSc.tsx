@@ -57,9 +57,11 @@ const NotificationSc = ({visible, setVisible, navigation,setNotificationCount}: 
   };
 
   useEffect(() => {
+    if (loginData?.data?.accessToken) {
     fetchNotifications();
     const interval = setInterval(fetchNotifications, 15000); 
     return () => clearInterval(interval);
+  }
   }, [profileData?.data?.uuid]);
 
   useEffect(()=>{

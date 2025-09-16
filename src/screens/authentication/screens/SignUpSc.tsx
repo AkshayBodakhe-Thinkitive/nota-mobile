@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-
 import {
+  Alert,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -21,435 +21,200 @@ import {RootState} from '../../../redux/store/storeConfig';
 import {OnboardingTopView} from '../components/OnboardingTopView';
 import PhoneWithCountryCode from '../../../components/phonewithcountrycode/PhoneWithCountryCode';
 import {responsiveFontSize} from 'react-native-responsive-dimensions';
-import CustomDateTextField from '../../../components/CustomDateField';
 import DatePickerInput from '../../../components/DatePicker/DatePickerInput';
 import DropdownComponent from '../../../components/Dropdown/DropDown';
 
+interface FormErrors {
+  [key: string]: string;
+}
+
 const SignUpSc = ({navigation}: any) => {
   const dispatch = useAppDispatch();
-  const signUpData = useAppSelector(
-    (state: RootState) => state.auth.signUpData,
-  );
-  const [contctIsCorrect, setContctIsCorrect] = useState(false);
-  const [correct, correctPass] = useState(false);
-  const [firstName, serFirstname] = useState('');
-  const [lastName, setLastname] = useState('');
-  const [email, setUsername] = useState(null);
-  const [phone, setPhonenumber] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState<{[key: string]: string}>({});
-
-  const [line1, setLine1] = useState('');
-  const [line2, setLine2] = useState('');
-  const [city, setCity] = useState('');
-  const [stateName, setStateName] = useState('');
-  const [country, setCountry] = useState('');
-  const [zipcode, setZipcode] = useState('');
+  const signUpData = useAppSelector((state: RootState) => state.auth.signUpData);
+  
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    password: '',
+    line1: '',
+    line2: '',
+    city: '',
+    stateName: '',
+    country: '',
+    dateOfBirth: '',
+    gender: '',
+  });
 
   const [countryCode, setCountryCode] = useState('');
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isPhoneValid, setIsPhoneValid] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
 
-  const [dateOfBirth, setDateOfBirth] = useState('');
-  const [gender, setGender] = useState('');
-
-  const handlePhoneChange = (
-    newCountryCode: string,
-    newPhoneNumber: string,
-  ) => {
+  const handlePhoneChange = (newCountryCode: string, newPhoneNumber: string) => {
     setCountryCode(newCountryCode);
-    setPhonenumber(newPhoneNumber);
-    handleChange('phone', newPhoneNumber);
+    // Only allow numbers and limit to 10 digits
+    const sanitizedNumber = newPhoneNumber.replace(/[^0-9]/g, '').slice(0, 10);
+    setFormData(prev => ({...prev, phone: sanitizedNumber}));
+    const error = validateField('phone', sanitizedNumber);
+    setErrors(prev => ({...prev, phone: error}));
+  };
+
+  const validateField = (fieldName: string, value: string) => {
+    let error = '';
+
+    switch (fieldName) {
+      case 'firstName':
+      case 'lastName':
+        if (!value) {
+          error = `${fieldName === 'firstName' ? 'First' : 'Last'} name is required`;
+        } else if (value.trim() !== value) {
+          error = `${fieldName === 'firstName' ? 'First' : 'Last'} name should not contain leading or trailing space`;
+        }
+        break;
+
+      case 'email':
+        if (value && !validateEmail(value)) {
+          error = 'Invalid email address';
+        }
+        break;
+
+      case 'phone':
+        if (!value) {
+          error = 'Phone is required';
+          setIsPhoneValid(false);
+        } else if (value.length !== 10) {
+          error = 'Please enter 10 digit contact number';
+          setIsPhoneValid(false);
+        } else {
+          setIsPhoneValid(true);
+        }
+        break;
+
+      case 'password':
+        if (!value) {
+          error = 'Password is required';
+        } else {
+          const passwordValidation = validatePassword(value);
+          error = passwordValidation.error;
+          setIsPasswordValid(passwordValidation.isValid);
+        }
+        break;
+
+      case 'dateOfBirth':
+        if (!value) {
+          error = 'DOB is required';
+        }
+        break;
+
+      case 'gender':
+        if (!value) {
+          error = 'Gender is required';
+        }
+        break;
+
+      case 'line1':
+        if (!value) {
+          error = 'Address Line 1 is required';
+        }
+        break;
+
+      case 'city':
+        if (!value) {
+          error = 'City is required';
+        }
+        break;
+
+      case 'country':
+        if (!value) {
+          error = 'Country is required';
+        }
+        break;
+    }
+
+    return error;
+  };
+
+  const handleChange = (fieldName: string, value: any) => {
+    setFormData(prev => ({...prev, [fieldName]: value}));
+    const error = validateField(fieldName, value);
+    setErrors(prev => ({...prev, [fieldName]: error}));
   };
 
   const handleBlur = (fieldName: string) => {
-    if (fieldName === 'firstName') {
-      if (!firstName) {
-        setErrors({...errors, firstName: 'First name is required'});
-        if (firstName[0] === ' ' || firstName[firstName.length - 1] === ' ') {
-          setErrors({
-            ...errors,
-            firstName:
-              'First name should not contain leading or trailing space',
-          });
-        } else {
-          if (errors.firstName) {
-            setErrors({...errors, firstName: ''});
-          }
-        }
-      }
-    } else if (fieldName === 'lastName') {
-      if (!lastName) {
-        setErrors({...errors, lastName: 'Last name is required'});
-      } else {
-        if (lastName[0] === ' ' || lastName[lastName.length - 1] === ' ') {
-          setErrors({
-            ...errors,
-            lastName: 'Last name should not contain leading or trailing space',
-          });
-        } else {
-          if (errors.lastName) {
-            setErrors({...errors, lastName: ''});
-          }
-        }
-      }
-    }
-    
-    else if (fieldName === 'dateOfBirth') {
-      setDateOfBirth(dateOfBirth);
-      if (!dateOfBirth) {
-      setErrors({...errors, dateOfBirth: 'DOB is required'});
-    } else if (errors.dateOfBirth) {
-      setErrors({...errors, dateOfBirth: ''});
-    }
-  } 
-  
-  else if (fieldName === 'gender') {
-    setGender(gender);
-    if (!gender) {
-      setErrors({...errors, city: 'Gender is required'});
-    } else if (errors.gender) {
-      setErrors({...errors, gender: ''});
-    }
-  } 
-    
-    else if (fieldName === 'email') {
-      if (!email) {
-        setErrors({...errors, email: ''});
-        setUsername(null);
-      } else {
-        setErrors({...errors, email: ''});
-      }
-    } else if (fieldName === 'phone') {
-      if (!phone) {
-        setErrors({...errors, phone: 'Phone is required'});
-      } else {
-        setErrors({...errors, phone: ''});
-      }
-    } else if (fieldName === 'password') {
-      if (!password) {
-        setErrors({...errors, password: 'Password is required'});
-      } else {
-        let passValidationResult = validatePassword(password);
-        if (passValidationResult.isError) {
-          setErrors({...errors, password: passValidationResult.value});
-        } else {
-          setErrors({...errors, password: ''});
-        }
-      }
-    }
-    // Add these cases in handleBlur
-    else if (fieldName === 'line1') {
-      if (!line1) {
-        setErrors({...errors, line1: 'Address Line 1 is required'});
-      } else {
-        setErrors({...errors, line1: ''});
-      }
-    } else if (fieldName === 'city') {
-      if (!city) {
-        setErrors({...errors, city: 'City is required'});
-      } else {
-        setErrors({...errors, city: ''});
-      }
-    } 
-    // else if (fieldName === 'stateName') {
-    //   if (!stateName) {
-    //     setErrors({...errors, stateName: 'State is required'});
-    //   } else {
-    //     setErrors({...errors, stateName: ''});
-    //   }
-    // } 
-    else if (fieldName === 'country') {
-      if (!country) {
-        setErrors({...errors, country: 'Country is required'});
-      } else {
-        setErrors({...errors, country: ''});
-      }
-    } 
-    // else if (fieldName === 'zipcode') {
-    //   if (!zipcode) {
-    //     setErrors({...errors, zipcode: 'Zipcode is required'});
-    //   } else {
-    //     // const regex = /^[0-9]{5}$/;
-    //     // if (!regex.test(zipcode)) {
-    //       if (!zipcode) {
-    //       setErrors({...errors, zipcode: 'Invalid zipcode format'});
-    //     } else {
-    //       setErrors({...errors, zipcode: ''});
-    //     }
-    //   }
-    // }
+    const value = formData[fieldName as keyof typeof formData];
+    const error = validateField(fieldName, value);
+    setErrors(prev => ({...prev, [fieldName]: error}));
   };
 
-  const handleChange = (fieldName: string, value: string) => {
-    const result = validateInput(value);
-    if (fieldName === 'firstName') {
-      if (result.isError) {
-        setErrors({...errors, firstName: result.value});
-      } else {
-        serFirstname(result.value);
-        if (value.length > 0) {
-          if (value[0] === ' ' || value[value.length - 1] === ' ') {
-            setErrors({
-              ...errors,
-              firstName:
-                'First name should not contain leading or trailing space',
-            });
-          } else if (errors.firstName) {
-            setErrors({...errors, firstName: ''});
-          }
-        }
-      }
-    } else if (fieldName === 'lastName') {
-      if (result.isError) {
-        setErrors({...errors, lastName: result.value});
-      } else {
-        setLastname(value);
-        if (value.length > 0) {
-          if (value[0] === ' ' || value[value.length - 1] === ' ') {
-            setErrors({
-              ...errors,
-              lastName:
-                'Last name should not contain leading or trailing space',
-            });
-          } else if (errors.lastName) {
-            setErrors({...errors, lastName: ''});
-          }
-        }
-        }
-      } 
-
-      else if (fieldName === 'dateOfBirth') {
-        setDateOfBirth(value);
-        if (!value) {
-        setErrors({...errors, dateOfBirth: 'DOB is required'});
-      } else if (errors.dateOfBirth) {
-        setErrors({...errors, dateOfBirth: ''});
-      }
-    } 
-    
-    else if (fieldName === 'gender') {
-      setGender(value);
-      if (!value) {
-        setErrors({...errors, city: 'Gender is required'});
-      } else if (errors.gender) {
-        setErrors({...errors, gender: ''});
-      }
-    } 
-    
-    else if (fieldName === 'email') {
-      setUsername(value);
-      if (!validateEmail(value)) {
-        setErrors({...errors, email: 'Invalid email address'});
-      } else {
-        setErrors({...errors, email: ''});
-      }
-    } else if (fieldName === 'phone') {
-      if (value.length <= 10) {
-        setPhonenumber(value);
-        let contactValidate = validatePhoneNumber(value);
-        if (contactValidate.isError) {
-          setErrors({...errors, phone: contactValidate.value});
-        } else {
-          setErrors({...errors, phone: ''});
-        }
-      } else {
-        setErrors({...errors, phone: ''});
-      }
-    } else if (fieldName === 'password') {
-      setPassword(value);
-      if (!password) {
-        setErrors({...errors, password: 'Password is required'});
-      } else {
-        let passValidationResult = validatePassword(value);
-        if (passValidationResult.isError) {
-          setErrors({...errors, password: passValidationResult.value});
-        } else if (errors.password) {
-          setErrors({...errors, password: ''});
-        }
-      }
-    }
-    // Add these cases in handleChange
-    else if (fieldName === 'line1') {
-      setLine1(value);
-      if (!value) {
-        setErrors({...errors, line1: 'Address Line 1 is required'});
-      } else if (errors.line1) {
-        setErrors({...errors, line1: ''});
-      }
-    } else if (fieldName === 'city') {
-      setCity(value);
-      if (!value) {
-        setErrors({...errors, city: 'City is required'});
-      } else if (errors.city) {
-        setErrors({...errors, city: ''});
-      }
-    } 
-      else if (fieldName === 'stateName') {
-      setStateName(value);
-      // if (!value) {
-      //   setErrors({...errors, stateName: 'State is required'});
-      // } else if (errors.stateName) {
-      //   setErrors({...errors, stateName: ''});
-      // }
-    }
-     else if (fieldName === 'country') {
-      setCountry(value);
-      if (!value) {
-        setErrors({...errors, country: 'Country is required'});
-      } else if (errors.country ){
-        setErrors({...errors, country: ''});
-      }
-    } 
-    // else if (fieldName === 'zipcode') {
-    //   setZipcode(value);
-    //   // const regex = /^[0-9]{5}$/;
-    //   // if (!regex.test(value)) {
-    //     if (!value) {
-    //     setErrors({...errors, zipcode: 'Invalid zipcode format'});
-    //   } else if (errors.zipcode) {
-    //     setErrors({...errors, zipcode: ''});
-    //   }
-    // }
+  const validatePassword = (password: string) => {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
+    const isValid = passwordRegex.test(password);
+    return {
+      isValid,
+      error: isValid ? '' : 'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character'
+    };
   };
 
-  const handleSignUp = () => {
-    const errors: {[key: string]: string} = {};
-    if (!firstName) {
-      errors.firstName = 'First name is required';
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleSignUp = async () => {
+    const requiredFields = ['firstName', 'lastName', 'dateOfBirth', 'gender', 'phone', 'password', 'line1', 'city', 'country'];
+    const newErrors: FormErrors = {};
+
+    // First validate all required fields
+    requiredFields.forEach(field => {
+      const value = formData[field as keyof typeof formData];
+      const error = validateField(field, value);
+      if (error) {
+        newErrors[field] = error;
+      }
+    });
+
+    // Update errors state with all validation results
+    setErrors(newErrors);
+
+    // If there are any errors, return
+    if (Object.keys(newErrors).length > 0) {
+      return;
     }
 
-    if (!lastName) {
-      errors.lastName = 'Last name is required';
-    }
-
-
-    if (!lastName) {
-      errors.lastName = 'Last name is required';
-    }
-
-    if (!dateOfBirth) {
-      errors.dateOfBirth = 'DOB is required';
-    }
-
-    if (!gender) {
-      errors.gender = 'Gender is required';
-    }
-
-    if (!phone) {
-      errors.phone = 'Contact number is required';
-    } else if (!contctIsCorrect) {
-      errors.phone = 'Please enter 10 digit contact number';
-    }
-    // if (!email) {
-    //   errors.email = 'Email is required';
-    // } else if (!validateEmail(email)) {
-    //   errors.email = 'Invalid email address';
-    // }
-
-    if (!password) {
-      errors.password = 'Password is required';
-    } else if (!correct) {
-      errors.password =
-        'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character';
-    }
-
-    if (!line1) {
-      errors.line1 = 'Line 1 is required';
-    }
-    if (!city) {
-      errors.city = 'City is required';
-    }
-    // if (!stateName) {
-    //   errors.stateName = 'State name is required';
-    // }
-    if (!country) {
-      errors.country = 'Country is required';
-    }
-    // if (!zipcode) {
-    //   errors.zipcode = 'Zip Code is required';
-    // }
-
-    if (Object.keys(errors).length === 0) {
-      const patientPortal = true;
-      const roleType = 'PATIENT';
-      const signUpPayload = {
-        email,
-        firstName,
-        lastName,
-        phone,
-        password,
-        patientPortal,
-        roleType,
-        countryCode,
-        gender,
-        birthDate: dateOfBirth,
-        address: {
-          line1,
-          line2,
-          city,
-          stateName,
-          country,
-          // zipcode,
-        },
-      };
-      dispatch(signUpAction(signUpPayload));
+    // If no errors, proceed with signup
+    const signUpPayload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email || null,
+      phone: formData.phone,
+      password: formData.password,
+      dateOfBirth: formData.dateOfBirth,
+      gender: formData.gender,
+      patientPortal: true,
+      roleType: 'PATIENT',
+      countryCode,
+      address: {
+        line1: formData.line1,
+        line2: formData.line2,
+        city: formData.city,
+        stateName: formData.stateName,
+        country: formData.country
+      }
+    };
+    console.log("signUpPayload-->", signUpPayload);
+    const res: any = await dispatch(signUpAction(signUpPayload));
+    console.log("res-->", res);
+    if (res?.error) {
+      Alert.alert("Error", res?.error?.message);
     } else {
-      setErrors(errors);
-    }
-  };
-  const backToSignIn = () => {
-    navigation.navigate('SignIn');
-  };
-
-  useEffect(() => {
-    if (signUpData) {
-      dispatch(resetAuth());
-      Toast.show('Your account created successfully', 2);
+      Toast.show("Your account created successfully", 2);
       navigation.navigate('SignIn');
     }
-  }, [signUpData]);
-
-  const validatePassword = (txt: string) => {
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
-    let errorMessage =
-      'Password must be at least 8 characters long and contain at least one uppercase, one lowercase letter, one number, and one special character';
-    if (!passwordRegex.test(txt)) {
-      correctPass(false);
-      return {value: errorMessage, isError: true};
-    } else {
-      correctPass(true);
-      return {value: txt, isError: false};
-    }
   };
 
-  const validateInput = (inputValue: string) => {
-    // const regex = /[!@#$%^&*()_+\-=\[\]{};`':"\\|,.<>\/?0-9]/;
-    // if (regex.test(inputValue)) {
-    //   return {
-    //     value: 'Input should not contain special characters or numbers',
-    //     isError: true,
-    //   };
-    // } else {
-      return {value: inputValue, isError: false};
-    // }
-  };
-  const validatePhoneNumber = (inputValue: string) => {
-    const regex = /^[0-9]{10}$/;
-    let errorMessage = 'Please enter 10 digit contact number';
-    if (!regex.test(inputValue)) {
-      setContctIsCorrect(false);
-      return {value: errorMessage, isError: true};
-    } else {
-      setContctIsCorrect(true);
-      return {value: inputValue, isError: false};
-    }
-  };
-  const validateEmail = (email: string) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
-
-  const genderType = [
+  const genderOptions = [
     {label: 'Female', value: 'FEMALE'},
     {label: 'Male', value: 'MALE'},
     {label: 'Other', value: 'OTHER'},
@@ -459,19 +224,15 @@ const SignUpSc = ({navigation}: any) => {
   return (
     <KeyboardAvoidingView
       style={{flex: 1}}
-      behavior={Platform.OS == 'ios' ? 'padding' : 'height'}>
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
       <ScrollView>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'space-around',
-            backgroundColor: 'white',
-          }}>
+        <View style={{flex: 1, justifyContent: 'space-around', backgroundColor: 'white'}}>
           <OnboardingTopView />
           <View style={styles.container}>
             <Text style={styles.heading}>Sign Up</Text>
+            
             <TextInput
-              value={firstName}
+              value={formData.firstName}
               label="First Name"
               placeholder="First Name"
               style={{marginTop: 15}}
@@ -480,11 +241,10 @@ const SignUpSc = ({navigation}: any) => {
               onBlur={() => handleBlur('firstName')}
               required
             />
-            {errors.firstName && (
-              <Text style={styles.error}>{errors.firstName}</Text>
-            )}
+            {errors.firstName && <Text style={styles.error}>{errors.firstName}</Text>}
+
             <TextInput
-              value={lastName}
+              value={formData.lastName}
               placeholder="Last Name"
               label="Last Name"
               style={{marginTop: 10}}
@@ -493,83 +253,65 @@ const SignUpSc = ({navigation}: any) => {
               onBlur={() => handleBlur('lastName')}
               required
             />
-            {errors.lastName && (
-              <Text style={styles.error}>{errors.lastName}</Text>
-            )}
+            {errors.lastName && <Text style={styles.error}>{errors.lastName}</Text>}
 
             <DatePickerInput
               label="Date of Birth"
-              date={dateOfBirth}
-              setDate={(date: any) => handleChange('dateOfBirth', date)}
+              date={formData.dateOfBirth ? new Date(formData.dateOfBirth) : null}
+              setDate={(date: Date) => handleChange('dateOfBirth', date)}
               containerStyles={{marginBottom: 10, marginTop: 5}}
               maximumDate={new Date()}
               required
             />
-             {errors.dateOfBirth && (
-              <Text style={styles.error}>{errors.dateOfBirth}</Text>
-            )}
+            {errors.dateOfBirth && <Text style={styles.error}>{errors.dateOfBirth}</Text>}
 
             <DropdownComponent
               label="Gender"
-              data={genderType}
+              data={genderOptions}
               placeholder="Select Gender"
-              selectedValue={gender}
-              onValueChange={(value: any) => {
-                // setGenderError(false)
-                handleChange('gender', value)
-              }}
-              // isValid={genderError}
-              // errorText={genderError === true ? 'Please Select Gender' : ''}
+              selectedValue={formData.gender}
+              onValueChange={(value: string) => handleChange('gender', value)}
               required
             />
-
-          {errors.gender && (
-              <Text style={styles.error}>{errors.gender}</Text>
-            )}
-            
+            {errors.gender && <Text style={styles.error}>{errors.gender}</Text>}
 
             <TextInput
               style={{marginTop: 10}}
-              value={email}
+              value={formData.email}
               placeholder="Email"
               label="Email"
               keyboardType="email-address"
               onChangeText={value => handleChange('email', value)}
               isValid={errors.email}
               onBlur={() => handleBlur('email')}
-              // required
             />
             {errors.email && <Text style={styles.error}>{errors.email}</Text>}
+
             <PhoneWithCountryCode
+              required
+              label='Phone Number'
               countryCode={countryCode}
-              number={phone}
+              number={formData.phone}
               onChange={handlePhoneChange}
+            
             />
             {errors.phone && <Text style={styles.error}>{errors.phone}</Text>}
-            <Text
-              style={{
-                color: colors.grey70,
-                marginBottom: 10,
-                fontSize: responsiveFontSize(1.7),
-              }}>
-              Password
-            </Text>
+
+            <Text style={styles.passwordLabel}>Password</Text>
             <TextInput
               secureTextEntry
               style={{marginVertical: 10}}
-              value={password}
+              value={formData.password}
               placeholder="Password"
-              // label="Password"
               onChangeText={value => handleChange('password', value)}
               isValid={errors.password}
               onBlur={() => handleBlur('password')}
               required
             />
-            {errors.password && (
-              <Text style={styles.error}>{errors.password}</Text>
-            )}
+            {errors.password && <Text style={styles.error}>{errors.password}</Text>}
+
             <TextInput
-              value={line1}
+              value={formData.line1}
               placeholder="Address Line 1"
               label="Address Line 1"
               style={{marginTop: 10}}
@@ -581,15 +323,15 @@ const SignUpSc = ({navigation}: any) => {
             {errors.line1 && <Text style={styles.error}>{errors.line1}</Text>}
 
             <TextInput
-              value={line2}
+              value={formData.line2}
               placeholder="Address Line 2 (Optional)"
               label="Address Line 2"
               style={{marginTop: 10}}
-              onChangeText={value => setLine2(value)}
+              onChangeText={value => handleChange('line2', value)}
             />
 
             <TextInput
-              value={city}
+              value={formData.city}
               placeholder="City"
               label="City"
               style={{marginTop: 10}}
@@ -601,21 +343,15 @@ const SignUpSc = ({navigation}: any) => {
             {errors.city && <Text style={styles.error}>{errors.city}</Text>}
 
             <TextInput
-              value={stateName}
+              value={formData.stateName}
               placeholder="State"
               label="State"
               style={{marginTop: 10}}
               onChangeText={value => handleChange('stateName', value)}
-              isValid={errors.stateName}
-              onBlur={() => handleBlur('stateName')}
-              // required
             />
-            {errors.stateName && (
-              <Text style={styles.error}>{errors.stateName}</Text>
-            )}
 
             <TextInput
-              value={country}
+              value={formData.country}
               placeholder="Country"
               label="Country"
               style={{marginTop: 10}}
@@ -624,47 +360,16 @@ const SignUpSc = ({navigation}: any) => {
               onBlur={() => handleBlur('country')}
               required
             />
-            {errors.country && (
-              <Text style={styles.error}>{errors.country}</Text>
-            )}
+            {errors.country && <Text style={styles.error}>{errors.country}</Text>}
 
-            {/* <TextInput
-              value={zipcode}
-              placeholder="Zipcode"
-              label="Zipcode"
-              keyboardType="numeric"
-              style={{marginTop: 10}}
-              onChangeText={value => handleChange('zipcode', value)}
-              isValid={errors.zipcode}
-              onBlur={() => handleBlur('zipcode')}
-            />
-            {errors.zipcode && (
-              <Text style={styles.error}>{errors.zipcode}</Text>
-            )} */}
             <View style={{paddingTop: 20}}>
-              <Button title={'Create New Patient'} onPress={handleSignUp} />
+              <Button title="Create New Patient" onPress={handleSignUp} />
             </View>
-            <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-              <Text
-                style={{
-                  paddingTop: 18,
-                  alignSelf: 'center',
-                  fontWeight: '500',
-                  fontSize: 14,
-                  color: '#1A1A1A',
-                }}>
-                Already have an account?{' '}
-              </Text>
-              <TouchableOpacity style={{top: 5}} onPress={backToSignIn}>
-                <Text
-                  style={{
-                    textDecorationLine: 'underline',
-                    color: '#0097F0',
-                    padding: 10,
-                    fontSize: 14,
-                  }}>
-                  Sign In
-                </Text>
+
+            <View style={styles.signInContainer}>
+              <Text style={styles.signInText}>Already have an account? </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+                <Text style={styles.signInLink}>Sign In</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -674,24 +379,16 @@ const SignUpSc = ({navigation}: any) => {
   );
 };
 
-export default SignUpSc;
 const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
     paddingHorizontal: 20,
   },
-
-  checkBoxImage: {
-    height: 20,
-    width: 20,
-  },
-
   heading: {
     color: colors.black,
     fontWeight: 'bold',
     fontFamily: fontType.Roboto,
     fontSize: 26,
-    // backgroundColor: 'pink',
     textAlign: 'center',
   },
   error: {
@@ -700,4 +397,28 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop: -5,
   },
+  passwordLabel: {
+    color: colors.grey70,
+    marginBottom: 10,
+    fontSize: responsiveFontSize(1.7),
+  },
+  signInContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  signInText: {
+    paddingTop: 18,
+    alignSelf: 'center',
+    fontWeight: '500',
+    fontSize: 14,
+    color: '#1A1A1A',
+  },
+  signInLink: {
+    textDecorationLine: 'underline',
+    color: '#0097F0',
+    padding: 10,
+    fontSize: 14,
+  },
 });
+
+export default SignUpSc;

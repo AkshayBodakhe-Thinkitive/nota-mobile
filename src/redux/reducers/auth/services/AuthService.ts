@@ -11,7 +11,7 @@ export class AuthService {
     console.log("signUpPayload---->",signUpPayload)
     try {
       const response = await post2(`/auth/patient`, signUpPayload);
-      console.log("response signUp==>",JSON.stringify(response));
+      // console.log("response signUp==>",JSON.stringify(response));
       return response;
     } catch (error: any) {
       console.log("error===>",JSON.stringify(error))

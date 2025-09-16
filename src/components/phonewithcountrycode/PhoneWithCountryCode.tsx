@@ -75,6 +75,7 @@ const PhoneWithCountryCode: React.FC<PhoneWithCountryCodeProps> = ({
             editable={editable}
             onChangeText={handleNumberChange} 
             keyboardType="phone-pad" 
+            maxLength={10}
           />
         </View>
       </View>
